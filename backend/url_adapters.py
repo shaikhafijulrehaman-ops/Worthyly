@@ -56,7 +56,7 @@ class AmazonAdapter(BaseRetailerAdapter):
 
     def matches_domain(self, hostname: str) -> bool:
         host = hostname.lower().replace("www.", "").replace("m.", "")
-        return host in {"amazon.in", "amazon.com", "amazon.co.uk", "amazon.de", "amazon.ca"} or host.endswith(".amazon.in")
+        return host in {"amazon.in", "amzn.in", "amazon.com", "amazon.co.uk", "amazon.de", "amazon.ca"} or host.endswith(".amazon.in")
 
     def get_retailer_name(self) -> str:
         return "Amazon India"

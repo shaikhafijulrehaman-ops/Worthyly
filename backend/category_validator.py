@@ -40,7 +40,7 @@ SUPPORTED_DOMAINS = {
 
 # Whitelist of trusted shortened retailer link domains
 SHORTENED_DOMAINS = {
-    "amzn.to", "amzn.eu", "a.co", "fkrt.it", "tinyurl.com", "bit.ly"
+    "amzn.to", "amzn.eu", "amzn.in", "a.co", "fkrt.it", "tinyurl.com", "bit.ly"
 }
 
 # Tracking parameters to strip
@@ -350,8 +350,8 @@ def resolve_shortened_retailer_url(raw_url: str) -> Tuple[Optional[str], Optiona
         opener = urllib.request.build_opener(NoRedirectHandler)
         req = urllib.request.Request(
             current_url,
-            headers={"User-Agent": "WORTHLY-Verifier/1.0 (+https://worthly.internal)"},
-            method="HEAD"
+            headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"},
+            method="GET"
         )
 
         try:
@@ -753,7 +753,8 @@ class CategoryValidator:
         candidate_model = None
         for seg in reversed(segments):
             clean_seg = seg.replace("-", " ").replace("_", " ").title()
-            if len(clean_seg) > 5 and not clean_seg.lower().startswith(("dp", "gp", "product", "shop", "buy", "item")):
+            is_opaque_token = bool(re.match(r"^[A-Za-z0-9]{4,16}$", seg)) and "-" not in seg and "_" not in seg
+            if len(clean_seg) > 5 and not is_opaque_token and not clean_seg.lower().startswith(("dp", "gp", "product", "shop", "buy", "item", "itm", "d")):
                 candidate_model = clean_seg
                 break
 
@@ -960,6 +961,7 @@ class CategoryValidator:
             "price": None,
             "currency": "INR",
             "data_source": "user_confirmation_required",
+            "retailer_name": adapter.get_retailer_name(),
             "retailer_identifiers": identifiers,
             "candidates": candidates
         }

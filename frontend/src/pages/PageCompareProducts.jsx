@@ -262,9 +262,12 @@ export default function PageCompareProducts({
         const brand = item.brand || '';
         const name = item.product_name || '';
         const price = item.price ? Number(item.price) : 0;
+        const asin = item.retailer_identifiers?.asin || item.retailer_identifiers?.amazon_asin || '';
+        const pid = item.retailer_identifiers?.pid || '';
+        const retailerName = item.retailer_name || (asin ? 'Amazon India' : pid ? 'Flipkart' : 'Retailer');
 
         if (!brand || !name) {
-          unconfirmed.push({ idx, item });
+          unconfirmed.push({ idx, item, asin, pid });
         }
 
         return {
@@ -272,6 +275,9 @@ export default function PageCompareProducts({
           name: name,
           brand: brand,
           price: price,
+          asin: asin,
+          pid: pid,
+          retailer_name: retailerName,
           category: item.category || commonCat,
           subcategory: item.subcategory || 'general',
           specs: {},
@@ -592,7 +598,7 @@ export default function PageCompareProducts({
                     <>
                       <div className="space-y-0.5 truncate">
                         <span className="font-bold text-[#18213A] truncate block">
-                          Product #{idx + 1}: {item.brand ? `${item.brand} ${item.name}` : item.name || 'Unconfirmed External Link'}
+                          Product #{idx + 1}: {item.brand && item.name ? `${item.brand} ${item.name}` : (item.asin ? `${item.retailer_name || 'Amazon'} (ASIN: ${item.asin})` : item.pid ? `${item.retailer_name || 'Flipkart'} (PID: ${item.pid})` : (item.name || 'Uncataloged External Product'))}
                         </span>
                         <span className="text-[10px] text-[#69738A] truncate block">
                           {item.officialProductUrl}
