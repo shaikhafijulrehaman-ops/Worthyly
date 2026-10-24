@@ -9,7 +9,8 @@ import fallbackProducts from './fallbackProducts.json';
 import fallbackCategories from './fallbackCategories.json';
 import fallbackReviews from './fallbackReviews.json';
 
-const API_BASE = '/api';
+const RAW_API_URL = import.meta.env.VITE_API_URL || import.meta.env.VITE_API_BASE_URL || '';
+const API_BASE = RAW_API_URL ? `${RAW_API_URL.replace(/\/+$/, '')}/api` : '/api';
 
 // Local storage keys for persistent demo states
 const STORAGE_KEYS = {
