@@ -15,6 +15,7 @@ from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
 
 from url_adapters import retailer_registry
 from product_providers import product_provider_manager
+from supabase_client import supabase_product_client
 
 # Safe retail and tech domains known for consumer products
 SUPPORTED_DOMAINS = {
@@ -466,7 +467,44 @@ class CategoryValidator:
         url_text_lower = (cleaned_url + " " + str(model_hint.get("variant") or "") + " " + target_path).lower()
 
         # =========================================================================
-        # TIER 1: Exact Retailer Product ID or ASIN
+        # SUPABASE PERSISTENT PRODUCT MASTER LOOKUP (When Configured)
+        # =========================================================================
+        if supabase_product_client.is_configured():
+            target_asin = identifiers.get("asin") or identifiers.get("amazon_asin") or self.extract_amazon_asin(cleaned_url)
+            if target_asin:
+                sb_prod, _ = supabase_product_client.find_by_retailer_identifier("asin", target_asin)
+                if sb_prod:
+                    return sb_prod
+
+            target_pid = identifiers.get("pid") or identifiers.get("flipkart_pid")
+            if target_pid:
+                sb_prod, _ = supabase_product_client.find_by_retailer_identifier("pid", target_pid)
+                if sb_prod:
+                    return sb_prod
+
+            target_fsn = identifiers.get("fsn")
+            if target_fsn:
+                sb_prod, _ = supabase_product_client.find_by_retailer_identifier("fsn", target_fsn)
+                if sb_prod:
+                    return sb_prod
+
+            # Tier 2 via Supabase Canonical URL
+            sb_prod, _ = supabase_product_client.find_by_canonical_url(cleaned_url)
+            if sb_prod:
+                return sb_prod
+
+            # Tier 3 via Supabase Brand / Model
+            if model_hint and model_hint.get("brand") and model_hint.get("model_name"):
+                sb_prod, _ = supabase_product_client.find_by_exact_model(
+                    model_hint["brand"],
+                    model_hint["model_name"],
+                    model_hint.get("variant")
+                )
+                if sb_prod:
+                    return sb_prod
+
+        # =========================================================================
+        # TIER 1: Exact Retailer Product ID or ASIN (Local / Fallback Catalog)
         # =========================================================================
         target_asin = identifiers.get("asin") or identifiers.get("amazon_asin") or self.extract_amazon_asin(cleaned_url)
         if target_asin:
