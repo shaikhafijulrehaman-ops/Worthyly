@@ -1,0 +1,106 @@
+[
+  {
+    "id": "eval-01",
+    "category": "electronics",
+    "text": "The display colors are remarkably crisp, but the battery drains quickly under load.",
+    "expected_aspects": [
+      {
+        "aspect": "display",
+        "polarity": "positive"
+      },
+      {
+        "aspect": "battery",
+        "polarity": "negative"
+      }
+    ]
+  },
+  {
+    "id": "eval-02",
+    "category": "electronics",
+    "text": "The 32GB RAM makes heavy containerization completely seamless with zero slowdowns.",
+    "expected_aspects": [
+      {
+        "aspect": "performance",
+        "polarity": "positive"
+      }
+    ]
+  },
+  {
+    "id": "eval-03",
+    "category": "electronics",
+    "text": "Fans spool up noticeably during long build runs and it gets quite hot.",
+    "expected_aspects": [
+      {
+        "aspect": "thermals",
+        "polarity": "negative"
+      }
+    ]
+  },
+  {
+    "id": "eval-04",
+    "category": "electronics",
+    "text": "The webcam and camera quality are terrible for Zoom meetings, but the aluminum build quality is top-tier.",
+    "expected_aspects": [
+      {
+        "aspect": "camera",
+        "polarity": "negative"
+      },
+      {
+        "aspect": "build_quality",
+        "polarity": "positive"
+      }
+    ]
+  },
+  {
+    "id": "eval-05",
+    "category": "footwear",
+    "text": "The ReactX foam has noticeably more bounce and plush comfort than earlier models.",
+    "expected_aspects": [
+      {
+        "aspect": "comfort",
+        "polarity": "positive"
+      }
+    ]
+  },
+  {
+    "id": "eval-06",
+    "category": "footwear",
+    "text": "After 250 road miles, the outsole tread shows minimal wear and excellent durability.",
+    "expected_aspects": [
+      {
+        "aspect": "durability",
+        "polarity": "positive"
+      }
+    ]
+  },
+  {
+    "id": "eval-07",
+    "category": "footwear",
+    "text": "The forefoot is snug and too narrow, but the lightweight mesh prevents sweat.",
+    "expected_aspects": [
+      {
+        "aspect": "fit",
+        "polarity": "negative"
+      },
+      {
+        "aspect": "weight",
+        "polarity": "positive"
+      }
+    ]
+  },
+  {
+    "id": "eval-08",
+    "category": "home_kitchen",
+    "text": "Cleaning the non-stick basket is fast and dishwasher safe, but the fan noise is quite loud.",
+    "expected_aspects": [
+      {
+        "aspect": "ease_of_cleaning",
+        "polarity": "positive"
+      },
+      {
+        "aspect": "noise",
+        "polarity": "negative"
+      }
+    ]
+  }
+]
