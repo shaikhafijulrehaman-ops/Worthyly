@@ -329,8 +329,14 @@ def evaluate_url_comparison(req: CompareEvaluateRequest):
         effective_prod["category"] = req.category
         effective_prod["is_verified"] = bool(cat_match)
         effective_prod["data_source"] = "verified_catalog" if cat_match else "user_provided"
+        effective_prod["retailer_name"] = item.get("retailer_name") or effective_prod.get("source") or "Verified Retailer"
+        effective_prod["price_status"] = item.get("price_status") or effective_prod.get("price_status") or "verified"
+        effective_prod["last_verified_at"] = item.get("last_verified_at") or effective_prod.get("lastVerifiedAt")
+        effective_prod["data_sources"] = effective_prod.get("data_sources") or ["verified_catalog"]
 
-        if "price" not in effective_prod or effective_prod["price"] is None:
+        if item.get("price") and float(item["price"]) > 0:
+            effective_prod["price"] = float(item["price"])
+        elif "price" not in effective_prod or effective_prod["price"] is None:
             effective_prod["price"] = float(item.get("price", 0))
 
         # Infer subcategory

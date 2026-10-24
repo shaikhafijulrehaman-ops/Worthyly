@@ -1292,7 +1292,7 @@
     "brand": "Apple",
     "name": "Apple iPhone 16 Pro",
     "product_name": "Apple iPhone 16 Pro",
-    "exact_model": "iPhone 16 Pro 128GB",
+    "exact_model": "iPhone 16 Pro",
     "variant": "128GB / Natural Titanium",
     "price": 119900.0,
     "price_inr": 119900.0,
@@ -1319,6 +1319,14 @@
         "price": 119900.0,
         "availability": "In Stock",
         "lastVerifiedAt": "2026-10-15T10:00:00Z"
+      },
+      {
+        "retailerName": "Flipkart",
+        "productUrl": "https://www.flipkart.com/apple-iphone-16-pro-natural-titanium-128-gb/p/itmdbce9a8be5154?pid=MOBH4DQF2GZZPZZG",
+        "price": 119900.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-20T10:00:00Z"
       }
     ],
     "specs": {
@@ -1357,7 +1365,20 @@
       "os": "iOS 18"
     },
     "product_source_url": "https://www.apple.com/in/shop/buy-iphone/iphone-16-pro",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "model_identifier": "A3293",
+    "canonical_url": "https://www.apple.com/in/shop/buy-iphone/iphone-16-pro",
+    "retailer_identifiers": {
+      "asin": "B0DGJ9TY1Z",
+      "amazon_asin": "B0DGJ9TY1Z",
+      "flipkart_pid": "MOBH4DQF2GZZPZZG",
+      "flipkart_fsn": "itmdbce9a8be5154"
+    },
+    "data_sources": [
+      "Apple Official Store",
+      "Amazon India",
+      "Flipkart Verified Listing"
+    ]
   },
   {
     "id": "phone-002",
@@ -1367,7 +1388,7 @@
     "brand": "Apple",
     "name": "Apple iPhone 15",
     "product_name": "Apple iPhone 15",
-    "exact_model": "iPhone 15 128GB",
+    "exact_model": "iPhone 15",
     "variant": "128GB / Black",
     "price": 69900.0,
     "price_inr": 69900.0,
@@ -1394,6 +1415,14 @@
         "price": 65999.0,
         "availability": "In Stock",
         "lastVerifiedAt": "2026-10-15T10:00:00Z"
+      },
+      {
+        "retailerName": "Flipkart",
+        "productUrl": "https://www.flipkart.com/apple-iphone-15-black-128-gb/p/itm6ac6485515ae4?pid=MOBGTAGPTB3VSURH",
+        "price": 65999.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-20T10:00:00Z"
       }
     ],
     "specs": {
@@ -1432,7 +1461,20 @@
       "os": "iOS 17 (upgradeable)"
     },
     "product_source_url": "https://www.apple.com/in/shop/buy-iphone/iphone-15",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "model_identifier": "A3090",
+    "canonical_url": "https://www.apple.com/in/shop/buy-iphone/iphone-15",
+    "retailer_identifiers": {
+      "asin": "B0CHX1W1XY",
+      "amazon_asin": "B0CHX1W1XY",
+      "flipkart_pid": "MOBGTAGPTB3VSURH",
+      "flipkart_fsn": "itm6ac6485515ae4"
+    },
+    "data_sources": [
+      "Apple Official Store",
+      "Amazon India",
+      "Flipkart Verified Listing"
+    ]
   },
   {
     "id": "phone-003",
@@ -1442,7 +1484,7 @@
     "brand": "Samsung",
     "name": "Samsung Galaxy S24 Ultra",
     "product_name": "Samsung Galaxy S24 Ultra",
-    "exact_model": "Galaxy S24 Ultra 5G (12GB/256GB)",
+    "exact_model": "Galaxy S24 Ultra 5G",
     "variant": "12GB RAM / 256GB / Titanium Gray",
     "price": 129999.0,
     "price_inr": 129999.0,
@@ -1469,6 +1511,14 @@
         "price": 129999.0,
         "availability": "In Stock",
         "lastVerifiedAt": "2026-10-15T10:00:00Z"
+      },
+      {
+        "retailerName": "Flipkart",
+        "productUrl": "https://www.flipkart.com/samsung-galaxy-s24-ultra-5g-titanium-gray-256-gb/p/itma42d13b4f9812?pid=MOBGW4F8G5ZGSG9Y",
+        "price": 129999.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-20T10:00:00Z"
       }
     ],
     "specs": {
@@ -1480,7 +1530,8 @@
       "battery": "5000 mAh (45W fast charge, 15W wireless)",
       "stylus": "Embedded Bluetooth S-Pen",
       "weight": "232g",
-      "os": "One UI 6.1 (Android 14)"
+      "os": "One UI 6.1 (Android 14)",
+      "charging": "Fast Wired & Wireless Charging"
     },
     "features": [
       "Titanium exterior frame with anti-reflective Gorilla Armor glass",
@@ -1507,7 +1558,20 @@
       "os": "One UI 6.1 (Android 14)"
     },
     "product_source_url": "https://www.samsung.com/in/smartphones/galaxy-s24-ultra/",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "model_identifier": "SM-S928B",
+    "canonical_url": "https://www.samsung.com/in/smartphones/galaxy-s24-ultra/",
+    "retailer_identifiers": {
+      "asin": "B0CS5X828H",
+      "amazon_asin": "B0CS5X828H",
+      "flipkart_pid": "MOBGW4F8G5ZGSG9Y",
+      "flipkart_fsn": "itma42d13b4f9812"
+    },
+    "data_sources": [
+      "Samsung India Official",
+      "Amazon India",
+      "Flipkart Verified Listing"
+    ]
   },
   {
     "id": "phone-004",
@@ -1517,7 +1581,7 @@
     "brand": "Samsung",
     "name": "Samsung Galaxy S24",
     "product_name": "Samsung Galaxy S24",
-    "exact_model": "Galaxy S24 5G (8GB/128GB)",
+    "exact_model": "Galaxy S24 5G",
     "variant": "8GB RAM / 128GB / Onyx Black",
     "price": 74999.0,
     "price_inr": 74999.0,
@@ -1544,6 +1608,14 @@
         "price": 72499.0,
         "availability": "In Stock",
         "lastVerifiedAt": "2026-10-15T10:00:00Z"
+      },
+      {
+        "retailerName": "Flipkart",
+        "productUrl": "https://www.flipkart.com/samsung-galaxy-s24-5g-onyx-black-128-gb/p/itm93cf556bc9e34?pid=MOBGW4F8259GG9ZX",
+        "price": 69999.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-20T10:00:00Z"
       }
     ],
     "specs": {
@@ -1554,7 +1626,8 @@
       "display": "6.2\" Dynamic AMOLED 2X 120Hz LTPO, 2600 nits peak",
       "battery": "4000 mAh (25W fast charge, 15W wireless)",
       "weight": "167g",
-      "os": "One UI 6.1 (Android 14)"
+      "os": "One UI 6.1 (Android 14)",
+      "charging": "Fast Wired & Wireless Charging"
     },
     "features": [
       "Compact lightweight 167g form factor with Armor Aluminum frame",
@@ -1580,7 +1653,20 @@
       "os": "One UI 6.1 (Android 14)"
     },
     "product_source_url": "https://www.samsung.com/in/smartphones/galaxy-s24/",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "model_identifier": "SM-S921B",
+    "canonical_url": "https://www.samsung.com/in/smartphones/galaxy-s24/",
+    "retailer_identifiers": {
+      "asin": "B0CS5Y2V6J",
+      "amazon_asin": "B0CS5Y2V6J",
+      "flipkart_pid": "MOBGW4F8259GG9ZX",
+      "flipkart_fsn": "itm93cf556bc9e34"
+    },
+    "data_sources": [
+      "Samsung India Official",
+      "Amazon India",
+      "Flipkart Verified Listing"
+    ]
   },
   {
     "id": "phone-005",
@@ -1590,7 +1676,7 @@
     "brand": "OnePlus",
     "name": "OnePlus 12 5G",
     "product_name": "OnePlus 12 5G",
-    "exact_model": "OnePlus 12 5G (16GB/512GB)",
+    "exact_model": "OnePlus 12 5G",
     "variant": "16GB RAM / 512GB / Silky Black",
     "price": 69999.0,
     "price_inr": 69999.0,
@@ -1617,6 +1703,14 @@
         "price": 69999.0,
         "availability": "In Stock",
         "lastVerifiedAt": "2026-10-15T10:00:00Z"
+      },
+      {
+        "retailerName": "Flipkart",
+        "productUrl": "https://www.flipkart.com/oneplus-12-5g-silky-black-512-gb/p/itm594b2382cf893?pid=MOBGXY7PPHJ94Z9V",
+        "price": 69999.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-20T10:00:00Z"
       }
     ],
     "specs": {
@@ -1627,7 +1721,8 @@
       "display": "6.82\" 2K 120Hz ProXDR LTPO AMOLED, 4500 nits peak",
       "battery": "5400 mAh (100W SUPERVOOC, 50W AIRVOOC)",
       "weight": "220g",
-      "os": "OxygenOS 14 (Android 14)"
+      "os": "OxygenOS 14 (Android 14)",
+      "charging": "Fast Wired & Wireless Charging"
     },
     "features": [
       "4th Gen Hasselblad Camera System with 3x periscope zoom",
@@ -1653,7 +1748,20 @@
       "os": "OxygenOS 14 (Android 14)"
     },
     "product_source_url": "https://www.oneplus.in/12",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "model_identifier": "CPH2581",
+    "canonical_url": "https://www.oneplus.in/12",
+    "retailer_identifiers": {
+      "asin": "B0CQPPY2C3",
+      "amazon_asin": "B0CQPPY2C3",
+      "flipkart_pid": "MOBGXY7PPHJ94Z9V",
+      "flipkart_fsn": "itm594b2382cf893"
+    },
+    "data_sources": [
+      "OnePlus India",
+      "Amazon India",
+      "Flipkart Verified Listing"
+    ]
   },
   {
     "id": "phone-006",
@@ -1663,8 +1771,8 @@
     "brand": "OnePlus",
     "name": "OnePlus 12R 5G",
     "product_name": "OnePlus 12R 5G",
-    "exact_model": "OnePlus 12R 5G (16GB/256GB)",
-    "variant": "16GB RAM / 256GB / Cool Blue",
+    "exact_model": "OnePlus 12R 5G",
+    "variant": "8GB RAM / 128GB / Cool Blue",
     "price": 42999.0,
     "price_inr": 42999.0,
     "currency": "INR",
@@ -1690,6 +1798,14 @@
         "price": 42999.0,
         "availability": "In Stock",
         "lastVerifiedAt": "2026-10-15T10:00:00Z"
+      },
+      {
+        "retailerName": "Flipkart",
+        "productUrl": "https://www.flipkart.com/oneplus-12r-5g-cool-blue-128-gb/p/itma4bc6061177cb?pid=MOBGXY7PXFHHZ79K",
+        "price": 37999.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-20T10:00:00Z"
       }
     ],
     "specs": {
@@ -1700,7 +1816,8 @@
       "display": "6.78\" 1.5K 120Hz AMOLED LTPO4, 4500 nits peak",
       "battery": "5500 mAh (100W SUPERVOOC charging)",
       "weight": "207g",
-      "os": "OxygenOS 14 (Android 14)"
+      "os": "OxygenOS 14 (Android 14)",
+      "charging": "Fast Wired & Wireless Charging"
     },
     "features": [
       "Largest battery ever in a OnePlus phone (5500 mAh)",
@@ -1726,7 +1843,20 @@
       "os": "OxygenOS 14 (Android 14)"
     },
     "product_source_url": "https://www.oneplus.in/12r",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "model_identifier": "CPH2585",
+    "canonical_url": "https://www.oneplus.in/12r",
+    "retailer_identifiers": {
+      "asin": "B0CQPP54H5",
+      "amazon_asin": "B0CQPP54H5",
+      "flipkart_pid": "MOBGXY7PXFHHZ79K",
+      "flipkart_fsn": "itma4bc6061177cb"
+    },
+    "data_sources": [
+      "OnePlus India",
+      "Amazon India",
+      "Flipkart Verified Listing"
+    ]
   },
   {
     "id": "phone-007",
@@ -1736,7 +1866,7 @@
     "brand": "Xiaomi",
     "name": "Redmi Note 13 Pro+ 5G",
     "product_name": "Redmi Note 13 Pro+ 5G",
-    "exact_model": "Redmi Note 13 Pro+ 5G (12GB/512GB)",
+    "exact_model": "Redmi Note 13 Pro+ 5G",
     "variant": "12GB RAM / 512GB / Fusion Black",
     "price": 33999.0,
     "price_inr": 33999.0,
@@ -1763,6 +1893,14 @@
         "price": 33999.0,
         "availability": "In Stock",
         "lastVerifiedAt": "2026-10-15T10:00:00Z"
+      },
+      {
+        "retailerName": "Flipkart",
+        "productUrl": "https://www.flipkart.com/redmi-note-13-pro-plus-5g-fusion-black-512-gb/p/itm965a39cb62112?pid=MOBGVG79ZZHYM277",
+        "price": 31999.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-20T10:00:00Z"
       }
     ],
     "specs": {
@@ -1774,7 +1912,8 @@
       "battery": "5000 mAh (120W HyperCharge)",
       "water_rating": "IP68 water & dust resistance",
       "weight": "204g",
-      "os": "MIUI 14 / Xiaomi HyperOS"
+      "os": "MIUI 14 / Xiaomi HyperOS",
+      "charging": "Fast Wired & Wireless Charging"
     },
     "features": [
       "200MP flagship sensor with 4x lossless in-sensor zoom",
@@ -1801,7 +1940,20 @@
       "os": "MIUI 14 / Xiaomi HyperOS"
     },
     "product_source_url": "https://www.mi.com/in/product/redmi-note-13-pro-plus-5g/",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "model_identifier": "23090RA98I",
+    "canonical_url": "https://www.mi.com/in/product/redmi-note-13-pro-plus-5g/",
+    "retailer_identifiers": {
+      "asin": "B0CR2Q7ZPW",
+      "amazon_asin": "B0CR2Q7ZPW",
+      "flipkart_pid": "MOBGVG79ZZHYM277",
+      "flipkart_fsn": "itm965a39cb62112"
+    },
+    "data_sources": [
+      "Mi India",
+      "Amazon India",
+      "Flipkart Verified Listing"
+    ]
   },
   {
     "id": "phone-008",
@@ -1811,8 +1963,8 @@
     "brand": "Motorola",
     "name": "Motorola Edge 50 Pro 5G",
     "product_name": "Motorola Edge 50 Pro 5G",
-    "exact_model": "Motorola Edge 50 Pro (12GB/256GB)",
-    "variant": "12GB RAM / 256GB / Black Beauty",
+    "exact_model": "Motorola Edge 50 Pro 5G",
+    "variant": "12GB RAM / 256GB / Luxe Lavender",
     "price": 31999.0,
     "price_inr": 31999.0,
     "currency": "INR",
@@ -1838,6 +1990,14 @@
         "price": 31999.0,
         "availability": "In Stock",
         "lastVerifiedAt": "2026-10-15T10:00:00Z"
+      },
+      {
+        "retailerName": "Amazon India",
+        "productUrl": "https://www.amazon.in/dp/B0D1V45M9B",
+        "price": 31999.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-20T10:00:00Z"
       }
     ],
     "specs": {
@@ -1849,7 +2009,8 @@
       "battery": "4500 mAh (125W TurboPower wired, 50W wireless)",
       "water_rating": "IP68 water resistant",
       "weight": "186g",
-      "os": "Hello UI (Android 14)"
+      "os": "Hello UI (Android 14)",
+      "charging": "Fast Wired & Wireless Charging"
     },
     "features": [
       "World's first Pantone Validated camera and display",
@@ -1876,7 +2037,20 @@
       "os": "Hello UI (Android 14)"
     },
     "product_source_url": "https://www.motorola.in/smartphones-motorola-edge-50-pro/p",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "model_identifier": "XT2403-1",
+    "canonical_url": "https://www.motorola.in/smartphones-motorola-edge-50-pro/p",
+    "retailer_identifiers": {
+      "asin": "B0D1V45M9B",
+      "amazon_asin": "B0D1V45M9B",
+      "flipkart_pid": "MOBGX2T7M9DPHBZY",
+      "flipkart_fsn": "itm134704b2b3a98"
+    },
+    "data_sources": [
+      "Motorola India",
+      "Flipkart Verified Listing",
+      "Amazon India"
+    ]
   },
   {
     "id": "lap-001",
@@ -2466,7 +2640,7 @@
     "id": "book-001",
     "slug": "hands-on-machine-learning-geron",
     "category": "books",
-    "subcategory": "ai_ml_books",
+    "subcategory": "study_materials",
     "brand": "O'Reilly Media",
     "name": "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow",
     "product_name": "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow",
@@ -2524,13 +2698,14 @@
       "format": "Paperback"
     },
     "product_source_url": "https://www.oreilly.com/library/view/hands-on-machine-learning/9781098125967/",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Books & Study Materials"
   },
   {
     "id": "book-002",
     "slug": "python-crash-course-matthes",
     "category": "books",
-    "subcategory": "programming_books",
+    "subcategory": "study_materials",
     "brand": "No Starch Press",
     "name": "Python Crash Course: A Hands-On, Project-Based Introduction",
     "product_name": "Python Crash Course: A Hands-On, Project-Based Introduction",
@@ -2588,13 +2763,14 @@
       "format": "Paperback"
     },
     "product_source_url": "https://nostarch.com/python-crash-course-3rd-edition",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Books & Study Materials"
   },
   {
     "id": "book-003",
     "slug": "introduction-to-algorithms-clrs",
     "category": "books",
-    "subcategory": "dsa_books",
+    "subcategory": "study_materials",
     "brand": "MIT Press",
     "name": "Introduction to Algorithms (CLRS)",
     "product_name": "Introduction to Algorithms (CLRS)",
@@ -2652,13 +2828,14 @@
       "format": "Hardcover"
     },
     "product_source_url": "https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Books & Study Materials"
   },
   {
     "id": "book-004",
     "slug": "operating-system-concepts-silberschatz",
     "category": "books",
-    "subcategory": "cs_core_books",
+    "subcategory": "study_materials",
     "brand": "Wiley",
     "name": "Operating System Concepts (The Dinosaur Book)",
     "product_name": "Operating System Concepts (The Dinosaur Book)",
@@ -2716,13 +2893,14 @@
       "format": "Paperback"
     },
     "product_source_url": "https://www.wiley.com/en-us/Operating+System+Concepts%2C+10th+Edition-p-9781119800361",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Books & Study Materials"
   },
   {
     "id": "book-005",
     "slug": "database-system-concepts-korth",
     "category": "books",
-    "subcategory": "cs_core_books",
+    "subcategory": "study_materials",
     "brand": "McGraw-Hill",
     "name": "Database System Concepts",
     "product_name": "Database System Concepts",
@@ -2780,13 +2958,14 @@
       "format": "Paperback"
     },
     "product_source_url": "https://www.mheducation.co.in/database-system-concepts-9789389949438-india",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Books & Study Materials"
   },
   {
     "id": "book-006",
     "slug": "computer-networking-kurose-ross",
     "category": "books",
-    "subcategory": "cs_core_books",
+    "subcategory": "study_materials",
     "brand": "Pearson",
     "name": "Computer Networking: A Top-Down Approach",
     "product_name": "Computer Networking: A Top-Down Approach",
@@ -2844,13 +3023,14 @@
       "format": "Paperback"
     },
     "product_source_url": "https://www.pearson.com/en-us/subject-catalog/p/computer-networking-a-top-down-approach/P200000003333",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Books & Study Materials"
   },
   {
     "id": "book-007",
     "slug": "designing-data-intensive-applications",
     "category": "books",
-    "subcategory": "systems_books",
+    "subcategory": "study_materials",
     "brand": "O'Reilly Media",
     "name": "Designing Data-Intensive Applications",
     "product_name": "Designing Data-Intensive Applications",
@@ -2908,13 +3088,14 @@
       "format": "Paperback"
     },
     "product_source_url": "https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Books & Study Materials"
   },
   {
     "id": "book-008",
     "slug": "gate-cse-made-easy-solved-papers",
     "category": "books",
-    "subcategory": "exam_prep_books",
+    "subcategory": "study_materials",
     "brand": "MADE EASY Publications",
     "name": "GATE 2025: Computer Science & IT Topicwise Previous Solved Papers",
     "product_name": "GATE 2025: Computer Science & IT Topicwise Previous Solved Papers",
@@ -2972,13 +3153,14 @@
       "format": "Paperback"
     },
     "product_source_url": "https://www.madeeasypublications.org/product/gate-cs-solved-papers",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Books & Study Materials"
   },
   {
     "id": "mag-001",
     "slug": "mit-technology-review-subscription",
     "category": "magazines",
-    "subcategory": "tech_magazines",
+    "subcategory": "periodicals",
     "brand": "MIT Technology Review",
     "name": "MIT Technology Review (Annual Subscription)",
     "product_name": "MIT Technology Review (Annual Subscription)",
@@ -3032,13 +3214,14 @@
       "pages_per_issue": "112 pages"
     },
     "product_source_url": "https://www.technologyreview.com/subscribe/",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Magazines & Periodicals"
   },
   {
     "id": "mag-002",
     "slug": "wired-magazine-subscription",
     "category": "magazines",
-    "subcategory": "tech_magazines",
+    "subcategory": "periodicals",
     "brand": "Cond\u00e9 Nast",
     "name": "Wired Magazine (Annual Subscription)",
     "product_name": "Wired Magazine (Annual Subscription)",
@@ -3092,13 +3275,14 @@
       "pages_per_issue": "96 pages"
     },
     "product_source_url": "https://www.wired.com/subscribe",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Magazines & Periodicals"
   },
   {
     "id": "mag-003",
     "slug": "scientific-american-subscription",
     "category": "magazines",
-    "subcategory": "science_magazines",
+    "subcategory": "periodicals",
     "brand": "Springer Nature",
     "name": "Scientific American (Annual Subscription)",
     "product_name": "Scientific American (Annual Subscription)",
@@ -3152,13 +3336,14 @@
       "pages_per_issue": "88 pages"
     },
     "product_source_url": "https://www.scientificamerican.com/page/subscribe/",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Magazines & Periodicals"
   },
   {
     "id": "mag-004",
     "slug": "harvard-business-review-subscription",
     "category": "magazines",
-    "subcategory": "business_magazines",
+    "subcategory": "periodicals",
     "brand": "Harvard Business Publishing",
     "name": "Harvard Business Review (HBR Annual Subscription)",
     "product_name": "Harvard Business Review (HBR Annual Subscription)",
@@ -3212,13 +3397,14 @@
       "pages_per_issue": "144 pages"
     },
     "product_source_url": "https://hbr.org/subscriptions",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Magazines & Periodicals"
   },
   {
     "id": "mag-005",
     "slug": "national-geographic-subscription",
     "category": "magazines",
-    "subcategory": "science_magazines",
+    "subcategory": "periodicals",
     "brand": "National Geographic Society",
     "name": "National Geographic Magazine (Annual Subscription)",
     "product_name": "National Geographic Magazine (Annual Subscription)",
@@ -3272,13 +3458,14 @@
       "pages_per_issue": "140 pages"
     },
     "product_source_url": "https://www.nationalgeographic.com/pages/topic/subscribe",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Magazines & Periodicals"
   },
   {
     "id": "mag-006",
     "slug": "bloomberg-businessweek-subscription",
     "category": "magazines",
-    "subcategory": "business_magazines",
+    "subcategory": "periodicals",
     "brand": "Bloomberg L.P.",
     "name": "Bloomberg Businessweek (Annual Subscription)",
     "product_name": "Bloomberg Businessweek (Annual Subscription)",
@@ -3332,13 +3519,14 @@
       "pages_per_issue": "72 pages"
     },
     "product_source_url": "https://www.bloomberg.com/businessweek",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Magazines & Periodicals"
   },
   {
     "id": "mag-007",
     "slug": "fast-company-subscription",
     "category": "magazines",
-    "subcategory": "business_magazines",
+    "subcategory": "periodicals",
     "brand": "Mansueto Ventures",
     "name": "Fast Company Magazine (Annual Subscription)",
     "product_name": "Fast Company Magazine (Annual Subscription)",
@@ -3392,13 +3580,14 @@
       "pages_per_issue": "100 pages"
     },
     "product_source_url": "https://www.fastcompany.com/subscribe",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Magazines & Periodicals"
   },
   {
     "id": "mag-008",
     "slug": "digit-magazine-india-subscription",
     "category": "magazines",
-    "subcategory": "tech_magazines",
+    "subcategory": "periodicals",
     "brand": "9.9 Media",
     "name": "Digit Magazine India (Annual Subscription)",
     "product_name": "Digit Magazine India (Annual Subscription)",
@@ -3450,7 +3639,8 @@
       "pages_per_issue": "128 pages"
     },
     "product_source_url": "https://www.digit.in/subscribe/",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Magazines & Periodicals"
   },
   {
     "id": "ce-001",
@@ -3518,7 +3708,8 @@
       "weight": "5.3g per bud, 50.8g case"
     },
     "product_source_url": "https://www.apple.com/in/shop/product/MTJV3HN/A/airpods-pro",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Audio & Headphones"
   },
   {
     "id": "ce-002",
@@ -3584,7 +3775,8 @@
       "weight": "253g"
     },
     "product_source_url": "https://www.bose.com/p/headphones/bose-quietcomfort-ultra-headphones/QCU-HEADPHONEARN.html",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Audio & Headphones"
   },
   {
     "id": "ce-003",
@@ -3992,7 +4184,7 @@
     "id": "fiteq-001",
     "slug": "boldfit-adjustable-dumbbell-24kg",
     "category": "fitness_equipment",
-    "subcategory": "strength_equipment",
+    "subcategory": "fitness_equipment",
     "brand": "Boldfit",
     "name": "Boldfit Adjustable Dumbbell Set (2.5kg to 24kg)",
     "product_name": "Boldfit Adjustable Dumbbell Set (2.5kg to 24kg)",
@@ -4052,13 +4244,14 @@
       "footprint": "Space-saving compact tray design"
     },
     "product_source_url": "https://boldfit.in/products/adjustable-dumbbell-24kg",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Fitness Equipment"
   },
   {
     "id": "fiteq-002",
     "slug": "manduka-pro-yoga-mat-6mm",
     "category": "fitness_equipment",
-    "subcategory": "yoga_mats",
+    "subcategory": "fitness_equipment",
     "brand": "Manduka",
     "name": "Manduka PRO Yoga and Pilates Mat (6mm)",
     "product_name": "Manduka PRO Yoga and Pilates Mat (6mm)",
@@ -4120,13 +4313,14 @@
       "weight": "3.4 kg"
     },
     "product_source_url": "https://www.manduka.com/products/manduka-pro-yoga-mat",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Fitness Equipment"
   },
   {
     "id": "fiteq-003",
     "slug": "liforme-original-yoga-mat",
     "category": "fitness_equipment",
-    "subcategory": "yoga_mats",
+    "subcategory": "fitness_equipment",
     "brand": "Liforme",
     "name": "Liforme Original Yoga Mat (4.2mm with Alignment)",
     "product_name": "Liforme Original Yoga Mat (4.2mm with Alignment)",
@@ -4188,13 +4382,14 @@
       "weight": "2.5 kg"
     },
     "product_source_url": "https://liforme.com/products/liforme-yoga-mat",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Fitness Equipment"
   },
   {
     "id": "fiteq-004",
     "slug": "slovic-resistance-bands-set",
     "category": "fitness_equipment",
-    "subcategory": "resistance_gear",
+    "subcategory": "fitness_equipment",
     "brand": "Slovic",
     "name": "Slovic 11-Piece Stackable Resistance Bands Set (150 lbs)",
     "product_name": "Slovic 11-Piece Stackable Resistance Bands Set (150 lbs)",
@@ -4252,13 +4447,14 @@
       "portability": "Ultra compact travel-ready pack"
     },
     "product_source_url": "https://slovic.in/products/resistance-tube-set-150lbs",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Fitness Equipment"
   },
   {
     "id": "fiteq-005",
     "slug": "kore-pvc-20kg-home-gym-set",
     "category": "fitness_equipment",
-    "subcategory": "strength_equipment",
+    "subcategory": "fitness_equipment",
     "brand": "Kore",
     "name": "Kore PVC 20kg Home Gym Dumbbell & Barbell Kit",
     "product_name": "Kore PVC 20kg Home Gym Dumbbell & Barbell Kit",
@@ -4309,13 +4505,14 @@
       "material": "Concrete-filled durable PVC shells"
     },
     "product_source_url": "https://korefit.in/products/kore-20kg-home-gym-combo",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Fitness Equipment"
   },
   {
     "id": "fiteq-006",
     "slug": "lifelong-llf135-adjustable-bench",
     "category": "fitness_equipment",
-    "subcategory": "benches",
+    "subcategory": "fitness_equipment",
     "brand": "Lifelong",
     "name": "Lifelong LLF135 Multi-Position Adjustable Workout Bench",
     "product_name": "Lifelong LLF135 Multi-Position Adjustable Workout Bench",
@@ -4375,13 +4572,14 @@
       "foldability": "Foldable compact footprint for under-bed storage"
     },
     "product_source_url": "https://lifelongindiaonline.com/products/lifelong-llf135-bench",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Fitness Equipment"
   },
   {
     "id": "fiteq-007",
     "slug": "burnlab-speed-jump-rope",
     "category": "fitness_equipment",
-    "subcategory": "jump_ropes",
+    "subcategory": "fitness_equipment",
     "brand": "Burnlab",
     "name": "Burnlab High-Speed Ball Bearing Jump Rope",
     "product_name": "Burnlab High-Speed Ball Bearing Jump Rope",
@@ -4439,13 +4637,14 @@
       "usage": "Cardio, double-unders, boxing footwork conditioning"
     },
     "product_source_url": "https://burnlab.co/products/speed-rope",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Fitness Equipment"
   },
   {
     "id": "fiteq-008",
     "slug": "cockatoo-foldable-weight-bench",
     "category": "fitness_equipment",
-    "subcategory": "benches",
+    "subcategory": "fitness_equipment",
     "brand": "Cockatoo",
     "name": "Cockatoo Foldable Multi-Purpose Workout Weight Bench",
     "product_name": "Cockatoo Foldable Multi-Purpose Workout Weight Bench",
@@ -4505,13 +4704,14 @@
       "weight": "13.5 kg"
     },
     "product_source_url": "https://cockatooindia.com/products/cockatoo-cs-01-bench",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Fitness Equipment"
   },
   {
     "id": "chim-001",
     "slug": "faber-orient-tc-bk-60",
     "category": "kitchen_chimneys",
-    "subcategory": "filterless_chimneys",
+    "subcategory": "kitchen_chimneys",
     "brand": "Faber",
     "name": "Faber 60cm 1200 m\u00b3/hr Autoclean Filterless Chimney",
     "product_name": "Faber 60cm 1200 m\u00b3/hr Autoclean Filterless Chimney",
@@ -4577,13 +4777,14 @@
       "motor_warranty": "5 Years on motor, 1 Year comprehensive"
     },
     "product_source_url": "https://faberindia.com/products/hood-orient-tc-bk-60",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Kitchen Chimneys"
   },
   {
     "id": "chim-002",
     "slug": "faber-primus-plus-90",
     "category": "kitchen_chimneys",
-    "subcategory": "filterless_chimneys",
+    "subcategory": "kitchen_chimneys",
     "brand": "Faber",
     "name": "Faber 90cm 1500 m\u00b3/hr Autoclean Filterless Chimney",
     "product_name": "Faber 90cm 1500 m\u00b3/hr Autoclean Filterless Chimney",
@@ -4649,13 +4850,14 @@
       "motor_warranty": "5 Years on motor"
     },
     "product_source_url": "https://faberindia.com/products/hood-primus-plus-90",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Kitchen Chimneys"
   },
   {
     "id": "chim-003",
     "slug": "elica-fl-600-hac-ltw-nero",
     "category": "kitchen_chimneys",
-    "subcategory": "filterless_chimneys",
+    "subcategory": "kitchen_chimneys",
     "brand": "Elica",
     "name": "Elica 60cm 1200 m\u00b3/hr Filterless Auto Clean Chimney",
     "product_name": "Elica 60cm 1200 m\u00b3/hr Filterless Auto Clean Chimney",
@@ -4719,13 +4921,14 @@
       "motor_warranty": "5 Years on motor, 2 Years comprehensive"
     },
     "product_source_url": "https://www.elica.in/chimneys/fl-600-hac-ltw-ms-nero",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Kitchen Chimneys"
   },
   {
     "id": "chim-004",
     "slug": "elica-wd-hac-touch-bf-90",
     "category": "kitchen_chimneys",
-    "subcategory": "baffle_filter_chimneys",
+    "subcategory": "kitchen_chimneys",
     "brand": "Elica",
     "name": "Elica 90cm 1425 m\u00b3/hr Auto Clean Chimney with Baffle Filter",
     "product_name": "Elica 90cm 1425 m\u00b3/hr Auto Clean Chimney with Baffle Filter",
@@ -4789,13 +4992,14 @@
       "motor_warranty": "5 Years on motor"
     },
     "product_source_url": "https://www.elica.in/chimneys/wd-hac-touch-bf-90",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Kitchen Chimneys"
   },
   {
     "id": "chim-005",
     "slug": "hindware-marcilla-60-chimney",
     "category": "kitchen_chimneys",
-    "subcategory": "filterless_chimneys",
+    "subcategory": "kitchen_chimneys",
     "brand": "Hindware",
     "name": "Hindware Smart Appliances 60cm 1200 m\u00b3/hr Filterless Auto-Clean",
     "product_name": "Hindware Smart Appliances 60cm 1200 m\u00b3/hr Filterless Auto-Clean",
@@ -4859,13 +5063,14 @@
       "motor_warranty": "10 Years on motor, 1 Year comprehensive"
     },
     "product_source_url": "https://hindwareappliances.com/kitchen-chimneys/marcilla-60/",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Kitchen Chimneys"
   },
   {
     "id": "chim-006",
     "slug": "hindware-althea-90-chimney",
     "category": "kitchen_chimneys",
-    "subcategory": "filterless_chimneys",
+    "subcategory": "kitchen_chimneys",
     "brand": "Hindware",
     "name": "Hindware Smart Appliances 90cm 1500 m\u00b3/hr Filterless Auto-Clean",
     "product_name": "Hindware Smart Appliances 90cm 1500 m\u00b3/hr Filterless Auto-Clean",
@@ -4927,13 +5132,14 @@
       "motor_warranty": "10 Years on motor"
     },
     "product_source_url": "https://hindwareappliances.com/kitchen-chimneys/althea-90/",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Kitchen Chimneys"
   },
   {
     "id": "chim-007",
     "slug": "glen-6071-ex-bl-chimney",
     "category": "kitchen_chimneys",
-    "subcategory": "filterless_chimneys",
+    "subcategory": "kitchen_chimneys",
     "brand": "Glen",
     "name": "Glen 60cm 1050 m\u00b3/hr Filterless Curved Glass Kitchen Chimney",
     "product_name": "Glen 60cm 1050 m\u00b3/hr Filterless Curved Glass Kitchen Chimney",
@@ -4997,13 +5203,14 @@
       "motor_warranty": "5 Years on copper Italian motor"
     },
     "product_source_url": "https://glenindia.com/products/filterless-chimney-6071-ex-bl",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Kitchen Chimneys"
   },
   {
     "id": "chim-008",
     "slug": "inalsa-classica-60bkbf-chimney",
     "category": "kitchen_chimneys",
-    "subcategory": "baffle_filter_chimneys",
+    "subcategory": "kitchen_chimneys",
     "brand": "Inalsa",
     "name": "Inalsa 60cm 1050 m\u00b3/hr Pyramid Chimney with Baffle Filter",
     "product_name": "Inalsa 60cm 1050 m\u00b3/hr Pyramid Chimney with Baffle Filter",
@@ -5067,13 +5274,14 @@
       "motor_warranty": "5 Years on motor, 2 Years comprehensive"
     },
     "product_source_url": "https://inalsaappliances.com/products/inalsa-classica-60bkbf-chimney",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Kitchen Chimneys"
   },
   {
     "id": "nutr-001",
     "slug": "on-gold-standard-whey-2lb",
     "category": "nutrition",
-    "subcategory": "whey_protein",
+    "subcategory": "protein_supplements",
     "brand": "Optimum Nutrition",
     "name": "Optimum Nutrition (ON) Gold Standard 100% Whey Protein (2 lb)",
     "product_name": "Optimum Nutrition (ON) Gold Standard 100% Whey Protein (2 lb)",
@@ -5138,13 +5346,14 @@
       "flavor": "Double Rich Chocolate"
     },
     "product_source_url": "https://www.optimumnutrition.com/en-in/Products/Protein/GOLD-STANDARD-100%25-WHEY/p/gold-standard-100-whey",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Protein Supplements"
   },
   {
     "id": "nutr-002",
     "slug": "on-gold-standard-whey-5lb",
     "category": "nutrition",
-    "subcategory": "whey_protein",
+    "subcategory": "protein_supplements",
     "brand": "Optimum Nutrition",
     "name": "Optimum Nutrition (ON) Gold Standard 100% Whey Protein (5 lb)",
     "product_name": "Optimum Nutrition (ON) Gold Standard 100% Whey Protein (5 lb)",
@@ -5207,13 +5416,14 @@
       "flavor": "Double Rich Chocolate"
     },
     "product_source_url": "https://www.optimumnutrition.com/en-in/Products/Protein/GOLD-STANDARD-100%25-WHEY/p/gold-standard-100-whey-5lb",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Protein Supplements"
   },
   {
     "id": "nutr-003",
     "slug": "muscleblaze-biozyme-performance-whey-1kg",
     "category": "nutrition",
-    "subcategory": "whey_protein",
+    "subcategory": "protein_supplements",
     "brand": "MuscleBlaze",
     "name": "MuscleBlaze Biozyme Performance Whey (1 kg)",
     "product_name": "MuscleBlaze Biozyme Performance Whey (1 kg)",
@@ -5278,13 +5488,14 @@
       "flavor": "Rich Chocolate"
     },
     "product_source_url": "https://www.muscleblaze.com/sv/muscleblaze-biozyme-performance-whey/SP-84610",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Protein Supplements"
   },
   {
     "id": "nutr-004",
     "slug": "muscleblaze-biozyme-performance-whey-2kg",
     "category": "nutrition",
-    "subcategory": "whey_protein",
+    "subcategory": "protein_supplements",
     "brand": "MuscleBlaze",
     "name": "MuscleBlaze Biozyme Performance Whey (2 kg)",
     "product_name": "MuscleBlaze Biozyme Performance Whey (2 kg)",
@@ -5347,13 +5558,14 @@
       "flavor": "Rich Chocolate"
     },
     "product_source_url": "https://www.muscleblaze.com/sv/muscleblaze-biozyme-performance-whey-2kg/SP-84620",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Protein Supplements"
   },
   {
     "id": "nutr-005",
     "slug": "dymatize-iso100-whey-isolate",
     "category": "nutrition",
-    "subcategory": "isolate_protein",
+    "subcategory": "protein_supplements",
     "brand": "Dymatize",
     "name": "Dymatize ISO100 Hydrolyzed 100% Whey Isolate (2.3 lb)",
     "product_name": "Dymatize ISO100 Hydrolyzed 100% Whey Isolate (2.3 lb)",
@@ -5418,13 +5630,14 @@
       "flavor": "Gourmet Chocolate"
     },
     "product_source_url": "https://dymatize.com/iso100",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Protein Supplements"
   },
   {
     "id": "nutr-006",
     "slug": "cosmix-plant-protein-powder",
     "category": "nutrition",
-    "subcategory": "plant_protein",
+    "subcategory": "protein_supplements",
     "brand": "Cosmix",
     "name": "Cosmix No Nonsense Plant Protein (500g)",
     "product_name": "Cosmix No Nonsense Plant Protein (500g)",
@@ -5489,13 +5702,14 @@
       "flavor": "Classic Vanilla"
     },
     "product_source_url": "https://cosmix.in/products/no-nonsense-plant-protein",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Protein Supplements"
   },
   {
     "id": "nutr-007",
     "slug": "oziva-organic-plant-protein-1kg",
     "category": "nutrition",
-    "subcategory": "plant_protein",
+    "subcategory": "protein_supplements",
     "brand": "Oziva",
     "name": "Oziva Organic Plant Protein (1 kg)",
     "product_name": "Oziva Organic Plant Protein (1 kg)",
@@ -5560,13 +5774,14 @@
       "flavor": "Unflavoured"
     },
     "product_source_url": "https://www.oziva.in/products/oziva-organic-plant-protein",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Protein Supplements"
   },
   {
     "id": "nutr-008",
     "slug": "isopure-zero-carb-whey-isolate",
     "category": "nutrition",
-    "subcategory": "isolate_protein",
+    "subcategory": "protein_supplements",
     "brand": "Isopure",
     "name": "Isopure Zero Carb 100% Whey Protein Isolate (2.2 lb)",
     "product_name": "Isopure Zero Carb 100% Whey Protein Isolate (2.2 lb)",
@@ -5631,6 +5846,354 @@
       "flavor": "Creamy Vanilla"
     },
     "product_source_url": "https://www.theisopurecompany.com/en-us/Products/Powder/ISOPURE%C2%AE-ZERO-CARB-PROTEIN/p/C101301",
-    "lastVerifiedAt": "2026-10-15T12:00:00Z"
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "subcategory_label": "Protein Supplements"
+  },
+  {
+    "id": "phone-009",
+    "slug": "galaxy-s25-ultra",
+    "category": "smartphones",
+    "subcategory": "flagship_smartphones",
+    "brand": "Samsung",
+    "name": "Samsung Galaxy S25 Ultra",
+    "product_name": "Samsung Galaxy S25 Ultra",
+    "exact_model": "Galaxy S25 Ultra 5G",
+    "model_identifier": "SM-S938B",
+    "variant": "12GB RAM / 256GB / Titanium Silverblue",
+    "price": 134999.0,
+    "price_inr": 134999.0,
+    "currency": "INR",
+    "price_status": "verified",
+    "verification_status": "verified",
+    "rating": 4.9,
+    "reviewCount": 480,
+    "verifiedPurchaseReviewCount": 412,
+    "imageUrl": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=800&q=80",
+    "image_url": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=800&q=80",
+    "canonical_url": "https://www.samsung.com/in/smartphones/galaxy-s25-ultra/",
+    "officialProductUrl": "https://www.samsung.com/in/smartphones/galaxy-s25-ultra/",
+    "productSourceUrl": "https://www.samsung.com/in/smartphones/galaxy-s25-ultra/",
+    "retailer_identifiers": {
+      "asin": "B0DT9S25U1",
+      "amazon_asin": "B0DT9S25U1",
+      "flipkart_pid": "MOBGZ9FYS25U256",
+      "flipkart_fsn": "itmc336d396a945d"
+    },
+    "retailerOffers": [
+      {
+        "retailerName": "Samsung India Official",
+        "productUrl": "https://www.samsung.com/in/smartphones/galaxy-s25-ultra/",
+        "price": 134999.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-20T10:00:00Z"
+      },
+      {
+        "retailerName": "Amazon India",
+        "productUrl": "https://www.amazon.in/dp/B0DT9S25U1",
+        "price": 134999.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-20T10:00:00Z"
+      },
+      {
+        "retailerName": "Flipkart",
+        "productUrl": "https://www.flipkart.com/samsung-galaxy-s25-ultra-5g-titanium-silverblue-256-gb/p/itmc336d396a945d?pid=MOBGZ9FYS25U256",
+        "price": 134999.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-20T10:00:00Z"
+      }
+    ],
+    "specs": {
+      "processor": "Qualcomm Snapdragon 8 Elite for Galaxy (3nm, Oryon CPU up to 4.47 GHz)",
+      "ram": "12GB LPDDR5X",
+      "storage": "256GB UFS 4.0",
+      "display": "6.9\" Dynamic AMOLED 2X 1-120Hz LTPO, Gorilla Armor 2, 2600 nits, flat display",
+      "camera": "200MP Main OIS + 50MP 5x Periscope + 50MP 3x Telephoto + 50MP Ultra-wide",
+      "battery": "5000 mAh",
+      "charging": "45W Fast Wired, 15W Wireless, Qi2 ready",
+      "stylus": "Embedded Bluetooth S-Pen",
+      "weight": "218g",
+      "os": "One UI 7 (Android 15)",
+      "durability": "IP68 water/dust resistant, Titanium grade 5 frame"
+    },
+    "specifications": {
+      "processor": "Qualcomm Snapdragon 8 Elite for Galaxy (3nm, Oryon CPU up to 4.47 GHz)",
+      "ram": "12GB LPDDR5X",
+      "storage": "256GB UFS 4.0",
+      "display": "6.9\" Dynamic AMOLED 2X 1-120Hz LTPO, Gorilla Armor 2, 2600 nits, flat display",
+      "camera": "200MP Main OIS + 50MP 5x Periscope + 50MP 3x Telephoto + 50MP Ultra-wide",
+      "battery": "5000 mAh",
+      "charging": "45W Fast Wired, 15W Wireless, Qi2 ready",
+      "stylus": "Embedded Bluetooth S-Pen",
+      "weight": "218g",
+      "os": "One UI 7 (Android 15)",
+      "durability": "IP68 water/dust resistant, Titanium grade 5 frame"
+    },
+    "intendedUsageTags": [
+      "photography",
+      "gaming",
+      "ai_productivity",
+      "heavy_multitasking"
+    ],
+    "priorityAffinities": {
+      "camera": 0.99,
+      "performance": 0.99,
+      "build_quality": 0.98,
+      "battery": 0.95,
+      "display": 0.99,
+      "value": 0.72
+    },
+    "features": [
+      "Snapdragon 8 Elite custom Oryon architecture delivering 45% faster CPU compute",
+      "Upgraded all-50MP secondary sensors for ultra-wide and dual telephoto portrait zoom",
+      "Ergonomic flat titanium enclosure shaving 14g down to 218g",
+      "Next-gen Galaxy AI with real-time video summarization and generative editing"
+    ],
+    "pros": [
+      "Class-leading Snapdragon 8 Elite CPU and GPU compute efficiency",
+      "Most versatile quad-lens camera system with 200MP detail and 5x optical telephoto",
+      "Sublime anti-reflective Gorilla Armor 2 display with 2600 nits peak brightness"
+    ],
+    "cons": [
+      "Premium flagship price point exceeding \u20b91,34,000",
+      "Fast charger brick sold separately",
+      "Large 6.9\" footprint requires two-handed usage"
+    ],
+    "data_sources": [
+      "Samsung Official Specifications",
+      "Amazon India Verified Listing",
+      "Flipkart Verified Catalog"
+    ],
+    "lastVerifiedAt": "2026-10-20T12:00:00Z"
+  },
+  {
+    "id": "phone-010",
+    "slug": "galaxy-s25-ultra-512gb",
+    "category": "smartphones",
+    "subcategory": "flagship_smartphones",
+    "brand": "Samsung",
+    "name": "Samsung Galaxy S25 Ultra (512GB)",
+    "product_name": "Samsung Galaxy S25 Ultra (512GB)",
+    "exact_model": "Galaxy S25 Ultra 5G",
+    "model_identifier": "SM-S938B/512",
+    "variant": "16GB RAM / 512GB / Titanium Black",
+    "price": 149999.0,
+    "price_inr": 149999.0,
+    "currency": "INR",
+    "price_status": "verified",
+    "verification_status": "verified",
+    "rating": 4.9,
+    "reviewCount": 210,
+    "verifiedPurchaseReviewCount": 185,
+    "imageUrl": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=800&q=80",
+    "image_url": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=800&q=80",
+    "canonical_url": "https://www.samsung.com/in/smartphones/galaxy-s25-ultra/",
+    "officialProductUrl": "https://www.samsung.com/in/smartphones/galaxy-s25-ultra/",
+    "productSourceUrl": "https://www.samsung.com/in/smartphones/galaxy-s25-ultra/",
+    "retailer_identifiers": {
+      "asin": "B0DT9S25U2",
+      "amazon_asin": "B0DT9S25U2",
+      "flipkart_pid": "MOBGZ9FYS25U512",
+      "flipkart_fsn": "itmc336d396a945d"
+    },
+    "retailerOffers": [
+      {
+        "retailerName": "Samsung India Official",
+        "productUrl": "https://www.samsung.com/in/smartphones/galaxy-s25-ultra/",
+        "price": 149999.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-20T10:00:00Z"
+      },
+      {
+        "retailerName": "Amazon India",
+        "productUrl": "https://www.amazon.in/dp/B0DT9S25U2",
+        "price": 149999.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-20T10:00:00Z"
+      },
+      {
+        "retailerName": "Flipkart",
+        "productUrl": "https://www.flipkart.com/samsung-galaxy-s25-ultra-5g-titanium-black-512-gb/p/itmc336d396a945d?pid=MOBGZ9FYS25U512",
+        "price": 149999.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-20T10:00:00Z"
+      }
+    ],
+    "specs": {
+      "processor": "Qualcomm Snapdragon 8 Elite for Galaxy (3nm, Oryon CPU up to 4.47 GHz)",
+      "ram": "16GB LPDDR5X",
+      "storage": "512GB UFS 4.0",
+      "display": "6.9\" Dynamic AMOLED 2X 1-120Hz LTPO, Gorilla Armor 2, 2600 nits, flat display",
+      "camera": "200MP Main OIS + 50MP 5x Periscope + 50MP 3x Telephoto + 50MP Ultra-wide",
+      "battery": "5000 mAh",
+      "charging": "45W Fast Wired, 15W Wireless, Qi2 ready",
+      "stylus": "Embedded Bluetooth S-Pen",
+      "weight": "218g",
+      "os": "One UI 7 (Android 15)",
+      "durability": "IP68 water/dust resistant, Titanium grade 5 frame"
+    },
+    "specifications": {
+      "processor": "Qualcomm Snapdragon 8 Elite for Galaxy (3nm, Oryon CPU up to 4.47 GHz)",
+      "ram": "16GB LPDDR5X",
+      "storage": "512GB UFS 4.0",
+      "display": "6.9\" Dynamic AMOLED 2X 1-120Hz LTPO, Gorilla Armor 2, 2600 nits, flat display",
+      "camera": "200MP Main OIS + 50MP 5x Periscope + 50MP 3x Telephoto + 50MP Ultra-wide",
+      "battery": "5000 mAh",
+      "charging": "45W Fast Wired, 15W Wireless, Qi2 ready",
+      "stylus": "Embedded Bluetooth S-Pen",
+      "weight": "218g",
+      "os": "One UI 7 (Android 15)",
+      "durability": "IP68 water/dust resistant, Titanium grade 5 frame"
+    },
+    "intendedUsageTags": [
+      "photography",
+      "gaming",
+      "ai_productivity",
+      "heavy_multitasking"
+    ],
+    "priorityAffinities": {
+      "camera": 0.99,
+      "performance": 1.0,
+      "build_quality": 0.98,
+      "battery": 0.95,
+      "display": 0.99,
+      "value": 0.68
+    },
+    "features": [
+      "16GB LPDDR5X RAM with 512GB UFS 4.0 high-speed internal storage",
+      "Snapdragon 8 Elite custom Oryon architecture",
+      "All-50MP secondary sensors for telephoto and ultra-wide"
+    ],
+    "pros": [
+      "Massive 16GB RAM overhead for extensive AI model operations",
+      "512GB high-speed storage"
+    ],
+    "cons": [
+      "High premium price at \u20b91,49,999"
+    ],
+    "data_sources": [
+      "Samsung Official Specifications",
+      "Amazon India Verified Listing",
+      "Flipkart Verified Catalog"
+    ],
+    "lastVerifiedAt": "2026-10-20T12:00:00Z"
+  },
+  {
+    "id": "phone-011",
+    "slug": "iphone-16-pro-256gb",
+    "category": "smartphones",
+    "subcategory": "flagship_smartphones",
+    "brand": "Apple",
+    "name": "Apple iPhone 16 Pro (256GB)",
+    "product_name": "Apple iPhone 16 Pro (256GB)",
+    "exact_model": "iPhone 16 Pro",
+    "model_identifier": "A3293/256",
+    "variant": "256GB / Desert Titanium",
+    "price": 129900.0,
+    "price_inr": 129900.0,
+    "currency": "INR",
+    "price_status": "verified",
+    "verification_status": "verified",
+    "rating": 4.8,
+    "reviewCount": 350,
+    "verifiedPurchaseReviewCount": 298,
+    "imageUrl": "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=800&q=80",
+    "image_url": "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=800&q=80",
+    "canonical_url": "https://www.apple.com/in/shop/buy-iphone/iphone-16-pro",
+    "officialProductUrl": "https://www.apple.com/in/shop/buy-iphone/iphone-16-pro",
+    "productSourceUrl": "https://www.apple.com/in/shop/buy-iphone/iphone-16-pro",
+    "retailer_identifiers": {
+      "asin": "B0DGJ9TY2A",
+      "amazon_asin": "B0DGJ9TY2A",
+      "flipkart_pid": "MOBH4DQF2GZZP256",
+      "flipkart_fsn": "itmdbce9a8be5154"
+    },
+    "retailerOffers": [
+      {
+        "retailerName": "Apple Store India",
+        "productUrl": "https://www.apple.com/in/shop/buy-iphone/iphone-16-pro",
+        "price": 129900.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-20T10:00:00Z"
+      },
+      {
+        "retailerName": "Amazon India",
+        "productUrl": "https://www.amazon.in/dp/B0DGJ9TY2A",
+        "price": 129900.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-20T10:00:00Z"
+      },
+      {
+        "retailerName": "Flipkart",
+        "productUrl": "https://www.flipkart.com/apple-iphone-16-pro-desert-titanium-256-gb/p/itmdbce9a8be5154?pid=MOBH4DQF2GZZP256",
+        "price": 129900.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-20T10:00:00Z"
+      }
+    ],
+    "specs": {
+      "processor": "Apple A18 Pro (6-core CPU, 6-core GPU, 16-core Neural Engine)",
+      "ram": "8GB Unified Memory",
+      "storage": "256GB NVMe",
+      "display": "6.3\" Super Retina XDR OLED, 120Hz ProMotion, 2000 nits, Ceramic Shield",
+      "camera": "48MP Fusion + 48MP Ultra-wide + 12MP 5x Telephoto",
+      "battery": "3582 mAh (Up to 27 hours video playback)",
+      "charging": "25W MagSafe, 20W Wired Fast Charge",
+      "weight": "199g",
+      "os": "iOS 18"
+    },
+    "specifications": {
+      "processor": "Apple A18 Pro (6-core CPU, 6-core GPU, 16-core Neural Engine)",
+      "ram": "8GB Unified Memory",
+      "storage": "256GB NVMe",
+      "display": "6.3\" Super Retina XDR OLED, 120Hz ProMotion, 2000 nits, Ceramic Shield",
+      "camera": "48MP Fusion + 48MP Ultra-wide + 12MP 5x Telephoto",
+      "battery": "3582 mAh (Up to 27 hours video playback)",
+      "charging": "25W MagSafe, 20W Wired Fast Charge",
+      "weight": "199g",
+      "os": "iOS 18"
+    },
+    "intendedUsageTags": [
+      "video_recording",
+      "photography",
+      "coding",
+      "everyday_flagship"
+    ],
+    "priorityAffinities": {
+      "performance": 0.98,
+      "camera": 0.98,
+      "build_quality": 0.99,
+      "battery": 0.91,
+      "display": 0.97,
+      "value": 0.75
+    },
+    "features": [
+      "Apple A18 Pro SoC with hardware-accelerated ray tracing and dedicated Camera Control button",
+      "4K 120 fps Dolby Vision recording capability",
+      "Grade 5 Titanium frame with thinner borders and lighter weight"
+    ],
+    "pros": [
+      "Superior video recording quality",
+      "Compact ergonomics at 199g",
+      "Tactile Camera Control button"
+    ],
+    "cons": [
+      "Base charging speed capped at 25W",
+      "Expensive storage upgrade tier"
+    ],
+    "data_sources": [
+      "Apple Store India",
+      "Amazon India Verified Listing",
+      "Flipkart Verified Catalog"
+    ],
+    "lastVerifiedAt": "2026-10-20T12:00:00Z"
   }
 ]

@@ -85,7 +85,71 @@ class TOPSISRankingEngine:
         features["review_evidence"] = (evidence_score, review_count <= 0)
 
         # Category and Subcategory specific spec extraction
-        if category == "electronics":
+        if category in ["smartphones", "consumer_electronics"]:
+            # RAM in GB
+            ram_text = specs.get("ram", "")
+            ram_val = None
+            for token in ["32GB", "24GB", "16GB", "12GB", "8GB", "6GB", "4GB"]:
+                if token.lower() in ram_text.lower():
+                    ram_val = float(re.search(r"\d+", token).group())
+                    break
+            features["ram_gb"] = (ram_val, ram_val is None)
+
+            # Storage in GB
+            storage_text = specs.get("storage", "")
+            storage_val = None
+            if "1tb" in storage_text.lower() or "1 tb" in storage_text.lower():
+                storage_val = 1024.0
+            elif "512gb" in storage_text.lower() or "512 gb" in storage_text.lower():
+                storage_val = 512.0
+            elif "256gb" in storage_text.lower() or "256 gb" in storage_text.lower():
+                storage_val = 256.0
+            elif "128gb" in storage_text.lower() or "128 gb" in storage_text.lower():
+                storage_val = 128.0
+            features["storage_gb"] = (storage_val, storage_val is None)
+
+            # Camera main MP
+            cam_text = specs.get("camera", "")
+            cam_val = None
+            mp_matches = re.findall(r"(\d+)\s*MP", cam_text, re.IGNORECASE)
+            if mp_matches:
+                cam_val = float(max(int(m) for m in mp_matches))
+            features["camera_mp"] = (cam_val, cam_val is None)
+
+            # Battery in mAh
+            batt_text = specs.get("battery", "")
+            batt_val = None
+            mah_match = re.search(r"(\d{3,5})\s*mAh", batt_text, re.IGNORECASE)
+            if mah_match:
+                batt_val = float(mah_match.group(1))
+            features["battery_mah"] = (batt_val, batt_val is None)
+
+            # Processor tier
+            proc_text = specs.get("processor", "").lower()
+            if proc_text:
+                if any(x in proc_text for x in ["snapdragon 8 elite", "a18 pro", "dimensity 9400"]):
+                    proc_tier = 5.5
+                elif any(x in proc_text for x in ["snapdragon 8 gen 3", "a17 pro", "dimensity 9300"]):
+                    proc_tier = 5.0
+                elif any(x in proc_text for x in ["a16", "snapdragon 8 gen 2", "dimensity 8300"]):
+                    proc_tier = 4.2
+                elif any(x in proc_text for x in ["snapdragon 7", "dimensity 7200", "tensor"]):
+                    proc_tier = 3.5
+                else:
+                    proc_tier = 3.0
+                features["processor_tier"] = (proc_tier, False)
+
+            # Weight in g
+            weight_text = specs.get("weight", "")
+            weight_val = None
+            if "g" in weight_text.lower():
+                try:
+                    weight_val = float(re.findall(r"\d+", weight_text)[0])
+                except Exception:
+                    pass
+            features["weight_g"] = (weight_val, weight_val is None)
+
+        elif category in ["electronics", "laptops"]:
             # RAM in GB
             ram_text = specs.get("ram", "")
             ram_val = None
@@ -253,9 +317,10 @@ class TOPSISRankingEngine:
 
         priority_map = {
             "performance": ["ram_gb", "processor_tier", "gpu_tier", "capacity", "wattage"],
-            "battery": ["battery_capacity", "fitness_battery"],
-            "portability": ["weight_kg", "shoe_weight", "stylus_latency"],
-            "ram": ["ram_gb"],
+            "battery": ["battery_capacity", "battery_mah", "fitness_battery"],
+            "camera": ["camera_mp"],
+            "portability": ["weight_kg", "weight_g", "shoe_weight", "stylus_latency"],
+            "ram": ["ram_gb", "storage_gb"],
             "value": ["price"],
             "comfort": ["shoe_weight", "drop_mm"],
             "durability": ["review_evidence", "warranty_years"],
@@ -566,6 +631,71 @@ class TOPSISRankingEngine:
             "ranked_products": recommendations
         }
 
+    def _compute_spec_differences(self, product: Dict[str, Any], other_products: List[Dict[str, Any]]) -> List[str]:
+        """
+        Calculates concrete, factual specification differences comparing this product
+        against other products in the shootout. Never invents data.
+        """
+        diffs = []
+        p_name = product.get("name") or product.get("exact_model") or "This model"
+        p_specs = product.get("specs") or product.get("specifications") or {}
+        p_price = float(product.get("price", 0))
+
+        for other in other_products:
+            o_name = other.get("name") or other.get("exact_model") or "competitor"
+            o_specs = other.get("specs") or other.get("specifications") or {}
+            o_price = float(other.get("price", 0))
+
+            # Price difference
+            if p_price > 0 and o_price > 0 and p_price != o_price:
+                diff_amount = abs(p_price - o_price)
+                if p_price < o_price:
+                    diffs.append(f"Priced ₹{diff_amount:,.0f} lower than {o_name}.")
+                else:
+                    diffs.append(f"Priced ₹{diff_amount:,.0f} higher than {o_name}.")
+
+            # Processor difference
+            p_proc = p_specs.get("processor")
+            o_proc = o_specs.get("processor")
+            if p_proc and o_proc and p_proc.strip().lower() != o_proc.strip().lower():
+                p_p_short = p_proc.split("(")[0].strip()
+                o_p_short = o_proc.split("(")[0].strip()
+                diffs.append(f"Powered by {p_p_short} vs {o_p_short} in {o_name}.")
+
+            # Camera difference
+            p_cam = p_specs.get("camera")
+            o_cam = o_specs.get("camera")
+            if p_cam and o_cam and p_cam.strip().lower() != o_cam.strip().lower():
+                diffs.append(f"Camera setup: {p_cam[:45]} vs {o_cam[:45]} in {o_name}.")
+
+            # Battery difference
+            p_batt = p_specs.get("battery")
+            o_batt = o_specs.get("battery")
+            if p_batt and o_batt and p_batt.strip().lower() != o_batt.strip().lower():
+                diffs.append(f"Battery: {p_batt} vs {o_batt} in {o_name}.")
+
+            # RAM & Storage
+            p_ram = p_specs.get("ram")
+            o_ram = o_specs.get("ram")
+            p_storage = p_specs.get("storage")
+            o_storage = o_specs.get("storage")
+            if p_ram and o_ram and p_ram.strip().lower() != o_ram.strip().lower():
+                diffs.append(f"RAM: {p_ram} vs {o_ram} in {o_name}.")
+            if p_storage and o_storage and p_storage.strip().lower() != o_storage.strip().lower():
+                diffs.append(f"Storage: {p_storage} vs {o_storage} in {o_name}.")
+
+            # Display difference
+            p_disp = p_specs.get("display")
+            o_disp = o_specs.get("display")
+            if p_disp and o_disp and p_disp.strip().lower() != o_disp.strip().lower():
+                diffs.append(f"Display: {p_disp[:40]} vs {o_disp[:40]} in {o_name}.")
+
+            # Only compare against first 2 competitors to keep diffs concise and actionable
+            if len(diffs) >= 4:
+                break
+
+        return diffs[:5] if diffs else ["Maintains specification parity with compared models."]
+
     def _assign_topsis_roles(
         self,
         ranked_items: List[Dict[str, Any]],
@@ -576,16 +706,71 @@ class TOPSISRankingEngine:
         1. BEST OVERALL MATCH: Highest TOPSIS relative closeness C_i.
         2. BEST VALUE: Optimal TOPSIS score-to-price ratio.
         3. BEST ALTERNATIVE: Highest scoring distinct runner-up.
+        Also attaches factual spec differences and category-specific merit badges.
         """
         if not ranked_items:
             return []
+
+        # Find specific leaders for merit badges
+        best_cam_item_id = None
+        best_batt_item_id = None
+        best_perf_item_id = None
+
+        if len(ranked_items) > 1:
+            cam_candidates = []
+            for it in ranked_items:
+                cam_text = it["product"].get("specs", {}).get("camera", "")
+                mps = re.findall(r"(\d+)\s*MP", cam_text, re.IGNORECASE)
+                if mps:
+                    cam_candidates.append((it["product"]["id"], max(int(m) for m in mps)))
+            if cam_candidates:
+                max_mp = max(c[1] for c in cam_candidates)
+                top_cams = [c[0] for c in cam_candidates if c[1] == max_mp]
+                if len(top_cams) == 1:
+                    best_cam_item_id = top_cams[0]
+
+            batt_candidates = []
+            for it in ranked_items:
+                batt_text = it["product"].get("specs", {}).get("battery", "")
+                mahs = re.findall(r"(\d{3,5})\s*mAh", batt_text, re.IGNORECASE)
+                if mahs:
+                    batt_candidates.append((it["product"]["id"], max(int(m) for m in mahs)))
+            if batt_candidates:
+                max_mah = max(b[1] for b in batt_candidates)
+                top_batts = [b[0] for b in batt_candidates if b[1] == max_mah]
+                if len(top_batts) == 1:
+                    best_batt_item_id = top_batts[0]
+
+            perf_candidates = []
+            for it in ranked_items:
+                proc = it["product"].get("specs", {}).get("processor", "").lower()
+                tier = 3.0
+                if any(x in proc for x in ["snapdragon 8 elite", "m3 max", "i9", "rtx 4090"]):
+                    tier = 5.5
+                elif any(x in proc for x in ["snapdragon 8 gen 3", "a18 pro", "m3 pro", "i7"]):
+                    tier = 5.0
+                elif any(x in proc for x in ["a17 pro", "m3", "i5"]):
+                    tier = 4.5
+                perf_candidates.append((it["product"]["id"], tier))
+            if perf_candidates:
+                max_tier = max(p[1] for p in perf_candidates)
+                top_perfs = [p[0] for p in perf_candidates if p[1] == max_tier]
+                if len(top_perfs) == 1:
+                    best_perf_item_id = top_perfs[0]
 
         recommendations = []
 
         # Role 1: BEST OVERALL MATCH
         best_overall = dict(ranked_items[0])
         best_overall["role"] = "BEST OVERALL MATCH"
-        best_overall["role_tagline"] = f"Highest TOPSIS relative closeness matching your priority of '{primary_priority}'."
+        best_overall["role_tagline"] = f"Highest composite score across all criteria matching '{primary_priority}'."
+        best_overall["important_differences"] = self._compute_spec_differences(best_overall["product"], [it["product"] for it in ranked_items[1:]])
+        if best_perf_item_id == best_overall["product"]["id"]:
+            best_overall["merit_badge"] = "BEST PERFORMANCE"
+        elif best_cam_item_id == best_overall["product"]["id"]:
+            best_overall["merit_badge"] = "BEST CAMERA"
+        else:
+            best_overall["merit_badge"] = "BEST OVERALL"
         recommendations.append(best_overall)
 
         if len(ranked_items) == 1:
@@ -599,7 +784,12 @@ class TOPSISRankingEngine:
 
         best_value_item = dict(max(remaining, key=value_metric))
         best_value_item["role"] = "BEST VALUE"
-        best_value_item["role_tagline"] = f"Optimal specification-per-rupee ratio, priced at ₹{best_value_item['product']['price']:,.0f}."
+        best_value_item["role_tagline"] = f"Optimal specification-per-rupee ratio, priced at ₹{best_value_item['product'].get('price', 0):,.0f}."
+        best_value_item["important_differences"] = self._compute_spec_differences(
+            best_value_item["product"],
+            [it["product"] for it in ranked_items if it["product"]["id"] != best_value_item["product"]["id"]]
+        )
+        best_value_item["merit_badge"] = "BEST VALUE"
         recommendations.append(best_value_item)
 
         if len(remaining) == 1:
@@ -611,7 +801,19 @@ class TOPSISRankingEngine:
         if alternatives:
             best_alt = dict(alternatives[0])
             best_alt["role"] = "BEST ALTERNATIVE"
-            best_alt["role_tagline"] = "A compelling alternative offering a distinct hardware balance or form factor."
+            best_alt["role_tagline"] = "Compelling alternative offering a distinct hardware balance or form factor."
+            best_alt["important_differences"] = self._compute_spec_differences(
+                best_alt["product"],
+                [it["product"] for it in ranked_items if it["product"]["id"] != best_alt["product"]["id"]]
+            )
+            if best_cam_item_id == best_alt["product"]["id"]:
+                best_alt["merit_badge"] = "BEST CAMERA"
+            elif best_batt_item_id == best_alt["product"]["id"]:
+                best_alt["merit_badge"] = "BEST BATTERY"
+            elif best_perf_item_id == best_alt["product"]["id"]:
+                best_alt["merit_badge"] = "BEST PERFORMANCE"
+            else:
+                best_alt["merit_badge"] = "BEST ALTERNATIVE"
             recommendations.append(best_alt)
 
         return recommendations

@@ -31,6 +31,14 @@ import { api } from '../services/api';
 
 const SAMPLE_URL_SETS = [
   {
+    label: 'Smartphones (Galaxy S25 Ultra: Flipkart vs Amazon)',
+    category: 'smartphones',
+    urls: [
+      'https://www.flipkart.com/samsung-galaxy-s25-ultra-5g-titanium-silverblue-256-gb/p/itmc336d396a945d?pid=MOBGZ9FYS25U256',
+      'https://www.amazon.in/Samsung-Galaxy-Ultra-Titanium-Storage/dp/B0DT9S25U1'
+    ]
+  },
+  {
     label: 'Smartphones (iPhone 16 Pro vs S24 Ultra)',
     category: 'smartphones',
     urls: [
@@ -237,13 +245,16 @@ export default function PageCompareProducts({
             id: p.id,
             name: p.name || p.product_name,
             brand: p.brand,
-            price: Number(p.price || p.price_inr || 0),
+            price: Number(item.price || p.price || p.price_inr || 0),
             category: p.category || commonCat,
             subcategory: p.subcategory || item.subcategory || 'general',
             specs: p.specs || p.specifications || {},
             officialProductUrl: p.officialProductUrl || item.original_url,
             is_verified: true,
-            imageUrl: p.imageUrl || p.image_url
+            imageUrl: p.imageUrl || p.image_url,
+            retailer_name: item.retailer_name || p.retailer_name || 'Verified Retailer',
+            price_status: item.price_status || p.price_status || 'verified',
+            last_verified_at: item.last_verified_at || p.lastVerifiedAt || p.last_verified_at
           };
         }
 
@@ -715,7 +726,7 @@ export default function PageCompareProducts({
                       <span className={`text-[10px] font-black uppercase px-2 py-0.5 rounded ${
                         idx === 0 ? 'bg-[#D6AD60]/30 text-[#101B3D]' : 'bg-gray-100 text-[#69738A]'
                       }`}>
-                        #{idx + 1} {r.role}
+                        #{idx + 1} {r.merit_badge || r.role}
                       </span>
                       <span className="font-bold text-[#3559C7]">
                         {r.match_score}% Match
@@ -725,6 +736,16 @@ export default function PageCompareProducts({
                     <h4 className="font-bold text-sm text-[#18213A] truncate">
                       {r.product.name}
                     </h4>
+
+                    {r.important_differences && r.important_differences.length > 0 && (
+                      <div className="space-y-1 py-1">
+                        {r.important_differences.slice(0, 2).map((diff, dIdx) => (
+                          <span key={dIdx} className="block text-[10px] font-semibold text-[#23865B] bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100 truncate">
+                            {diff}
+                          </span>
+                        ))}
+                      </div>
+                    )}
 
                     <p className="text-[11px] text-[#69738A] leading-relaxed line-clamp-2">
                       {r.role_tagline || r.reasons?.[0] || 'Strong candidate across evaluated criteria.'}
@@ -751,11 +772,18 @@ export default function PageCompareProducts({
                       return (
                         <th key={p.id || idx} className="p-4 sm:p-5 text-center min-w-[220px] max-w-[280px]">
                           <div className="space-y-3">
-                            {isWinner && (
-                              <span className="inline-flex items-center gap-1 text-[10px] font-black uppercase text-[#101B3D] bg-[#D6AD60] px-2.5 py-0.5 rounded-full shadow-xs">
-                                <Award className="w-3 h-3" /> Best Overall
-                              </span>
-                            )}
+                            <div className="flex flex-wrap items-center justify-center gap-1">
+                              {isWinner && (
+                                <span className="inline-flex items-center gap-1 text-[10px] font-black uppercase text-[#101B3D] bg-[#D6AD60] px-2.5 py-0.5 rounded-full shadow-xs">
+                                  <Award className="w-3 h-3" /> Best Overall
+                                </span>
+                              )}
+                              {rankData?.merit_badge && (
+                                <span className="inline-flex items-center gap-1 text-[9px] font-black uppercase text-[#3559C7] bg-[#3559C7]/10 px-2 py-0.5 rounded-full border border-[#3559C7]/20">
+                                  <Zap className="w-2.5 h-2.5" /> {rankData.merit_badge}
+                                </span>
+                              )}
+                            </div>
 
                             <div className="w-28 h-28 mx-auto rounded-2xl overflow-hidden shadow-md border border-white/80 bg-white">
                               <ProductImage
@@ -779,9 +807,21 @@ export default function PageCompareProducts({
                               <div className="text-lg font-black text-[#101B3D]">
                                 {p.price ? formatINR(p.price) : 'Price Unavailable'}
                               </div>
-                              <span className="text-[10px] font-bold text-[#23865B] bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                                Verified Retail Price
-                              </span>
+                              <div className="flex flex-col items-center gap-0.5">
+                                <span className={`text-[10px] font-bold px-2 py-0.5 rounded border ${
+                                  p.price_status === 'unverified' || !p.price
+                                    ? 'text-amber-700 bg-amber-50 border-amber-200'
+                                    : 'text-[#23865B] bg-emerald-50 border-emerald-200'
+                                }`}>
+                                  {p.retailer_name ? p.retailer_name : 'Verified Retailer'}
+                                  {p.price ? ' • Active Price' : ' • Price Unavailable'}
+                                </span>
+                                {p.last_verified_at && (
+                                  <span className="text-[9px] text-[#69738A]">
+                                    Verified {new Date(p.last_verified_at).toLocaleDateString()}
+                                  </span>
+                                )}
+                              </div>
                             </div>
 
                             {/* Rating */}

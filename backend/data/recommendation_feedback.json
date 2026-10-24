@@ -1,5 +1,173 @@
 [
   {
+    "id": "fb-65417ae1",
+    "sessionId": "test-sess-001",
+    "productId": "elec-001",
+    "productName": "Dell XPS 15 9530",
+    "userId": "test-user-99",
+    "metRequirements": true,
+    "satisfactionScore": 5,
+    "wouldRecommend": true,
+    "aspectsBetter": [
+      "performance",
+      "display"
+    ],
+    "aspectsWorse": [
+      "thermals"
+    ],
+    "feedbackNotes": "Exceeded my expectations for local container runs.",
+    "isVerifiedBuyer": true,
+    "algorithmVersion": "topsis_v1",
+    "createdAt": "2026-10-24T08:31:53.039874+00:00"
+  },
+  {
+    "id": "fb-e4ef5507",
+    "sessionId": "test-sess-001",
+    "productId": "elec-001",
+    "productName": "Dell XPS 15 9530",
+    "userId": "test-user-99",
+    "metRequirements": true,
+    "satisfactionScore": 5,
+    "wouldRecommend": true,
+    "aspectsBetter": [
+      "performance",
+      "display"
+    ],
+    "aspectsWorse": [
+      "thermals"
+    ],
+    "feedbackNotes": "Exceeded my expectations for local container runs.",
+    "isVerifiedBuyer": true,
+    "algorithmVersion": "topsis_v1",
+    "createdAt": "2026-10-24T08:30:22.372290+00:00"
+  },
+  {
+    "id": "fb-d0e2ed99",
+    "sessionId": "test-sess-001",
+    "productId": "elec-001",
+    "productName": "Dell XPS 15 9530",
+    "userId": "test-user-99",
+    "metRequirements": true,
+    "satisfactionScore": 5,
+    "wouldRecommend": true,
+    "aspectsBetter": [
+      "performance",
+      "display"
+    ],
+    "aspectsWorse": [
+      "thermals"
+    ],
+    "feedbackNotes": "Exceeded my expectations for local container runs.",
+    "isVerifiedBuyer": true,
+    "algorithmVersion": "topsis_v1",
+    "createdAt": "2026-10-24T08:27:07.809470+00:00"
+  },
+  {
+    "id": "fb-b500a3b8",
+    "sessionId": "test-sess-001",
+    "productId": "elec-001",
+    "productName": "Dell XPS 15 9530",
+    "userId": "test-user-99",
+    "metRequirements": true,
+    "satisfactionScore": 5,
+    "wouldRecommend": true,
+    "aspectsBetter": [
+      "performance",
+      "display"
+    ],
+    "aspectsWorse": [
+      "thermals"
+    ],
+    "feedbackNotes": "Exceeded my expectations for local container runs.",
+    "isVerifiedBuyer": true,
+    "algorithmVersion": "topsis_v1",
+    "createdAt": "2026-10-24T08:25:03.766593+00:00"
+  },
+  {
+    "id": "fb-41a5432e",
+    "sessionId": "test-sess-001",
+    "productId": "elec-001",
+    "productName": "Dell XPS 15 9530",
+    "userId": "test-user-99",
+    "metRequirements": true,
+    "satisfactionScore": 5,
+    "wouldRecommend": true,
+    "aspectsBetter": [
+      "performance",
+      "display"
+    ],
+    "aspectsWorse": [
+      "thermals"
+    ],
+    "feedbackNotes": "Exceeded my expectations for local container runs.",
+    "isVerifiedBuyer": true,
+    "algorithmVersion": "topsis_v1",
+    "createdAt": "2026-10-24T08:22:32.572924+00:00"
+  },
+  {
+    "id": "fb-4943004b",
+    "sessionId": "test-sess-001",
+    "productId": "elec-001",
+    "productName": "Dell XPS 15 9530",
+    "userId": "test-user-99",
+    "metRequirements": true,
+    "satisfactionScore": 5,
+    "wouldRecommend": true,
+    "aspectsBetter": [
+      "performance",
+      "display"
+    ],
+    "aspectsWorse": [
+      "thermals"
+    ],
+    "feedbackNotes": "Exceeded my expectations for local container runs.",
+    "isVerifiedBuyer": true,
+    "algorithmVersion": "topsis_v1",
+    "createdAt": "2026-10-24T08:21:08.245367+00:00"
+  },
+  {
+    "id": "fb-dfe8ab83",
+    "sessionId": "test-sess-001",
+    "productId": "elec-001",
+    "productName": "Dell XPS 15 9530",
+    "userId": "test-user-99",
+    "metRequirements": true,
+    "satisfactionScore": 5,
+    "wouldRecommend": true,
+    "aspectsBetter": [
+      "performance",
+      "display"
+    ],
+    "aspectsWorse": [
+      "thermals"
+    ],
+    "feedbackNotes": "Exceeded my expectations for local container runs.",
+    "isVerifiedBuyer": true,
+    "algorithmVersion": "topsis_v1",
+    "createdAt": "2026-10-24T08:17:38.579806+00:00"
+  },
+  {
+    "id": "fb-4c0adf82",
+    "sessionId": "test-sess-001",
+    "productId": "elec-001",
+    "productName": "Dell XPS 15 9530",
+    "userId": "test-user-99",
+    "metRequirements": true,
+    "satisfactionScore": 5,
+    "wouldRecommend": true,
+    "aspectsBetter": [
+      "performance",
+      "display"
+    ],
+    "aspectsWorse": [
+      "thermals"
+    ],
+    "feedbackNotes": "Exceeded my expectations for local container runs.",
+    "isVerifiedBuyer": true,
+    "algorithmVersion": "topsis_v1",
+    "createdAt": "2026-10-24T08:00:07.957551+00:00"
+  },
+  {
     "id": "fb-05b7456f",
     "sessionId": "test-sess-001",
     "productId": "elec-001",

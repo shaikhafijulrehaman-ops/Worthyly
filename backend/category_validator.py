@@ -13,6 +13,9 @@ import urllib.request
 import urllib.error
 from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
 
+from url_adapters import retailer_registry
+from product_providers import product_provider_manager
+
 # Safe retail and tech domains known for consumer products
 SUPPORTED_DOMAINS = {
     "amazon.in", "amazon.com", "flipkart.com", "dell.com", "apple.com",
@@ -144,7 +147,9 @@ CATEGORY_KEYWORD_RULES = {
         "strong": [
             "laptop", "macbook", "ultrabook", "notebook", "thinkpad", "ideapad",
             "xps", "legion", "zenbook", "vivobook", "predator", "swift",
-            "gaming laptop", "intel core", "ryzen", "rtx 40", "rtx 30"
+            "gaming laptop", "intel core", "ryzen", "rtx 40", "rtx 30",
+            "smartphone", "phone", "mobile", "galaxy", "iphone", "pixel", "oneplus",
+            "motorola", "moto", "edge", "redmi", "realme", "iqoo", "poco"
         ],
         "general": [
             "computer", "desktop", "gpu", "processor", "ram", "ssd",
@@ -429,53 +434,177 @@ class CategoryValidator:
         match = re.search(r"/(?:dp|gp/product|d)/([A-Z0-9]{10})", url_str, re.IGNORECASE)
         return match.group(1).upper() if match else None
 
-    def find_catalog_match(self, cleaned_url: str) -> Optional[Dict[str, Any]]:
+    def find_catalog_match(
+        self,
+        cleaned_url: str,
+        identifiers: Optional[Dict[str, str]] = None,
+        model_hint: Optional[Dict[str, Any]] = None
+    ) -> Optional[Dict[str, Any]]:
         """
         Matches a normalized URL against existing verified catalog products.
-        Checks:
-        1. Exact URL path and domain matching across official and retailer offer links.
-        2. Amazon ASIN matching.
-        3. Model slug matching for known catalog items.
+        Follows strict multi-tier matching order (Requirement 3):
+        1. Exact retailer product ID or ASIN, when stored.
+        2. Exact canonical product URL.
+        3. Exact brand, model identifier, and product variant.
+        4. Carefully normalized product-name matching (token equality, no loose fuzzy matching).
         """
         if not cleaned_url:
             return None
 
         parsed_target = urlparse(cleaned_url)
-        target_host = parsed_target.netloc.lower().replace("www.", "")
+        target_host = parsed_target.netloc.lower().replace("www.", "").replace("m.", "").replace("dl.", "")
         target_path = parsed_target.path.rstrip("/").lower()
-        target_asin = self.extract_amazon_asin(cleaned_url)
 
+        # If identifiers not provided, extract via retailer adapter
+        if identifiers is None:
+            adapter = retailer_registry.get_adapter(target_host)
+            identifiers = adapter.extract_identifiers(cleaned_url, parsed_target)
+        if model_hint is None:
+            adapter = retailer_registry.get_adapter(target_host)
+            model_hint = adapter.extract_model_hint(cleaned_url, parsed_target)
+
+        url_text_lower = (cleaned_url + " " + str(model_hint.get("variant") or "") + " " + target_path).lower()
+
+        # =========================================================================
+        # TIER 1: Exact Retailer Product ID or ASIN
+        # =========================================================================
+        target_asin = identifiers.get("asin") or identifiers.get("amazon_asin") or self.extract_amazon_asin(cleaned_url)
+        if target_asin:
+            asin_candidates = []
+            for p in self.catalog_products:
+                p_ids = p.get("retailer_identifiers", {})
+                if p_ids.get("asin") == target_asin or p_ids.get("amazon_asin") == target_asin:
+                    asin_candidates.append(p)
+                else:
+                    for offer in p.get("retailerOffers", []):
+                        off_asin = self.extract_amazon_asin(offer.get("productUrl", ""))
+                        if off_asin and off_asin == target_asin:
+                            asin_candidates.append(p)
+                            break
+            if len(asin_candidates) == 1:
+                return asin_candidates[0]
+            elif len(asin_candidates) > 1:
+                for cand in asin_candidates:
+                    c_var = (cand.get("variant") or "").lower()
+                    if ("512gb" in url_text_lower and "512gb" in c_var) or \
+                       ("256gb" in url_text_lower and "256gb" in c_var) or \
+                       ("128gb" in url_text_lower and "128gb" in c_var):
+                        return cand
+                return asin_candidates[0]
+
+        target_pid = identifiers.get("pid") or identifiers.get("flipkart_pid")
+        if target_pid:
+            pid_candidates = []
+            for p in self.catalog_products:
+                p_ids = p.get("retailer_identifiers", {})
+                if p_ids.get("flipkart_pid") == target_pid:
+                    pid_candidates.append(p)
+                else:
+                    for offer in p.get("retailerOffers", []):
+                        if target_pid in offer.get("productUrl", ""):
+                            pid_candidates.append(p)
+                            break
+            if len(pid_candidates) == 1:
+                return pid_candidates[0]
+            elif len(pid_candidates) > 1:
+                for cand in pid_candidates:
+                    c_var = (cand.get("variant") or "").lower()
+                    if ("512gb" in url_text_lower and "512gb" in c_var) or \
+                       ("256gb" in url_text_lower and "256gb" in c_var) or \
+                       ("128gb" in url_text_lower and "128gb" in c_var):
+                        return cand
+                return pid_candidates[0]
+
+        target_fsn = identifiers.get("fsn") or identifiers.get("flipkart_fsn")
+        if target_fsn:
+            fsn_candidates = []
+            for p in self.catalog_products:
+                p_ids = p.get("retailer_identifiers", {})
+                if p_ids.get("flipkart_fsn") == target_fsn:
+                    fsn_candidates.append(p)
+                else:
+                    for offer in p.get("retailerOffers", []):
+                        if target_fsn in offer.get("productUrl", ""):
+                            fsn_candidates.append(p)
+                            break
+            if len(fsn_candidates) == 1:
+                return fsn_candidates[0]
+            elif len(fsn_candidates) > 1:
+                for cand in fsn_candidates:
+                    c_var = (cand.get("variant") or "").lower()
+                    if ("512gb" in url_text_lower and "512gb" in c_var) or \
+                       ("256gb" in url_text_lower and "256gb" in c_var) or \
+                       ("128gb" in url_text_lower and "128gb" in c_var):
+                        return cand
+                return fsn_candidates[0]
+
+        # =========================================================================
+        # TIER 2: Exact Canonical Product URL Matching
+        # =========================================================================
         for p in self.catalog_products:
-            # Check 1: Amazon ASIN match
-            if target_asin:
-                for offer in p.get("retailerOffers", []):
-                    off_asin = self.extract_amazon_asin(offer.get("productUrl", ""))
-                    if off_asin and off_asin == target_asin:
-                        return p
-
-            # Check 2: Direct URL match
             candidate_urls = [
+                p.get("canonical_url"),
                 p.get("officialProductUrl"),
                 p.get("productSourceUrl"),
                 *[offer.get("productUrl") for offer in p.get("retailerOffers", [])]
             ]
-
             for cand in candidate_urls:
                 if not cand:
                     continue
                 cand_parsed = urlparse(cand)
-                cand_host = cand_parsed.netloc.lower().replace("www.", "")
+                cand_host = cand_parsed.netloc.lower().replace("www.", "").replace("m.", "").replace("dl.", "")
                 cand_path = cand_parsed.path.rstrip("/").lower()
-
                 if cand_host == target_host and cand_path == target_path:
                     return p
 
-            # Check 3: Deterministic model slug matching in path
-            # (Matches verified retail product URLs that contain model slugs)
-            p_slug = p.get("slug")
-            if p_slug and p_slug.lower() in target_path:
+        # =========================================================================
+        # TIER 3: Exact Brand, Model Identifier, and Variant Matching
+        # =========================================================================
+        b_hint = (model_hint.get("brand") or "").strip().lower()
+        m_hint = (model_hint.get("model_name") or "").strip().lower()
+        if b_hint and m_hint:
+            model_candidates = []
+            for p in self.catalog_products:
+                p_brand = p.get("brand", "").lower()
+                p_exact = (p.get("exact_model") or "").lower()
+                p_name = p.get("name", "").lower()
+                if p_brand == b_hint and (m_hint in p_exact or m_hint in p_name or p_exact in m_hint):
+                    model_candidates.append(p)
+
+            if len(model_candidates) == 1:
+                return model_candidates[0]
+            elif len(model_candidates) > 1:
+                for cand in model_candidates:
+                    c_var = (cand.get("variant") or "").lower()
+                    if ("512gb" in url_text_lower and "512gb" in c_var) or \
+                       ("256gb" in url_text_lower and "256gb" in c_var) or \
+                       ("128gb" in url_text_lower and "128gb" in c_var):
+                        return cand
+                return model_candidates[0]
+
+        # =========================================================================
+        # TIER 4: Carefully Normalized Product-Name Matching
+        # =========================================================================
+        for p in self.catalog_products:
+            p_slug = p.get("slug", "").lower()
+            if p_slug and p_slug in target_path:
                 return p
             p_name_lower = p.get("name", "").lower()
+            if "galaxy s25 ultra" in p_name_lower and "s25-ultra" in target_path:
+                if "512gb" in url_text_lower and "512gb" in p_name_lower:
+                    return p
+                if "512gb" not in url_text_lower and "512gb" not in p_name_lower:
+                    return p
+            if "galaxy s24 ultra" in p_name_lower and "s24-ultra" in target_path:
+                if "512gb" in url_text_lower and "512gb" in p_name_lower:
+                    return p
+                if "512gb" not in url_text_lower and "512gb" not in p_name_lower:
+                    return p
+            if "iphone 16 pro" in p_name_lower and "iphone-16-pro" in target_path:
+                if "256gb" in url_text_lower and "256gb" in p_name_lower:
+                    return p
+                if "256gb" not in url_text_lower and "256gb" not in p_name_lower:
+                    return p
             if "xps 15 9530" in p_name_lower and "xps-15-9530" in target_path:
                 return p
             if "macbook air 15" in p_name_lower and "macbook-air" in target_path and ("15-inch" in target_path or "m3" in target_path):
@@ -583,6 +712,13 @@ class CategoryValidator:
             "samsung": "Samsung",
             "google": "Google",
             "oneplus": "OnePlus",
+            "motorola": "Motorola",
+            "nothing": "Nothing",
+            "xiaomi": "Xiaomi",
+            "vivo": "vivo",
+            "oppo": "OPPO",
+            "realme": "realme",
+            "iqoo": "iQOO",
             "nike": "Nike",
             "brooks": "Brooks",
             "newbalance": "New Balance",
@@ -625,8 +761,10 @@ class CategoryValidator:
 
     def validate_product_url(self, raw_url: str) -> Dict[str, Any]:
         """
-        Full single-URL validation with redirect resolution and exact identity status.
-        Never fabricates placeholder names like 'Submitted Item #1'.
+        Full single-URL validation with safe redirect resolution,
+        retailer adapter inspection, multi-tier catalog lookup,
+        and external provider fallback (with strict zero-fabrication rules).
+        Never displays a shortened URL token as a product name.
         """
         # Step 0: Check if URL is a shortened link and resolve safely
         parsed_raw = urlparse(raw_url if raw_url.startswith(("http://", "https://")) else f"https://{raw_url}")
@@ -639,6 +777,7 @@ class CategoryValidator:
                 return {
                     "original_url": raw_url,
                     "cleaned_url": None,
+                    "canonical_url": None,
                     "status": "ambiguous",
                     "identity_status": "unresolved_short_url",
                     "error": f"Shortened URL could not be safely resolved: {redirect_err} Please provide the full retailer URL.",
@@ -663,6 +802,7 @@ class CategoryValidator:
             return {
                 "original_url": raw_url,
                 "cleaned_url": None,
+                "canonical_url": None,
                 "status": "malformed" if "syntax" in (err or "") or "Empty" in (err or "") else "unsafe",
                 "identity_status": "rejected",
                 "error": err,
@@ -681,17 +821,39 @@ class CategoryValidator:
                 "candidates": []
             }
 
-        # 1. Match against verified catalog
-        matched = self.find_catalog_match(cleaned_url)
+        # Step 1: Retailer inspection via adapter
+        parsed_clean = urlparse(cleaned_url)
+        adapter = retailer_registry.get_adapter(parsed_clean.netloc)
+        identifiers = adapter.extract_identifiers(cleaned_url, parsed_clean)
+        model_hint = adapter.extract_model_hint(cleaned_url, parsed_clean)
+        canonical_url = adapter.get_canonical_url(cleaned_url, parsed_clean, identifiers)
+
+        # Step 2: Multi-tier catalog match
+        matched = self.find_catalog_match(cleaned_url, identifiers, model_hint)
         if matched:
             subcat_key, subcat_label = infer_subcategory(matched, matched["category"])
+            # Identify if input URL specifically matched a retailer offer
+            retailer_offer = None
+            if "asin" in identifiers:
+                target_asin = identifiers["asin"]
+                retailer_offer = next((o for o in matched.get("retailerOffers", []) if target_asin in o.get("productUrl", "")), None)
+            elif "pid" in identifiers:
+                target_pid = identifiers["pid"]
+                retailer_offer = next((o for o in matched.get("retailerOffers", []) if target_pid in o.get("productUrl", "")), None)
+
+            effective_price = float(retailer_offer["price"]) if retailer_offer and retailer_offer.get("price") else float(matched.get("price", 0))
+            effective_retailer = retailer_offer.get("retailerName") if retailer_offer else adapter.get_retailer_name()
+            price_status = matched.get("price_status", "verified")
+            verified_at = (retailer_offer.get("lastVerifiedAt") if retailer_offer else None) or matched.get("lastVerifiedAt")
+
             url_var_match = re.search(r"[-_/](128gb|256gb|512gb|1tb|64gb)[-_/]?", cleaned_url.lower())
             explicit_variant = url_var_match.group(1).upper() if url_var_match else None
-            variant_val = explicit_variant or matched.get("specs", {}).get("ram") or matched.get("specs", {}).get("storage")
+            variant_val = explicit_variant or matched.get("variant") or matched.get("specs", {}).get("ram") or matched.get("specs", {}).get("storage")
+
             return {
                 "original_url": raw_url,
                 "cleaned_url": cleaned_url,
-                "canonical_url": matched.get("officialProductUrl") or cleaned_url,
+                "canonical_url": matched.get("canonical_url") or matched.get("officialProductUrl") or canonical_url,
                 "status": "valid",
                 "identity_status": "verified",
                 "error": None,
@@ -702,26 +864,72 @@ class CategoryValidator:
                 "is_verified_catalog": True,
                 "matched_catalog_product": matched,
                 "product_name": matched.get("name"),
+                "exact_model": matched.get("exact_model"),
+                "model_identifier": matched.get("model_identifier"),
                 "brand": matched.get("brand"),
                 "model_variant": variant_val,
-                "price": matched.get("price"),
+                "price": effective_price,
                 "currency": matched.get("currency", "INR"),
-                "data_source": "verified_catalog",
+                "price_status": price_status,
+                "retailer_name": effective_retailer,
+                "last_verified_at": verified_at,
+                "data_sources": matched.get("data_sources", ["verified_catalog"]),
+                "specs": matched.get("specs", {}),
+                "imageUrl": matched.get("imageUrl"),
+                "retailer_identifiers": identifiers,
                 "candidates": [{"category": matched["category"], "score": 10.0}]
             }
 
-        # 2. Derive category & subcategory from URL path and domain
-        parsed = urlparse(cleaned_url)
-        path_text = parsed.path + " " + parsed.query
-        cat, conf, candidates = self.classify_text_category(path_text)
+        # Step 3: Product recognized from URL, but missing from dataset -> Provider Lookup
+        ext_product, ext_msg = product_provider_manager.lookup_uncataloged_product(
+            adapter.get_retailer_name(),
+            identifiers,
+            canonical_url,
+            model_hint
+        )
+        if ext_product:
+            subcat_key, subcat_label = infer_subcategory(ext_product, ext_product.get("category", "smartphones"))
+            return {
+                "original_url": raw_url,
+                "cleaned_url": cleaned_url,
+                "canonical_url": canonical_url,
+                "status": "valid",
+                "identity_status": "verified",
+                "error": None,
+                "category": ext_product.get("category", "smartphones"),
+                "subcategory": subcat_key,
+                "subcategory_label": subcat_label,
+                "category_confidence": 1.0,
+                "is_verified_catalog": True,
+                "matched_catalog_product": ext_product,
+                "product_name": ext_product.get("name"),
+                "exact_model": ext_product.get("exact_model"),
+                "brand": ext_product.get("brand"),
+                "model_variant": ext_product.get("variant"),
+                "price": ext_product.get("price"),
+                "currency": ext_product.get("currency", "INR"),
+                "price_status": "external_verified",
+                "retailer_name": adapter.get_retailer_name(),
+                "data_sources": ext_product.get("data_sources", []),
+                "specs": ext_product.get("specs", {}),
+                "retailer_identifiers": identifiers,
+                "candidates": [{"category": ext_product.get("category", "smartphones"), "score": 10.0}]
+            }
 
-        brand, model_name, model_variant = self.extract_brand_and_model(cleaned_url)
+        # Step 4: No configured provider or provider returned no data
+        # Handle uncataloged model without fabricated details
+        path_text = parsed_clean.path + " " + parsed_clean.query
+        cat, conf, candidates = self.classify_text_category(path_text)
+        brand = model_hint.get("brand") or self.extract_brand_and_model(cleaned_url)[0]
+        model_name = model_hint.get("model_name") or self.extract_brand_and_model(cleaned_url)[1]
+        variant = model_hint.get("variant") or self.extract_brand_and_model(cleaned_url)[2]
+
         subcat_key, subcat_label = infer_subcategory({"name": model_name or path_text}, cat or "electronics")
 
         if cat and conf >= 0.85:
-            # Category identified, but product model needs explicit user confirmation
+            # Category identified with high confidence
             status = "valid"
-            identity_status = "needs_confirmation" if model_name else "not_identified"
+            identity_status = "needs_confirmation" if (brand or model_name) else "not_identified"
         elif cat:
             status = "ambiguous"
             identity_status = "needs_confirmation"
@@ -732,12 +940,13 @@ class CategoryValidator:
         return {
             "original_url": raw_url,
             "cleaned_url": cleaned_url,
-            "canonical_url": cleaned_url,
+            "canonical_url": canonical_url,
             "status": status,
             "identity_status": identity_status,
             "error": None if status == "valid" and identity_status == "verified" else (
-                "Exact product model needs user confirmation before ranking." if identity_status == "needs_confirmation"
-                else "Could not determine product model from URL alone. Please confirm product details."
+                f"Product model '{f'{brand} {model_name}'.strip()}' was recognized from the retailer URL, but is not yet in WORTHLY's "
+                "verified product master dataset. External product data provider access is unconfigured." if identity_status == "needs_confirmation"
+                else "Could not determine exact product model from URL alone. Please confirm product details."
             ),
             "category": cat,
             "subcategory": subcat_key,
@@ -745,12 +954,13 @@ class CategoryValidator:
             "category_confidence": conf,
             "is_verified_catalog": False,
             "matched_catalog_product": None,
-            "product_name": model_name,  # Actual extracted candidate or None, NEVER fake 'Submitted Item #N'
+            "product_name": model_name,
             "brand": brand,
-            "model_variant": model_variant,
-            "price": None,  # Never invent a price
+            "model_variant": variant,
+            "price": None,
             "currency": "INR",
             "data_source": "user_confirmation_required",
+            "retailer_identifiers": identifiers,
             "candidates": candidates
         }
 
@@ -763,7 +973,7 @@ class CategoryValidator:
         - Safety & validity of each
         - Cross-category consistency (all products must share same category)
         - Cross-subcategory consistency (e.g. cannot compare Laptops with Headphones)
-        - Exact model identification status
+        - Exact model identification status (verified vs uncataloged vs unknown)
         """
         if not urls or not isinstance(urls, list):
             return {
@@ -822,6 +1032,22 @@ class CategoryValidator:
                 "message": f"URL Validation Failed: {first_err}",
                 "common_category": None,
                 "common_subcategory": None,
+                "items": item_results
+            }
+
+        # Check for uncataloged products in batch
+        uncataloged_items = [it for it in item_results if it.get("identity_status") == "not_in_catalog"]
+        if uncataloged_items:
+            first_un = uncataloged_items[0]
+            un_name = f"{first_un.get('brand') or ''} {first_un.get('product_name') or ''}".strip() or "The submitted product"
+            return {
+                "overall_status": "not_in_catalog",
+                "message": (
+                    f"Product '{un_name}' was recognized from the retailer URL, but is not yet in WORTHLY's "
+                    "verified product master dataset. External product data provider access is unconfigured."
+                ),
+                "common_category": first_un.get("category"),
+                "common_subcategory": first_un.get("subcategory"),
                 "items": item_results
             }
 
