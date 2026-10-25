@@ -25,72 +25,33 @@ import {
 } from 'lucide-react';
 import NeonBorder from '../components/NeonBorder';
 
-const CATEGORIES = [
-  {
-    id: 'smartphones',
-    name: 'Smartphones',
-    description: 'Flagship processors, periscope telephoto optics, and all-day 5G battery endurance.',
-    icon: Smartphone,
-    budgetRange: '₹31,999 - ₹1,29,999',
-    itemCount: '8 Verified Models'
-  },
-  {
-    id: 'laptops',
-    name: 'Laptops & Computers',
-    description: 'High performance ultrabooks, AI-boost workstations, and creative powerhouses.',
-    icon: Laptop,
-    budgetRange: '₹54,990 - ₹1,99,900',
-    itemCount: '8 Verified Models'
-  },
-  {
-    id: 'books',
-    name: 'Books & Study Materials',
-    description: 'Standard computer science textbooks, coding masteries, and competitive GATE manuals.',
-    icon: BookOpen,
-    budgetRange: '₹890 - ₹4,450',
-    itemCount: '8 Verified Titles'
-  },
-  {
-    id: 'magazines',
-    name: 'Magazines & Periodicals',
-    description: 'Curated annual subscriptions to MIT Technology Review, Wired, and Harvard Business Review.',
-    icon: Newspaper,
-    budgetRange: '₹2,400 - ₹5,999',
-    itemCount: '8 Subscriptions'
-  },
-  {
-    id: 'consumer_electronics',
-    name: 'Consumer Electronics',
-    description: 'World-class ANC headphones, low-profile mechanical keyboards, and 165Hz QHD gaming panels.',
-    icon: Headphones,
-    budgetRange: '₹9,495 - ₹35,900',
-    itemCount: '8 Verified Models'
-  },
-  {
-    id: 'fitness_equipment',
-    name: 'Fitness Equipment',
-    description: 'Heavy dial-tech adjustable dumbbells, commercial yoga mats, and 6-position weight benches.',
-    icon: Dumbbell,
-    budgetRange: '₹799 - ₹38,500',
-    itemCount: '8 Verified Gear'
-  },
-  {
-    id: 'kitchen_chimneys',
-    name: 'Kitchen Chimneys',
-    description: 'Wall-mounted curved glass chimneys with thermal heat auto-clean and gesture controls.',
-    icon: Flame,
-    budgetRange: '₹6,290 - ₹17,490',
-    itemCount: '8 Verified Models'
-  },
-  {
-    id: 'nutrition',
-    name: 'Protein & Nutrition',
-    description: 'Clinically tested whey protein isolates, plant protein, and clean third-party certified powders.',
-    icon: Package,
-    budgetRange: '₹1,650 - ₹7,299',
-    itemCount: '8 Verified Brands'
-  }
-];
+const CATEGORY_ICON_MAP = {
+  smartphones: Smartphone,
+  laptops: Laptop,
+  televisions: Tv,
+  refrigerators: Box,
+  washing_machines: Disc,
+  air_conditioners: Wind,
+  tablets_monitors: Tablet,
+  consumer_electronics: Headphones,
+  fitness_equipment: Dumbbell,
+  kitchen_chimneys: Flame,
+  books: BookOpen,
+  magazines: Newspaper,
+  nutrition: Package,
+  home_kitchen: Home,
+  furniture: Armchair,
+  footwear: Footprints
+};
+
+const CATEGORIES = getCanonicalCategories().map((c) => ({
+  id: c.id,
+  name: c.name,
+  description: c.description,
+  icon: CATEGORY_ICON_MAP[c.id] || Laptop,
+  budgetRange: 'Spec-Verified',
+  itemCount: 'Verified Models'
+}));
 
 const HOW_IT_WORKS = [
   {

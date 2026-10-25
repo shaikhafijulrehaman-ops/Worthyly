@@ -36,6 +36,7 @@ import {
 } from 'lucide-react';
 import { formatINR } from '../utils/currency';
 import ProductImage from '../components/ProductImage';
+import { getCanonicalCategories, normalizeCategoryId, getCanonicalCategory } from '../services/categoryRegistry';
 
 const CATEGORY_ICONS = {
   all: LayoutGrid,
@@ -77,6 +78,27 @@ export default function PageProductExplorer({
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [sortBy, setSortBy] = useState('rating');
+
+  // Authoritative deduplicated categories: exactly one per canonical category
+  const canonicalCategoriesList = useMemo(() => {
+    const raw = categories && categories.length > 0 ? categories : getCanonicalCategories();
+    const seen = new Set();
+    const list = [];
+    for (const c of raw) {
+      const normId = normalizeCategoryId(c.id || c);
+      if (!seen.has(normId)) {
+        seen.add(normId);
+        const canon = getCanonicalCategory(normId);
+        list.push({
+          id: normId,
+          name: canon?.name || c.name || normId,
+          description: canon?.description || c.description,
+          icon: canon?.icon || c.icon
+        });
+      }
+    }
+    return list;
+  }, [categories]);
 
   // Extract unique brands from active category
   const availableBrands = useMemo(() => {
@@ -256,8 +278,8 @@ export default function PageProductExplorer({
               )}
             </button>
 
-            {/* Individual Categories */}
-            {categories.map((c) => {
+            {/* Individual Categories (Deduplicated Canonical) */}
+            {canonicalCategoriesList.map((c) => {
               const Icon = CATEGORY_ICONS[c.id] || Laptop;
               const isSelected = selectedCategory === c.id;
 

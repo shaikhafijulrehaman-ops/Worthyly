@@ -1,7 +1,7 @@
 -- ============================================================================
 -- WORTHLY - Multi-Category Product Master Expansion Migration
 -- Migration: 003_expand_multicategory_catalog.sql
--- Generated at: 2026-10-25T08:04:22.028817+00:00
+-- Generated at: 2026-10-25T13:45:23.282105+00:00
 -- Total New Models: 76 across Laptops, TVs, Fridges, Washers, ACs, etc.
 -- ============================================================================
 

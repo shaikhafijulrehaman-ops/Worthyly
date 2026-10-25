@@ -2,12 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import {
   Sparkles,
+  Smartphone,
   Laptop,
+  Tv,
+  Box,
+  Disc,
+  Wind,
+  Tablet,
+  Headphones,
   Footprints,
   Utensils,
   Armchair,
   Dumbbell,
-  GraduationCap,
+  Flame,
+  BookOpen,
+  Newspaper,
   ArrowRight,
   ShieldCheck,
   CheckCircle2,
@@ -25,6 +34,7 @@ import {
   Layers,
   ChevronLeft
 } from 'lucide-react';
+import { getCanonicalCategories } from '../services/categoryRegistry';
 import NeonBorder from '../components/NeonBorder';
 import { formatINR } from '../utils/currency';
 import GlitchHeroSequence, { WORTHLY_MESSAGES } from '../components/GlitchHeroSequence';
@@ -32,56 +42,33 @@ import ProductImage from '../components/ProductImage';
 import LetterDrop from '../components/originkit/ui/letter-drop';
 import PulseRoll from '../components/originkit/ui/pulse-roll';
 
-const CATEGORIES = [
-  {
-    id: 'electronics',
-    name: 'Electronics & Gadgets',
-    description: 'Developer laptops, ANC headphones, tablets, and AI compute powerhouses.',
-    icon: Laptop,
-    budgetRange: '₹26,990 - ₹1,49,990',
-    itemCount: '6 Verified Models'
-  },
-  {
-    id: 'footwear',
-    name: 'Fashion & Footwear',
-    description: 'Road running shoes, hospital walking trainers, and formal oxfords.',
-    icon: Footprints,
-    budgetRange: '₹6,499 - ₹12,999',
-    itemCount: '4 Verified Models'
-  },
-  {
-    id: 'home_kitchen',
-    name: 'Home & Kitchen',
-    description: 'Precision espresso makers, automated robot vacuums, and air fryers.',
-    icon: Utensils,
-    budgetRange: '₹9,999 - ₹1,19,000',
-    itemCount: '3 Verified Models'
-  },
-  {
-    id: 'furniture',
-    name: 'Furniture & Home Office',
-    description: 'Ergonomic lumbar office chairs and heavy-duty dual motor standing desks.',
-    icon: Armchair,
-    budgetRange: '₹42,999 - ₹1,25,000',
-    itemCount: '2 Verified Models'
-  },
-  {
-    id: 'fitness',
-    name: 'Fitness & Sports',
-    description: 'Multi-band GPS smartwatches and space-saving adjustable dumbbell systems.',
-    icon: Dumbbell,
-    budgetRange: '₹38,500 - ₹39,990',
-    itemCount: '2 Verified Models'
-  },
-  {
-    id: 'education',
-    name: 'Education & Student Essentials',
-    description: 'Paper-feel digital note tablets, ANC study headphones, and academic tablets.',
-    icon: GraduationCap,
-    budgetRange: '₹7,999 - ₹59,900',
-    itemCount: '3 Verified Models'
-  }
-];
+const CATEGORY_ICON_MAP = {
+  smartphones: Smartphone,
+  laptops: Laptop,
+  televisions: Tv,
+  refrigerators: Box,
+  washing_machines: Disc,
+  air_conditioners: Wind,
+  tablets_monitors: Tablet,
+  consumer_electronics: Headphones,
+  fitness_equipment: Dumbbell,
+  kitchen_chimneys: Flame,
+  books: BookOpen,
+  magazines: Newspaper,
+  nutrition: ShieldCheck,
+  home_kitchen: Utensils,
+  furniture: Armchair,
+  footwear: Footprints
+};
+
+const CATEGORIES = getCanonicalCategories().map((c) => ({
+  id: c.id,
+  name: c.name,
+  description: c.description,
+  icon: CATEGORY_ICON_MAP[c.id] || Laptop,
+  budgetRange: 'Spec-Verified',
+  itemCount: 'Verified Models'
+}));
 
 const HOW_IT_WORKS = [
   {

@@ -12,7 +12,7 @@
         130000
       ],
       "defaultMax": 80000,
-      "budgetRange": "₹31,999 - ₹1,29,999",
+      "budgetRange": "\u20b931,999 - \u20b91,29,999",
       "usages": [
         {
           "id": "daily",
@@ -83,7 +83,7 @@
     {
       "id": "laptops",
       "name": "Laptops & Computers",
-      "description": "Ultrabooks, workstation, business, and creator laptops",
+      "description": "Productivity, ultrabook, creator, and high-performance gaming laptops",
       "icon": "Laptop",
       "budgetPresets": [
         50000,
@@ -92,7 +92,7 @@
         180000
       ],
       "defaultMax": 150000,
-      "budgetRange": "₹54,990 - ₹1,99,900",
+      "budgetRange": "\u20b954,990 - \u20b91,99,900",
       "usages": [
         {
           "id": "programming",
@@ -166,798 +166,6 @@
       ]
     },
     {
-      "id": "books",
-      "name": "Books & Study Materials",
-      "description": "Standard computer science textbooks, programming guides, and competitive exam preparation",
-      "icon": "BookOpen",
-      "budgetPresets": [
-        800,
-        1500,
-        2500,
-        4500
-      ],
-      "defaultMax": 3000,
-      "budgetRange": "₹890 - ₹4,450",
-      "usages": [
-        {
-          "id": "self_study",
-          "label": "Self-Paced Hands-On Learning"
-        },
-        {
-          "id": "college_curriculum",
-          "label": "University Semester Coursework"
-        },
-        {
-          "id": "exam_prep",
-          "label": "GATE & Competitive Exam Prep"
-        }
-      ],
-      "priorities": [
-        {
-          "id": "depth",
-          "label": "Comprehensive Theory & Depth"
-        },
-        {
-          "id": "practical",
-          "label": "Practical Exercises & Code Examples"
-        },
-        {
-          "id": "reputation",
-          "label": "Standard Author & Academic Rigour"
-        },
-        {
-          "id": "value",
-          "label": "Value for Price"
-        }
-      ],
-      "optionalSpecs": []
-    },
-    {
-      "id": "magazines",
-      "name": "Magazines & Periodicals",
-      "description": "Annual subscriptions to premier tech, science, business, and policy periodicals",
-      "icon": "Newspaper",
-      "budgetPresets": [
-        2500,
-        3500,
-        4500,
-        6000
-      ],
-      "defaultMax": 4500,
-      "budgetRange": "₹2,400 - ₹5,999",
-      "usages": [
-        {
-          "id": "tech_insights",
-          "label": "Deep Technology & AI Trends"
-        },
-        {
-          "id": "business_strategy",
-          "label": "Global Markets & Executive Strategy"
-        },
-        {
-          "id": "scientific_research",
-          "label": "Scientific Discoveries & Nature"
-        }
-      ],
-      "priorities": [
-        {
-          "id": "depth",
-          "label": "In-Depth Investigative Journalism"
-        },
-        {
-          "id": "frequency",
-          "label": "Issue Frequency & Timeliness"
-        },
-        {
-          "id": "prestige",
-          "label": "Global Editorial Reputation"
-        },
-        {
-          "id": "value",
-          "label": "Annual Cost per Issue"
-        }
-      ],
-      "optionalSpecs": []
-    },
-    {
-      "id": "consumer_electronics",
-      "name": "Consumer Electronics",
-      "description": "ANC earbuds, premium over-ear headphones, ergonomic keyboards, mice, and gaming monitors",
-      "icon": "Headphones",
-      "budgetPresets": [
-        8000,
-        15000,
-        25000,
-        35000
-      ],
-      "defaultMax": 25000,
-      "budgetRange": "₹9,495 - ₹35,900",
-      "usages": [
-        {
-          "id": "remote_office",
-          "label": "Remote Office & Productivity"
-        },
-        {
-          "id": "gaming_highfps",
-          "label": "High-FPS Gaming & Visuals"
-        },
-        {
-          "id": "audiophile",
-          "label": "Critical Listening & Travel ANC"
-        }
-      ],
-      "priorities": [
-        {
-          "id": "audio_quality",
-          "label": "Acoustic Fidelity & Noise Isolation"
-        },
-        {
-          "id": "ergonomics",
-          "label": "Ergonomics & Typing / Mouse Feel"
-        },
-        {
-          "id": "battery_life",
-          "label": "Multi-Day Wireless Endurance"
-        },
-        {
-          "id": "value",
-          "label": "Value for Money"
-        }
-      ],
-      "optionalSpecs": []
-    },
-    {
-      "id": "fitness_equipment",
-      "name": "Fitness Equipment",
-      "description": "Adjustable dumbbells, commercial-grade mats, stackable bands, and multi-position benches",
-      "icon": "Dumbbell",
-      "budgetPresets": [
-        1500,
-        5000,
-        12000,
-        25000
-      ],
-      "defaultMax": 15000,
-      "budgetRange": "₹799 - ₹38,500",
-      "usages": [
-        {
-          "id": "strength_hypertrophy",
-          "label": "Strength & Muscle Building"
-        },
-        {
-          "id": "yoga_mobility",
-          "label": "Yoga, Stretching & Mobility"
-        },
-        {
-          "id": "compact_homegym",
-          "label": "Compact Home Gym Setup"
-        }
-      ],
-      "priorities": [
-        {
-          "id": "durability",
-          "label": "Steel / Material Durability"
-        },
-        {
-          "id": "adjustability",
-          "label": "Weight & Angle Adjustability"
-        },
-        {
-          "id": "safety_grip",
-          "label": "Non-Slip Grip & Joint Cushioning"
-        },
-        {
-          "id": "value",
-          "label": "Value for Money"
-        }
-      ],
-      "optionalSpecs": []
-    },
-    {
-      "id": "kitchen_chimneys",
-      "name": "Kitchen Chimneys",
-      "description": "Wall-mounted, autoclean, and filterless curved glass kitchen chimneys",
-      "icon": "Flame",
-      "budgetPresets": [
-        8000,
-        12000,
-        16000,
-        20000
-      ],
-      "defaultMax": 15000,
-      "budgetRange": "₹6,290 - ₹17,490",
-      "usages": [
-        {
-          "id": "heavy_frying",
-          "label": "Heavy Indian Frying & Grilling"
-        },
-        {
-          "id": "medium_cooking",
-          "label": "Daily 2-3 Burner Cooking"
-        },
-        {
-          "id": "quiet_operation",
-          "label": "Low Acoustic Noise Operation"
-        }
-      ],
-      "priorities": [
-        {
-          "id": "suction",
-          "label": "High Suction Capacity (m³/hr)"
-        },
-        {
-          "id": "cleaning",
-          "label": "Filterless & Heat Auto-Clean"
-        },
-        {
-          "id": "controls",
-          "label": "Touch & Motion Gesture Sensor"
-        },
-        {
-          "id": "value",
-          "label": "Value for Money"
-        }
-      ],
-      "optionalSpecs": []
-    },
-    {
-      "id": "nutrition",
-      "name": "Protein & Nutrition",
-      "description": "Whey protein isolate, concentrate, and 100% plant-based protein powders",
-      "icon": "CupSoda",
-      "budgetPresets": [
-        2000,
-        3500,
-        5000,
-        7500
-      ],
-      "defaultMax": 4500,
-      "budgetRange": "₹1,650 - ₹7,299",
-      "usages": [
-        {
-          "id": "muscle_recovery",
-          "label": "Post-Workout Muscle Recovery"
-        },
-        {
-          "id": "daily_intake",
-          "label": "Daily Protein Gap Supplementation"
-        },
-        {
-          "id": "vegan_clean",
-          "label": "100% Vegan Clean Plant Nutrition"
-        }
-      ],
-      "priorities": [
-        {
-          "id": "protein_yield",
-          "label": "High Protein per Serving (24g-30g)"
-        },
-        {
-          "id": "absorption",
-          "label": "High Digestibility & Low Bloat"
-        },
-        {
-          "id": "certification",
-          "label": "Third-Party Purity Testing (Labdoor/Informed)"
-        },
-        {
-          "id": "value",
-          "label": "Cost per Gram of Pure Protein"
-        }
-      ],
-      "optionalSpecs": []
-    },
-    {
-      "id": "electronics",
-      "name": "Electronics & Gadgets",
-      "description": "Laptops, audio, smart devices, and high-performance computing",
-      "icon": "Laptop",
-      "budgetPresets": [
-        40000,
-        75000,
-        120000,
-        160000
-      ],
-      "defaultMax": 140000,
-      "budgetRange": "₹26,990 - ₹1,49,990",
-      "usages": [
-        {
-          "id": "college",
-          "label": "College & Assignments"
-        },
-        {
-          "id": "programming",
-          "label": "Programming & Development"
-        },
-        {
-          "id": "ai_ml",
-          "label": "AI / ML Development"
-        },
-        {
-          "id": "gaming",
-          "label": "Gaming & 3D Rendering"
-        },
-        {
-          "id": "video_editing",
-          "label": "Video Editing & Content Creation"
-        },
-        {
-          "id": "office",
-          "label": "Business & Office Work"
-        }
-      ],
-      "priorities": [
-        {
-          "id": "performance",
-          "label": "Raw Performance (CPU/GPU)"
-        },
-        {
-          "id": "battery",
-          "label": "Battery Life & Endurance"
-        },
-        {
-          "id": "portability",
-          "label": "Portability & Lightweight"
-        },
-        {
-          "id": "ram",
-          "label": "High RAM / Multitasking"
-        },
-        {
-          "id": "build_quality",
-          "label": "Premium Build & Screen"
-        },
-        {
-          "id": "value",
-          "label": "Value for Money"
-        }
-      ],
-      "optionalSpecs": [
-        {
-          "id": "min_ram",
-          "label": "Minimum RAM",
-          "type": "select",
-          "options": [
-            "Any",
-            "8GB",
-            "16GB",
-            "32GB",
-            "64GB"
-          ]
-        },
-        {
-          "id": "preferred_os",
-          "label": "Operating System",
-          "type": "select",
-          "options": [
-            "Any",
-            "Windows",
-            "macOS",
-            "Linux"
-          ]
-        },
-        {
-          "id": "dedicated_gpu",
-          "label": "Dedicated GPU Required",
-          "type": "boolean"
-        },
-        {
-          "id": "preferred_brand",
-          "label": "Preferred Brand",
-          "type": "select",
-          "options": [
-            "Any",
-            "Apple",
-            "Dell",
-            "Lenovo",
-            "ASUS",
-            "Acer",
-            "Sony"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "footwear",
-      "name": "Fashion & Footwear",
-      "description": "Athletic shoes, everyday sneakers, and formal dress shoes",
-      "icon": "Footprints",
-      "budgetPresets": [
-        4000,
-        7000,
-        10000,
-        15000
-      ],
-      "defaultMax": 12000,
-      "budgetRange": "₹6,499 - ₹12,999",
-      "usages": [
-        {
-          "id": "running",
-          "label": "Running & Marathon Training"
-        },
-        {
-          "id": "walking",
-          "label": "Daily Walking & Commute"
-        },
-        {
-          "id": "college_daily",
-          "label": "Daily College & Campus Wear"
-        },
-        {
-          "id": "gym_training",
-          "label": "Gym & Cross Training"
-        },
-        {
-          "id": "formal",
-          "label": "Formal Events & Office Wear"
-        }
-      ],
-      "priorities": [
-        {
-          "id": "comfort",
-          "label": "All-Day Comfort & Cushioning"
-        },
-        {
-          "id": "durability",
-          "label": "Durability & Outsole Grip"
-        },
-        {
-          "id": "breathability",
-          "label": "Breathability & Lightweight"
-        },
-        {
-          "id": "arch_support",
-          "label": "Arch & Ankle Support"
-        },
-        {
-          "id": "aesthetic",
-          "label": "Style & Versatility"
-        },
-        {
-          "id": "value",
-          "label": "Value for Money"
-        }
-      ],
-      "optionalSpecs": [
-        {
-          "id": "waterproof",
-          "label": "Water Resistant / Waterproof",
-          "type": "boolean"
-        },
-        {
-          "id": "preferred_brand",
-          "label": "Preferred Brand",
-          "type": "select",
-          "options": [
-            "Any",
-            "Nike",
-            "Brooks",
-            "New Balance",
-            "Clarks",
-            "Asics"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "home_kitchen",
-      "name": "Home & Kitchen",
-      "description": "Smart kitchen appliances, coffee makers, and automated cleaning",
-      "icon": "Utensils",
-      "budgetPresets": [
-        8000,
-        25000,
-        70000,
-        120000
-      ],
-      "defaultMax": 75000,
-      "budgetRange": "₹9,999 - ₹1,19,000",
-      "usages": [
-        {
-          "id": "daily_cooking",
-          "label": "Quick Daily Meal Prep"
-        },
-        {
-          "id": "specialty_coffee",
-          "label": "Artisanal Coffee & Espresso"
-        },
-        {
-          "id": "automated_cleaning",
-          "label": "Hands-off Floor Cleaning"
-        },
-        {
-          "id": "healthy_baking",
-          "label": "Healthy Frying & Baking"
-        },
-        {
-          "id": "smoothies",
-          "label": "Heavy-Duty Blending & Shakes"
-        }
-      ],
-      "priorities": [
-        {
-          "id": "ease_of_cleaning",
-          "label": "Easy to Clean & Dishwasher Safe"
-        },
-        {
-          "id": "capacity",
-          "label": "Large Capacity for Family"
-        },
-        {
-          "id": "energy_efficiency",
-          "label": "Energy Efficiency & Low Noise"
-        },
-        {
-          "id": "durability",
-          "label": "Long-Term Reliability"
-        },
-        {
-          "id": "compact_size",
-          "label": "Compact Countertop Footprint"
-        },
-        {
-          "id": "value",
-          "label": "Value for Money"
-        }
-      ],
-      "optionalSpecs": [
-        {
-          "id": "smart_features",
-          "label": "Smart App / WiFi Connectivity",
-          "type": "boolean"
-        },
-        {
-          "id": "preferred_brand",
-          "label": "Preferred Brand",
-          "type": "select",
-          "options": [
-            "Any",
-            "Ninja",
-            "Breville",
-            "Roborock",
-            "Philips",
-            "Cosori"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "furniture",
-      "name": "Furniture & Home Office",
-      "description": "Ergonomic chairs, standing desks, and productivity setups",
-      "icon": "Armchair",
-      "budgetPresets": [
-        25000,
-        45000,
-        80000,
-        130000
-      ],
-      "defaultMax": 80000,
-      "budgetRange": "₹42,999 - ₹1,25,000",
-      "usages": [
-        {
-          "id": "remote_work",
-          "label": "Full-Time 8+ Hour Remote Work"
-        },
-        {
-          "id": "coding_setup",
-          "label": "Multi-Monitor Programming Setup"
-        },
-        {
-          "id": "student_study",
-          "label": "Student Study & Writing Desk"
-        },
-        {
-          "id": "compact_space",
-          "label": "Small Apartment / Compact Space"
-        }
-      ],
-      "priorities": [
-        {
-          "id": "ergonomics",
-          "label": "Ergonomic Lumbar & Posture Support"
-        },
-        {
-          "id": "adjustability",
-          "label": "Height & Armrest Adjustability"
-        },
-        {
-          "id": "sturdiness",
-          "label": "Sturdy Build & High Weight Limit"
-        },
-        {
-          "id": "assembly",
-          "label": "Easy Assembly"
-        },
-        {
-          "id": "aesthetic",
-          "label": "Modern Minimalist Design"
-        },
-        {
-          "id": "value",
-          "label": "Value for Money"
-        }
-      ],
-      "optionalSpecs": [
-        {
-          "id": "electric_motor",
-          "label": "Dual Electric Motors (for desks)",
-          "type": "boolean"
-        },
-        {
-          "id": "breathable_mesh",
-          "label": "Breathable Mesh Material",
-          "type": "boolean"
-        },
-        {
-          "id": "preferred_brand",
-          "label": "Preferred Brand",
-          "type": "select",
-          "options": [
-            "Any",
-            "Herman Miller",
-            "FLEXISPOT",
-            "Steelcase",
-            "Autonomous"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "fitness",
-      "name": "Fitness & Sports",
-      "description": "Smart trackers, home gym essentials, and recovery gear",
-      "icon": "Dumbbell",
-      "budgetPresets": [
-        15000,
-        30000,
-        40000,
-        50000
-      ],
-      "defaultMax": 40000,
-      "budgetRange": "₹38,500 - ₹39,990",
-      "usages": [
-        {
-          "id": "strength_training",
-          "label": "Strength & Muscle Building"
-        },
-        {
-          "id": "cardio_tracking",
-          "label": "Heart Rate & Marathon Pacing"
-        },
-        {
-          "id": "home_mobility",
-          "label": "Yoga, Mobility & Stretching"
-        },
-        {
-          "id": "outdoor_hiking",
-          "label": "Outdoor Trail & GPS Tracking"
-        }
-      ],
-      "priorities": [
-        {
-          "id": "accuracy",
-          "label": "Sensor & Metric Accuracy"
-        },
-        {
-          "id": "durability",
-          "label": "Sweat & Water Resistance"
-        },
-        {
-          "id": "battery_life",
-          "label": "Multi-Day Battery Life"
-        },
-        {
-          "id": "space_saving",
-          "label": "Compact / Space-Saving"
-        },
-        {
-          "id": "app_ecosystem",
-          "label": "No Subscription Required / Free App"
-        },
-        {
-          "id": "value",
-          "label": "Value for Money"
-        }
-      ],
-      "optionalSpecs": [
-        {
-          "id": "gps_built_in",
-          "label": "Built-in GPS",
-          "type": "boolean"
-        },
-        {
-          "id": "preferred_brand",
-          "label": "Preferred Brand",
-          "type": "select",
-          "options": [
-            "Any",
-            "Garmin",
-            "Bowflex",
-            "Fitbit",
-            "Apple"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "education",
-      "name": "Education & Student Essentials",
-      "description": "Note-taking tablets, e-readers, noise-reduction audio, and study tools",
-      "icon": "GraduationCap",
-      "budgetPresets": [
-        8000,
-        25000,
-        40000,
-        65000
-      ],
-      "defaultMax": 40000,
-      "budgetRange": "₹7,999 - ₹59,900",
-      "usages": [
-        {
-          "id": "handwritten_notes",
-          "label": "Digital Handwritten Notes & PDF Markup"
-        },
-        {
-          "id": "textbook_reading",
-          "label": "Extensive E-Book & Academic Reading"
-        },
-        {
-          "id": "library_focus",
-          "label": "Library & Quiet Study Focus"
-        },
-        {
-          "id": "lecture_recording",
-          "label": "Audio Recording & Transcription"
-        }
-      ],
-      "priorities": [
-        {
-          "id": "battery_life",
-          "label": "All-Day 10+ Hour Battery"
-        },
-        {
-          "id": "stylus_latency",
-          "label": "Low Latency Pen / Paper Feel"
-        },
-        {
-          "id": "portability",
-          "label": "Ultra Lightweight in Backpack"
-        },
-        {
-          "id": "eye_comfort",
-          "label": "Anti-Glare / Eye-Friendly Display"
-        },
-        {
-          "id": "audio_anc",
-          "label": "Active Noise Cancellation"
-        },
-        {
-          "id": "value",
-          "label": "Student Budget Friendly"
-        }
-      ],
-      "optionalSpecs": [
-        {
-          "id": "stylus_included",
-          "label": "Stylus Pen Included",
-          "type": "boolean"
-        },
-        {
-          "id": "preferred_brand",
-          "label": "Preferred Brand",
-          "type": "select",
-          "options": [
-            "Any",
-            "reMarkable",
-            "Apple",
-            "Anker",
-            "Sony"
-          ]
-        }
-      ]
-    },
-    {
       "id": "televisions",
       "name": "Televisions & Smart TVs",
       "description": "4K OLED, QLED, Mini-LED, and Smart 4K UHD TVs",
@@ -969,7 +177,7 @@
         180000
       ],
       "defaultMax": 90000,
-      "budgetRange": "₹28,990 - ₹1,89,990",
+      "budgetRange": "\u20b928,990 - \u20b91,89,990",
       "usages": [
         {
           "id": "cinema",
@@ -1050,7 +258,7 @@
         130000
       ],
       "defaultMax": 65000,
-      "budgetRange": "₹22,990 - ₹1,49,990",
+      "budgetRange": "\u20b922,990 - \u20b91,49,990",
       "usages": [
         {
           "id": "small_family",
@@ -1130,7 +338,7 @@
         70000
       ],
       "defaultMax": 40000,
-      "budgetRange": "₹16,990 - ₹69,990",
+      "budgetRange": "\u20b916,990 - \u20b969,990",
       "usages": [
         {
           "id": "daily_laundry",
@@ -1209,7 +417,7 @@
         75000
       ],
       "defaultMax": 48000,
-      "budgetRange": "₹29,990 - ₹72,990",
+      "budgetRange": "\u20b929,990 - \u20b972,990",
       "usages": [
         {
           "id": "bedroom",
@@ -1221,7 +429,7 @@
         },
         {
           "id": "extreme_heat",
-          "label": "High Ambient Heat (50°C+)"
+          "label": "High Ambient Heat (50\u00b0C+)"
         },
         {
           "id": "quiet_sleep",
@@ -1289,7 +497,7 @@
         110000
       ],
       "defaultMax": 65000,
-      "budgetRange": "₹18,990 - ₹1,19,900",
+      "budgetRange": "\u20b918,990 - \u20b91,19,900",
       "usages": [
         {
           "id": "digital_art",
@@ -1352,6 +560,534 @@
             "Dell",
             "LG",
             "Lenovo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "consumer_electronics",
+      "name": "Audio & Wearables",
+      "description": "Noise-cancelling headphones, wireless earbuds, smartwatches, and fitness trackers",
+      "icon": "Headphones",
+      "budgetPresets": [
+        8000,
+        15000,
+        25000,
+        35000
+      ],
+      "defaultMax": 25000,
+      "budgetRange": "\u20b99,495 - \u20b935,900",
+      "usages": [
+        {
+          "id": "remote_office",
+          "label": "Remote Office & Productivity"
+        },
+        {
+          "id": "gaming_highfps",
+          "label": "High-FPS Gaming & Visuals"
+        },
+        {
+          "id": "audiophile",
+          "label": "Critical Listening & Travel ANC"
+        }
+      ],
+      "priorities": [
+        {
+          "id": "audio_quality",
+          "label": "Acoustic Fidelity & Noise Isolation"
+        },
+        {
+          "id": "ergonomics",
+          "label": "Ergonomics & Typing / Mouse Feel"
+        },
+        {
+          "id": "battery_life",
+          "label": "Multi-Day Wireless Endurance"
+        },
+        {
+          "id": "value",
+          "label": "Value for Money"
+        }
+      ],
+      "optionalSpecs": []
+    },
+    {
+      "id": "fitness_equipment",
+      "name": "Fitness Equipment",
+      "description": "Home gym gear, treadmills, smart exercise bikes, and recovery equipment",
+      "icon": "Dumbbell",
+      "budgetPresets": [
+        1500,
+        5000,
+        12000,
+        25000
+      ],
+      "defaultMax": 15000,
+      "budgetRange": "\u20b9799 - \u20b938,500",
+      "usages": [
+        {
+          "id": "strength_hypertrophy",
+          "label": "Strength & Muscle Building"
+        },
+        {
+          "id": "yoga_mobility",
+          "label": "Yoga, Stretching & Mobility"
+        },
+        {
+          "id": "compact_homegym",
+          "label": "Compact Home Gym Setup"
+        }
+      ],
+      "priorities": [
+        {
+          "id": "durability",
+          "label": "Steel / Material Durability"
+        },
+        {
+          "id": "adjustability",
+          "label": "Weight & Angle Adjustability"
+        },
+        {
+          "id": "safety_grip",
+          "label": "Non-Slip Grip & Joint Cushioning"
+        },
+        {
+          "id": "value",
+          "label": "Value for Money"
+        }
+      ],
+      "optionalSpecs": []
+    },
+    {
+      "id": "kitchen_chimneys",
+      "name": "Kitchen Chimneys",
+      "description": "Filterless, auto-clean, curved glass, and high-suction kitchen chimneys",
+      "icon": "Flame",
+      "budgetPresets": [
+        8000,
+        12000,
+        16000,
+        20000
+      ],
+      "defaultMax": 15000,
+      "budgetRange": "\u20b96,290 - \u20b917,490",
+      "usages": [
+        {
+          "id": "heavy_frying",
+          "label": "Heavy Indian Frying & Grilling"
+        },
+        {
+          "id": "medium_cooking",
+          "label": "Daily 2-3 Burner Cooking"
+        },
+        {
+          "id": "quiet_operation",
+          "label": "Low Acoustic Noise Operation"
+        }
+      ],
+      "priorities": [
+        {
+          "id": "suction",
+          "label": "High Suction Capacity (m\u00b3/hr)"
+        },
+        {
+          "id": "cleaning",
+          "label": "Filterless & Heat Auto-Clean"
+        },
+        {
+          "id": "controls",
+          "label": "Touch & Motion Gesture Sensor"
+        },
+        {
+          "id": "value",
+          "label": "Value for Money"
+        }
+      ],
+      "optionalSpecs": []
+    },
+    {
+      "id": "books",
+      "name": "Books & Study Materials",
+      "description": "Academic textbooks, reference manuals, competitive exam prep, and professional literature",
+      "icon": "BookOpen",
+      "budgetPresets": [
+        800,
+        1500,
+        2500,
+        4500
+      ],
+      "defaultMax": 3000,
+      "budgetRange": "\u20b9890 - \u20b94,450",
+      "usages": [
+        {
+          "id": "self_study",
+          "label": "Self-Paced Hands-On Learning"
+        },
+        {
+          "id": "college_curriculum",
+          "label": "University Semester Coursework"
+        },
+        {
+          "id": "exam_prep",
+          "label": "GATE & Competitive Exam Prep"
+        }
+      ],
+      "priorities": [
+        {
+          "id": "depth",
+          "label": "Comprehensive Theory & Depth"
+        },
+        {
+          "id": "practical",
+          "label": "Practical Exercises & Code Examples"
+        },
+        {
+          "id": "reputation",
+          "label": "Standard Author & Academic Rigour"
+        },
+        {
+          "id": "value",
+          "label": "Value for Price"
+        }
+      ],
+      "optionalSpecs": []
+    },
+    {
+      "id": "magazines",
+      "name": "Magazines & Periodicals",
+      "description": "Technology reviews, business intelligence, scientific journals, and global periodicals",
+      "icon": "Newspaper",
+      "budgetPresets": [
+        2500,
+        3500,
+        4500,
+        6000
+      ],
+      "defaultMax": 4500,
+      "budgetRange": "\u20b92,400 - \u20b95,999",
+      "usages": [
+        {
+          "id": "tech_insights",
+          "label": "Deep Technology & AI Trends"
+        },
+        {
+          "id": "business_strategy",
+          "label": "Global Markets & Executive Strategy"
+        },
+        {
+          "id": "scientific_research",
+          "label": "Scientific Discoveries & Nature"
+        }
+      ],
+      "priorities": [
+        {
+          "id": "depth",
+          "label": "In-Depth Investigative Journalism"
+        },
+        {
+          "id": "frequency",
+          "label": "Issue Frequency & Timeliness"
+        },
+        {
+          "id": "prestige",
+          "label": "Global Editorial Reputation"
+        },
+        {
+          "id": "value",
+          "label": "Annual Cost per Issue"
+        }
+      ],
+      "optionalSpecs": []
+    },
+    {
+      "id": "nutrition",
+      "name": "Protein & Nutrition",
+      "description": "Lab-certified whey isolate, plant protein, creatine, and sports performance nutrition",
+      "icon": "ShieldCheck",
+      "budgetPresets": [
+        2000,
+        3500,
+        5000,
+        7500
+      ],
+      "defaultMax": 4500,
+      "budgetRange": "\u20b91,650 - \u20b97,299",
+      "usages": [
+        {
+          "id": "muscle_recovery",
+          "label": "Post-Workout Muscle Recovery"
+        },
+        {
+          "id": "daily_intake",
+          "label": "Daily Protein Gap Supplementation"
+        },
+        {
+          "id": "vegan_clean",
+          "label": "100% Vegan Clean Plant Nutrition"
+        }
+      ],
+      "priorities": [
+        {
+          "id": "protein_yield",
+          "label": "High Protein per Serving (24g-30g)"
+        },
+        {
+          "id": "absorption",
+          "label": "High Digestibility & Low Bloat"
+        },
+        {
+          "id": "certification",
+          "label": "Third-Party Purity Testing (Labdoor/Informed)"
+        },
+        {
+          "id": "value",
+          "label": "Cost per Gram of Pure Protein"
+        }
+      ],
+      "optionalSpecs": []
+    },
+    {
+      "id": "home_kitchen",
+      "name": "Home & Kitchen Appliances",
+      "description": "Smart air fryers, multi-cookers, espresso machines, and high-performance blenders",
+      "icon": "Home",
+      "budgetPresets": [
+        8000,
+        25000,
+        70000,
+        120000
+      ],
+      "defaultMax": 75000,
+      "budgetRange": "\u20b99,999 - \u20b91,19,000",
+      "usages": [
+        {
+          "id": "daily_cooking",
+          "label": "Quick Daily Meal Prep"
+        },
+        {
+          "id": "specialty_coffee",
+          "label": "Artisanal Coffee & Espresso"
+        },
+        {
+          "id": "automated_cleaning",
+          "label": "Hands-off Floor Cleaning"
+        },
+        {
+          "id": "healthy_baking",
+          "label": "Healthy Frying & Baking"
+        },
+        {
+          "id": "smoothies",
+          "label": "Heavy-Duty Blending & Shakes"
+        }
+      ],
+      "priorities": [
+        {
+          "id": "ease_of_cleaning",
+          "label": "Easy to Clean & Dishwasher Safe"
+        },
+        {
+          "id": "capacity",
+          "label": "Large Capacity for Family"
+        },
+        {
+          "id": "energy_efficiency",
+          "label": "Energy Efficiency & Low Noise"
+        },
+        {
+          "id": "durability",
+          "label": "Long-Term Reliability"
+        },
+        {
+          "id": "compact_size",
+          "label": "Compact Countertop Footprint"
+        },
+        {
+          "id": "value",
+          "label": "Value for Money"
+        }
+      ],
+      "optionalSpecs": [
+        {
+          "id": "smart_features",
+          "label": "Smart App / WiFi Connectivity",
+          "type": "boolean"
+        },
+        {
+          "id": "preferred_brand",
+          "label": "Preferred Brand",
+          "type": "select",
+          "options": [
+            "Any",
+            "Ninja",
+            "Breville",
+            "Roborock",
+            "Philips",
+            "Cosori"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "furniture",
+      "name": "Furniture & Home Office",
+      "description": "Ergonomic executive chairs, dual-motor standing desks, and lumbar workstations",
+      "icon": "Armchair",
+      "budgetPresets": [
+        25000,
+        45000,
+        80000,
+        130000
+      ],
+      "defaultMax": 80000,
+      "budgetRange": "\u20b942,999 - \u20b91,25,000",
+      "usages": [
+        {
+          "id": "remote_work",
+          "label": "Full-Time 8+ Hour Remote Work"
+        },
+        {
+          "id": "coding_setup",
+          "label": "Multi-Monitor Programming Setup"
+        },
+        {
+          "id": "student_study",
+          "label": "Student Study & Writing Desk"
+        },
+        {
+          "id": "compact_space",
+          "label": "Small Apartment / Compact Space"
+        }
+      ],
+      "priorities": [
+        {
+          "id": "ergonomics",
+          "label": "Ergonomic Lumbar & Posture Support"
+        },
+        {
+          "id": "adjustability",
+          "label": "Height & Armrest Adjustability"
+        },
+        {
+          "id": "sturdiness",
+          "label": "Sturdy Build & High Weight Limit"
+        },
+        {
+          "id": "assembly",
+          "label": "Easy Assembly"
+        },
+        {
+          "id": "aesthetic",
+          "label": "Modern Minimalist Design"
+        },
+        {
+          "id": "value",
+          "label": "Value for Money"
+        }
+      ],
+      "optionalSpecs": [
+        {
+          "id": "electric_motor",
+          "label": "Dual Electric Motors (for desks)",
+          "type": "boolean"
+        },
+        {
+          "id": "breathable_mesh",
+          "label": "Breathable Mesh Material",
+          "type": "boolean"
+        },
+        {
+          "id": "preferred_brand",
+          "label": "Preferred Brand",
+          "type": "select",
+          "options": [
+            "Any",
+            "Herman Miller",
+            "FLEXISPOT",
+            "Steelcase",
+            "Autonomous"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "footwear",
+      "name": "Fashion & Footwear",
+      "description": "Marathon distance running shoes, carbon-plated racers, and cross-training shoes",
+      "icon": "Footprints",
+      "budgetPresets": [
+        4000,
+        7000,
+        10000,
+        15000
+      ],
+      "defaultMax": 12000,
+      "budgetRange": "\u20b96,499 - \u20b912,999",
+      "usages": [
+        {
+          "id": "running",
+          "label": "Running & Marathon Training"
+        },
+        {
+          "id": "walking",
+          "label": "Daily Walking & Commute"
+        },
+        {
+          "id": "college_daily",
+          "label": "Daily College & Campus Wear"
+        },
+        {
+          "id": "gym_training",
+          "label": "Gym & Cross Training"
+        },
+        {
+          "id": "formal",
+          "label": "Formal Events & Office Wear"
+        }
+      ],
+      "priorities": [
+        {
+          "id": "comfort",
+          "label": "All-Day Comfort & Cushioning"
+        },
+        {
+          "id": "durability",
+          "label": "Durability & Outsole Grip"
+        },
+        {
+          "id": "breathability",
+          "label": "Breathability & Lightweight"
+        },
+        {
+          "id": "arch_support",
+          "label": "Arch & Ankle Support"
+        },
+        {
+          "id": "aesthetic",
+          "label": "Style & Versatility"
+        },
+        {
+          "id": "value",
+          "label": "Value for Money"
+        }
+      ],
+      "optionalSpecs": [
+        {
+          "id": "waterproof",
+          "label": "Water Resistant / Waterproof",
+          "type": "boolean"
+        },
+        {
+          "id": "preferred_brand",
+          "label": "Preferred Brand",
+          "type": "select",
+          "options": [
+            "Any",
+            "Nike",
+            "Brooks",
+            "New Balance",
+            "Clarks",
+            "Asics"
           ]
         }
       ]

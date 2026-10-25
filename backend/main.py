@@ -22,6 +22,8 @@ from recommendation_engine import RecommendationEngine
 from category_validator import CategoryValidator, infer_subcategory, PRODUCT_SUBCATEGORIES
 from topsis_engine import TOPSISRankingEngine
 from absa_engine import ABSAEngine
+from category_registry import normalize_category_id, CANONICAL_CATEGORIES, get_all_canonical_categories
+from image_pipeline import ImagePipeline
 
 app = FastAPI(
     title="WORTHLY API",
@@ -156,6 +158,15 @@ def health_check():
 @app.get("/api/categories")
 def get_categories():
     return CATEGORIES
+
+@app.get("/api/categories/canonical")
+def get_canonical_categories_endpoint():
+    return get_all_canonical_categories()
+
+@app.get("/api/images/manifest")
+def get_image_manifest():
+    manifest_path = os.path.join(DATA_DIR, "image_manifest.json")
+    return load_json(manifest_path, {"version": "1.0", "images": []})
 
 @app.get("/api/products")
 def list_products(

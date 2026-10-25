@@ -1473,6 +1473,10 @@ def generate_full_master_dataset():
         if p["id"] not in seen_ids:
             seen_ids.add(p["id"])
             p_copy = dict(p)
+            if p_copy.get("category") == "fitness":
+                p_copy["category"] = "fitness_equipment"
+            elif p_copy.get("category") == "education":
+                p_copy["category"] = "books"
             if not p_copy.get("price_status"):
                 p_copy["price_status"] = "verified" if float(p_copy.get("price", 0)) > 0 else "unavailable"
             unified_products.append(p_copy)

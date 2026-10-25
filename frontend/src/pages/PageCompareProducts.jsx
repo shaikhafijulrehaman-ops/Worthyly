@@ -29,6 +29,7 @@ import {
 import { formatINR } from '../utils/currency';
 import ProductImage from '../components/ProductImage';
 import { api } from '../services/api';
+import { getCanonicalCategories, normalizeCategoryId, getCanonicalCategory } from '../services/categoryRegistry';
 
 const SAMPLE_URL_SETS = [
   {
@@ -218,15 +219,26 @@ export default function PageCompareProducts({
     }
   }, [comparedProducts, comparisonResults]);
 
-  // Categories list for Option B
+  // Categories list for Option B: Each canonical category appears exactly once
   const availableCategories = useMemo(() => {
-    if (categories && categories.length > 0) return categories;
-    const cats = Array.from(new Set(products.map((p) => p.category).filter(Boolean)));
-    return cats.map((c) => ({
-      id: c,
-      name: c.replace(/_/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase())
-    }));
-  }, [categories, products]);
+    const raw = categories && categories.length > 0 ? categories : getCanonicalCategories();
+    const seen = new Set();
+    const list = [];
+    for (const c of raw) {
+      const normId = normalizeCategoryId(c.id || c);
+      if (!seen.has(normId)) {
+        seen.add(normId);
+        const canon = getCanonicalCategory(normId);
+        list.push({
+          id: normId,
+          name: canon?.name || c.name || normId.replace(/_/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase()),
+          description: canon?.description || c.description,
+          icon: canon?.icon || c.icon
+        });
+      }
+    }
+    return list;
+  }, [categories]);
 
   // Available brands in the active category
   const availableBrands = useMemo(() => {

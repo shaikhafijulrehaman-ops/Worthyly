@@ -19,6 +19,7 @@ import {
 import { api } from '../services/api';
 import { formatINR } from '../utils/currency';
 import ProductImage from '../components/ProductImage';
+import { getCanonicalCategories, normalizeCategoryId, getCanonicalCategory } from '../services/categoryRegistry';
 
 export default function PageBudgetFinder({
   categories = [],
@@ -30,6 +31,25 @@ export default function PageBudgetFinder({
 }) {
   const [selectedCategory, setSelectedCategory] = useState('electronics');
   const [budget, setBudget] = useState(135000);
+
+  const canonicalCategories = React.useMemo(() => {
+    const raw = categories && categories.length > 0 ? categories : getCanonicalCategories();
+    const seen = new Set();
+    const list = [];
+    for (const c of raw) {
+      const normId = normalizeCategoryId(c.id || c);
+      if (!seen.has(normId)) {
+        seen.add(normId);
+        const canon = getCanonicalCategory(normId);
+        list.push({
+          id: normId,
+          name: canon?.name || c.name || normId,
+          defaultMax: canon?.defaultMax || c.defaultMax || 50000
+        });
+      }
+    }
+    return list;
+  }, [categories]);
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -87,7 +107,7 @@ export default function PageBudgetFinder({
               onChange={(e) => setSelectedCategory(e.target.value)}
               className="w-full px-4 py-2.5 rounded-xl glass-input font-semibold text-xs sm:text-sm text-[#18213A]"
             >
-              {categories.map((c) => (
+              {canonicalCategories.map((c) => (
                 <option key={c.id} value={c.id}>
                   {c.name}
                 </option>

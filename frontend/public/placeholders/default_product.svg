@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg_default_product" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="acc_default_product" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="16" fill="url(#bg_default_product)" stroke="#334155" stroke-width="2"/>
+  <circle cx="200" cy="120" r="48" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" transform="translate(186, 106) scale(1.15)" fill="none" stroke="url(#acc_default_product)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="200" y="200" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#f8fafc" letter-spacing="0.5">Product Image Pending</text>
+  <text x="200" y="222" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#94a3b8">Verified Image Pending • Specification Confirmed</text>
+  <rect x="140" y="240" width="120" height="20" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="200" y="254" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700" fill="#38bdf8" letter-spacing="1">WORTHLY VERIFIED</text>
+</svg>

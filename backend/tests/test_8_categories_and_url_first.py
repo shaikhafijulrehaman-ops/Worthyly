@@ -15,7 +15,7 @@ import json
 from fastapi.testclient import TestClient
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from main import app
+from main import app, evaluate_url_comparison, CompareEvaluateRequest
 from category_validator import CategoryValidator
 from topsis_engine import TOPSISRankingEngine
 
@@ -155,36 +155,32 @@ def test_direct_topsis_evaluation_without_survey(catalog, topsis):
 
 # 5. Full API endpoint test for URL evaluation without survey
 def test_evaluate_api_endpoint_url_first():
-    response = client.post(
-        "/api/compare/evaluate",
-        json={
-            "items": [
-                {
-                    "id": "phone-001",
-                    "name": "Apple iPhone 16 Pro",
-                    "brand": "Apple",
-                    "price": 119900.0,
-                    "category": "smartphones",
-                    "subcategory": "flagship_smartphones",
-                    "specs": {"processor": "A18 Pro", "ram": "8GB"}
-                },
-                {
-                    "id": "phone-003",
-                    "name": "Samsung Galaxy S24 Ultra",
-                    "brand": "Samsung",
-                    "price": 129999.0,
-                    "category": "smartphones",
-                    "subcategory": "flagship_smartphones",
-                    "specs": {"processor": "Snapdragon 8 Gen 3", "ram": "12GB"}
-                }
-            ],
-            "category": "smartphones",
-            "priorities": ["performance"],
-            "allow_budget_flexibility": True
-        }
+    req = CompareEvaluateRequest(
+        items=[
+            {
+                "id": "phone-001",
+                "name": "Apple iPhone 16 Pro",
+                "brand": "Apple",
+                "price": 119900.0,
+                "category": "smartphones",
+                "subcategory": "flagship_smartphones",
+                "specs": {"processor": "A18 Pro", "ram": "8GB"}
+            },
+            {
+                "id": "phone-003",
+                "name": "Samsung Galaxy S24 Ultra",
+                "brand": "Samsung",
+                "price": 129999.0,
+                "category": "smartphones",
+                "subcategory": "flagship_smartphones",
+                "specs": {"processor": "Snapdragon 8 Gen 3", "ram": "12GB"}
+            }
+        ],
+        category="smartphones",
+        priorities=["performance"],
+        allow_budget_flexibility=True
     )
-    assert response.status_code == 200
-    data = response.json()
+    data = evaluate_url_comparison(req)
     assert data["status"] == "success"
     assert len(data["ranked_products"]) == 2
     assert data["ranked_products"][0]["role"] == "BEST OVERALL MATCH"
