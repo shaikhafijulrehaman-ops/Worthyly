@@ -297,7 +297,10 @@ export default function App() {
 
         {activeTab === 'compare' && (
           <PageCompareProducts
+            products={products}
+            categories={categories}
             comparedProducts={comparedProducts}
+            onAddToCompare={handleAddToCompare}
             onRemoveFromCompare={handleRemoveFromCompare}
             onClearCompare={handleClearCompare}
             onSaveComparison={handleSaveComparison}

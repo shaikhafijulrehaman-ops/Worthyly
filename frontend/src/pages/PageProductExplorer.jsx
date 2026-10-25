@@ -27,7 +27,12 @@ import {
   Newspaper,
   Headphones,
   Flame,
-  Package
+  Package,
+  Tv,
+  Wind,
+  Disc,
+  Tablet,
+  Box
 } from 'lucide-react';
 import { formatINR } from '../utils/currency';
 import ProductImage from '../components/ProductImage';
@@ -36,6 +41,11 @@ const CATEGORY_ICONS = {
   all: LayoutGrid,
   smartphones: Smartphone,
   laptops: Laptop,
+  televisions: Tv,
+  refrigerators: Box,
+  washing_machines: Disc,
+  air_conditioners: Wind,
+  tablets_monitors: Tablet,
   books: BookOpen,
   magazines: Newspaper,
   consumer_electronics: Headphones,
@@ -101,10 +111,15 @@ export default function PageProductExplorer({
       const q = search.toLowerCase();
       list = list.filter(
         (p) =>
-          p.name.toLowerCase().includes(q) ||
-          p.brand.toLowerCase().includes(q) ||
+          p.name?.toLowerCase().includes(q) ||
+          p.brand?.toLowerCase().includes(q) ||
+          p.exact_model?.toLowerCase().includes(q) ||
+          p.model?.toLowerCase().includes(q) ||
+          p.variant?.toLowerCase().includes(q) ||
+          p.category?.toLowerCase().includes(q) ||
+          p.subcategory?.toLowerCase().includes(q) ||
           Object.values(p.specs || {}).some((v) => String(v).toLowerCase().includes(q)) ||
-          p.features?.some((f) => f.toLowerCase().includes(q))
+          p.features?.some((f) => String(f).toLowerCase().includes(q))
       );
     }
 

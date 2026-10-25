@@ -380,6 +380,7 @@ def evaluate_url_comparison(req: CompareEvaluateRequest):
 
     return {
         **topsis_res,
+        "total_compared": len(hydrated_products),
         "category": req.category,
         "aspect_sentiments": aspect_sentiments_by_id
     }

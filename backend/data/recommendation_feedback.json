@@ -1,5 +1,152 @@
 [
   {
+    "id": "fb-daa93e91",
+    "sessionId": "test-sess-001",
+    "productId": "elec-001",
+    "productName": "Dell XPS 15 9530",
+    "userId": "test-user-99",
+    "metRequirements": true,
+    "satisfactionScore": 5,
+    "wouldRecommend": true,
+    "aspectsBetter": [
+      "performance",
+      "display"
+    ],
+    "aspectsWorse": [
+      "thermals"
+    ],
+    "feedbackNotes": "Exceeded my expectations for local container runs.",
+    "isVerifiedBuyer": true,
+    "algorithmVersion": "topsis_v1",
+    "createdAt": "2026-10-25T08:06:19.301561+00:00"
+  },
+  {
+    "id": "fb-1fe87f3b",
+    "sessionId": "test-sess-001",
+    "productId": "elec-001",
+    "productName": "Dell XPS 15 9530",
+    "userId": "test-user-99",
+    "metRequirements": true,
+    "satisfactionScore": 5,
+    "wouldRecommend": true,
+    "aspectsBetter": [
+      "performance",
+      "display"
+    ],
+    "aspectsWorse": [
+      "thermals"
+    ],
+    "feedbackNotes": "Exceeded my expectations for local container runs.",
+    "isVerifiedBuyer": true,
+    "algorithmVersion": "topsis_v1",
+    "createdAt": "2026-10-25T08:04:28.900131+00:00"
+  },
+  {
+    "id": "fb-01912c73",
+    "sessionId": "test-sess-001",
+    "productId": "elec-001",
+    "productName": "Dell XPS 15 9530",
+    "userId": "test-user-99",
+    "metRequirements": true,
+    "satisfactionScore": 5,
+    "wouldRecommend": true,
+    "aspectsBetter": [
+      "performance",
+      "display"
+    ],
+    "aspectsWorse": [
+      "thermals"
+    ],
+    "feedbackNotes": "Exceeded my expectations for local container runs.",
+    "isVerifiedBuyer": true,
+    "algorithmVersion": "topsis_v1",
+    "createdAt": "2026-10-25T08:02:27.482734+00:00"
+  },
+  {
+    "id": "fb-ee96b036",
+    "sessionId": "test-sess-001",
+    "productId": "elec-001",
+    "productName": "Dell XPS 15 9530",
+    "userId": "test-user-99",
+    "metRequirements": true,
+    "satisfactionScore": 5,
+    "wouldRecommend": true,
+    "aspectsBetter": [
+      "performance",
+      "display"
+    ],
+    "aspectsWorse": [
+      "thermals"
+    ],
+    "feedbackNotes": "Exceeded my expectations for local container runs.",
+    "isVerifiedBuyer": true,
+    "algorithmVersion": "topsis_v1",
+    "createdAt": "2026-10-25T07:55:37.652398+00:00"
+  },
+  {
+    "id": "fb-054fb33e",
+    "sessionId": "test-sess-001",
+    "productId": "elec-001",
+    "productName": "Dell XPS 15 9530",
+    "userId": "test-user-99",
+    "metRequirements": true,
+    "satisfactionScore": 5,
+    "wouldRecommend": true,
+    "aspectsBetter": [
+      "performance",
+      "display"
+    ],
+    "aspectsWorse": [
+      "thermals"
+    ],
+    "feedbackNotes": "Exceeded my expectations for local container runs.",
+    "isVerifiedBuyer": true,
+    "algorithmVersion": "topsis_v1",
+    "createdAt": "2026-10-24T10:53:21.565897+00:00"
+  },
+  {
+    "id": "fb-2abcbfdf",
+    "sessionId": "test-sess-001",
+    "productId": "elec-001",
+    "productName": "Dell XPS 15 9530",
+    "userId": "test-user-99",
+    "metRequirements": true,
+    "satisfactionScore": 5,
+    "wouldRecommend": true,
+    "aspectsBetter": [
+      "performance",
+      "display"
+    ],
+    "aspectsWorse": [
+      "thermals"
+    ],
+    "feedbackNotes": "Exceeded my expectations for local container runs.",
+    "isVerifiedBuyer": true,
+    "algorithmVersion": "topsis_v1",
+    "createdAt": "2026-10-24T10:50:56.436987+00:00"
+  },
+  {
+    "id": "fb-e425bb20",
+    "sessionId": "test-sess-001",
+    "productId": "elec-001",
+    "productName": "Dell XPS 15 9530",
+    "userId": "test-user-99",
+    "metRequirements": true,
+    "satisfactionScore": 5,
+    "wouldRecommend": true,
+    "aspectsBetter": [
+      "performance",
+      "display"
+    ],
+    "aspectsWorse": [
+      "thermals"
+    ],
+    "feedbackNotes": "Exceeded my expectations for local container runs.",
+    "isVerifiedBuyer": true,
+    "algorithmVersion": "topsis_v1",
+    "createdAt": "2026-10-24T10:43:26.825833+00:00"
+  },
+  {
     "id": "fb-65417ae1",
     "sessionId": "test-sess-001",
     "productId": "elec-001",

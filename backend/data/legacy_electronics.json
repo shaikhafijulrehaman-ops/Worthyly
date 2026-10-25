@@ -1,0 +1,421 @@
+[
+  {
+    "id": "elec-001",
+    "name": "Dell XPS 15 9530",
+    "category": "electronics",
+    "brand": "Dell",
+    "price": 149990.0,
+    "currency": "INR",
+    "lastVerified": "2026-10-15T14:30:00Z",
+    "lastVerifiedAt": "2026-10-15T14:30:00Z",
+    "source": "Dell India Official Store & Authorized Retailers",
+    "productSourceUrl": "https://www.dell.com/en-in/shop/dell-laptops/xps-15-laptop/spd/xps-15-9530-laptop",
+    "officialProductUrl": "https://www.dell.com/en-in/shop/dell-laptops/xps-15-laptop/spd/xps-15-9530-laptop",
+    "retailerOffers": [
+      {
+        "retailerName": "Dell Official Store",
+        "productUrl": "https://www.dell.com/en-in/shop/dell-laptops/xps-15-laptop/spd/xps-15-9530-laptop",
+        "price": 149990.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-15T14:30:00Z"
+      },
+      {
+        "retailerName": "Amazon India",
+        "productUrl": "https://www.amazon.in/dp/B0C39XPS15",
+        "price": 151490.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-15T14:30:00Z"
+      }
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.6,
+    "reviewCount": 342,
+    "verifiedPurchaseReviewCount": 289,
+    "specs": {
+      "processor": "Intel Core i7-13700H (14 cores, up to 5.0 GHz)",
+      "ram": "32GB DDR5 4800MHz",
+      "storage": "1TB M.2 PCIe NVMe SSD",
+      "gpu": "NVIDIA GeForce RTX 4060 8GB GDDR6",
+      "display": "15.6\" FHD+ (1920x1200) InfinityEdge 500 nits",
+      "battery": "86 Wh (Up to 10 hours mixed use)",
+      "weight": "1.86 kg (4.1 lbs)",
+      "os": "Windows 11 Pro",
+      "ports": "2x Thunderbolt 4, 1x USB-C 3.2, SD Card Reader, 3.5mm jack"
+    },
+    "intendedUsageTags": [
+      "programming",
+      "ai_ml",
+      "video_editing",
+      "office",
+      "college"
+    ],
+    "priorityAffinities": {
+      "performance": 0.94,
+      "battery": 0.78,
+      "portability": 0.75,
+      "ram": 0.95,
+      "build_quality": 0.96,
+      "value": 0.82
+    },
+    "features": [
+      "CNC machined aluminum chassis with carbon-fiber palm rest",
+      "Dedicated RTX 4060 GPU suitable for local LLM inference and 4K export",
+      "Dual fan thermal architecture with rear hidden vents"
+    ],
+    "pros": [
+      "Exceptional multi-core performance for coding and containerization",
+      "Stunning 16:10 high-brightness display with 100% sRGB",
+      "Full-sized SD card slot and excellent glass precision touchpad"
+    ],
+    "cons": [
+      "Fans become audible under sustained heavy AI/ML compute workloads",
+      "Slightly heavier than ultraportables at 1.86 kg",
+      "No native full-sized USB-A port (dongle required)"
+    ],
+    "price_status": "verified"
+  },
+  {
+    "id": "elec-002",
+    "name": "Apple MacBook Air 15\" (M3)",
+    "category": "electronics",
+    "brand": "Apple",
+    "price": 124900.0,
+    "currency": "INR",
+    "lastVerified": "2026-10-15T12:00:00Z",
+    "lastVerifiedAt": "2026-10-15T12:00:00Z",
+    "source": "Apple India Verified Pricing Index",
+    "productSourceUrl": "https://www.apple.com/in/macbook-air/",
+    "officialProductUrl": "https://www.apple.com/in/macbook-air/",
+    "retailerOffers": [
+      {
+        "retailerName": "Apple Store India",
+        "productUrl": "https://www.apple.com/in/shop/buy-mac/macbook-air/15-inch-m3",
+        "price": 124900.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-15T12:00:00Z"
+      },
+      {
+        "retailerName": "Croma / Amazon India",
+        "productUrl": "https://www.amazon.in/dp/B0CX23M3AIR",
+        "price": 122900.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-15T12:00:00Z"
+      }
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.8,
+    "reviewCount": 612,
+    "verifiedPurchaseReviewCount": 540,
+    "specs": {
+      "processor": "Apple M3 (8-core CPU with 4 performance and 4 efficiency cores)",
+      "ram": "16GB Unified Memory",
+      "storage": "512GB High-speed SSD",
+      "gpu": "10-core Integrated GPU with Hardware Ray Tracing",
+      "display": "15.3\" Liquid Retina display (2880x1864) 500 nits True Tone",
+      "battery": "66.5 Wh (Up to 18 hours wireless web)",
+      "weight": "1.51 kg (3.3 lbs)",
+      "os": "macOS Sonoma",
+      "ports": "MagSafe 3, 2x Thunderbolt / USB 4, 3.5mm headphone jack"
+    },
+    "intendedUsageTags": [
+      "college",
+      "programming",
+      "office",
+      "video_editing"
+    ],
+    "priorityAffinities": {
+      "performance": 0.88,
+      "battery": 0.98,
+      "portability": 0.93,
+      "ram": 0.82,
+      "build_quality": 0.98,
+      "value": 0.9
+    },
+    "features": [
+      "Fanless silent design even under continuous load",
+      "Class-leading battery life exceeding 16+ real-world hours",
+      "Support for up to two external displays with laptop lid closed"
+    ],
+    "pros": [
+      "Completely silent operation with zero fan noise",
+      "Sublime battery endurance and lightweight 11.5mm thin unibody",
+      "Best-in-class keyboard, audio speakers, and trackpad haptics"
+    ],
+    "cons": [
+      "Thermal throttling can occur during extended 30+ minute render passes",
+      "Memory and storage are non-upgradable after purchase",
+      "Limited port selection without an external dock"
+    ],
+    "price_status": "verified"
+  },
+  {
+    "id": "elec-003",
+    "name": "Lenovo Legion Pro 5 Gen 9",
+    "category": "electronics",
+    "brand": "Lenovo",
+    "price": 129990.0,
+    "currency": "INR",
+    "lastVerified": "2026-10-15T15:00:00Z",
+    "lastVerifiedAt": "2026-10-15T15:00:00Z",
+    "source": "Lenovo Direct India Verified",
+    "productSourceUrl": "https://www.lenovo.com/in/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-5-gen-9",
+    "officialProductUrl": "https://www.lenovo.com/in/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-5-gen-9",
+    "retailerOffers": [
+      {
+        "retailerName": "Lenovo India Store",
+        "productUrl": "https://www.lenovo.com/in/en/p/laptops/legion-laptops/legion-pro-series/legion-pro-5-gen-9",
+        "price": 129990.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-15T15:00:00Z"
+      }
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.7,
+    "reviewCount": 425,
+    "verifiedPurchaseReviewCount": 380,
+    "specs": {
+      "processor": "AMD Ryzen 7 7745HX (8 cores / 16 threads, up to 5.1 GHz)",
+      "ram": "32GB DDR5 5200MHz (Dual Channel)",
+      "storage": "1TB PCIe Gen 4 SSD",
+      "gpu": "NVIDIA GeForce RTX 4070 8GB (140W TGP)",
+      "display": "16\" WQXGA (2560x1600) IPS 240Hz 500 nits 100% sRGB",
+      "battery": "80 Wh (Up to 5.5 hours hybrid mode)",
+      "weight": "2.5 kg (5.5 lbs)",
+      "os": "Windows 11 Home",
+      "ports": "4x USB-A 3.2, 2x USB-C 3.2, HDMI 2.1, RJ-45 Ethernet, 3.5mm jack"
+    },
+    "intendedUsageTags": [
+      "gaming",
+      "ai_ml",
+      "programming",
+      "video_editing"
+    ],
+    "priorityAffinities": {
+      "performance": 0.98,
+      "battery": 0.55,
+      "portability": 0.52,
+      "ram": 0.96,
+      "build_quality": 0.88,
+      "value": 0.94
+    },
+    "features": [
+      "Legion Coldfront 5.0 vapor-chamber assisted cooling system",
+      "Lenovo LA1 AI chip for dynamic CPU/GPU wattage tuning",
+      "TrueStrike keyboard with 1.5mm key travel and per-key RGB"
+    ],
+    "pros": [
+      "Unmatched price-to-compute ratio with full 140W RTX 4070 power",
+      "High refresh 240Hz color-calibrated display with G-Sync support",
+      "Comprehensive rear I/O port layout keeps desk cables organized"
+    ],
+    "cons": [
+      "Heavy chassis and large 300W power brick make commuting cumbersome",
+      "Modest battery life under active performance usage (~4.5 hours)",
+      "Plastic deck accents around vents compared to all-metal chassis"
+    ],
+    "price_status": "verified"
+  },
+  {
+    "id": "elec-004",
+    "name": "ASUS Zenbook 14 OLED (UX3405)",
+    "category": "electronics",
+    "brand": "ASUS",
+    "price": 89990.0,
+    "currency": "INR",
+    "lastVerified": "2026-10-15T11:00:00Z",
+    "lastVerifiedAt": "2026-10-15T11:00:00Z",
+    "source": "ASUS India Official Store",
+    "productSourceUrl": "https://in.store.asus.com/zenbook-14-oled-ux3405.html",
+    "officialProductUrl": "https://in.store.asus.com/zenbook-14-oled-ux3405.html",
+    "retailerOffers": [
+      {
+        "retailerName": "ASUS India Store",
+        "productUrl": "https://in.store.asus.com/zenbook-14-oled-ux3405.html",
+        "price": 89990.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-15T11:00:00Z"
+      }
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.5,
+    "reviewCount": 278,
+    "verifiedPurchaseReviewCount": 240,
+    "specs": {
+      "processor": "Intel Core Ultra 7 155H with Intel AI Boost NPU",
+      "ram": "16GB LPDDR5X 7467MHz",
+      "storage": "1TB M.2 NVMe PCIe 4.0 SSD",
+      "gpu": "Intel Arc Graphics (Integrated 8 Xe cores)",
+      "display": "14.0\" 3K (2880x1800) OLED 120Hz 0.2ms 500 nits HDR",
+      "battery": "75 Wh (Up to 14 hours battery)",
+      "weight": "1.28 kg (2.82 lbs)",
+      "os": "Windows 11 Home",
+      "ports": "2x Thunderbolt 4, 1x USB-A 3.2, 1x HDMI 2.1, 3.5mm combo audio"
+    },
+    "intendedUsageTags": [
+      "college",
+      "programming",
+      "office"
+    ],
+    "priorityAffinities": {
+      "performance": 0.83,
+      "battery": 0.91,
+      "portability": 0.96,
+      "ram": 0.82,
+      "build_quality": 0.91,
+      "value": 0.95
+    },
+    "features": [
+      "Vibrant 120Hz Lumina OLED panel with 100% DCI-P3 color gamut",
+      "Integrated NPU for on-device AI background blur and eye tracking",
+      "Military-grade MIL-STD 810H durability certified chassis"
+    ],
+    "pros": [
+      "Stunning OLED contrast with deep true blacks and HDR highlights",
+      "Ultra-portable at just 1.28 kg and ultra-slim 14.9mm profile",
+      "Exceptional battery life on a 75 Wh cell paired with Intel Ultra"
+    ],
+    "cons": [
+      "Glossy OLED screen exhibits reflections in direct bright sunlight",
+      "Soldered RAM cannot be upgraded later",
+      "Integrated graphics are not suited for hardcore AAA 4K gaming"
+    ],
+    "price_status": "verified"
+  },
+  {
+    "id": "elec-005",
+    "name": "Acer Aspire 5 A515",
+    "category": "electronics",
+    "brand": "Acer",
+    "price": 52990.0,
+    "currency": "INR",
+    "lastVerified": "2026-10-15T09:00:00Z",
+    "lastVerifiedAt": "2026-10-15T09:00:00Z",
+    "source": "Acer India Direct",
+    "productSourceUrl": "https://store.acer.com/en-in/laptops/aspire",
+    "officialProductUrl": "https://store.acer.com/en-in/laptops/aspire",
+    "retailerOffers": [
+      {
+        "retailerName": "Acer India Store",
+        "productUrl": "https://store.acer.com/en-in/laptops/aspire",
+        "price": 52990.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-15T09:00:00Z"
+      }
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.3,
+    "reviewCount": 512,
+    "verifiedPurchaseReviewCount": 460,
+    "specs": {
+      "processor": "Intel Core i5-1335U (10 cores, up to 4.6 GHz)",
+      "ram": "16GB DDR4 3200MHz (Upgradable)",
+      "storage": "512GB PCIe Gen 4 SSD",
+      "gpu": "Intel Iris Xe Graphics",
+      "display": "15.6\" FHD (1920x1080) IPS ComfyView",
+      "battery": "50 Wh (Up to 7.5 hours)",
+      "weight": "1.78 kg (3.92 lbs)",
+      "os": "Windows 11 Home",
+      "ports": "1x Thunderbolt 4, 2x USB-A 3.2, 1x HDMI 2.1, Ethernet RJ45"
+    },
+    "intendedUsageTags": [
+      "college",
+      "office",
+      "programming"
+    ],
+    "priorityAffinities": {
+      "performance": 0.72,
+      "battery": 0.74,
+      "portability": 0.76,
+      "ram": 0.8,
+      "build_quality": 0.75,
+      "value": 0.98
+    },
+    "features": [
+      "TwinAir cooling system with multiple cooling modes",
+      "Upgradable dual-slot RAM configuration",
+      "Full numeric keypad for data entry and accounting"
+    ],
+    "pros": [
+      "Accessible price tag with genuine 10-core modern Intel CPU",
+      "Easily user-serviceable storage and memory slots",
+      "Good assortment of legacy and modern ports including Ethernet"
+    ],
+    "cons": [
+      "Display brightness tops out at 280 nits; mediocre in bright spaces",
+      "Plastic chassis flexes slightly under firm palm pressure",
+      "Speakers lack lower-frequency bass depth"
+    ],
+    "price_status": "verified"
+  },
+  {
+    "id": "elec-006",
+    "name": "Sony WH-1000XM5 Wireless Headphones",
+    "category": "electronics",
+    "brand": "Sony",
+    "price": 26990.0,
+    "currency": "INR",
+    "lastVerified": "2026-10-15T16:00:00Z",
+    "lastVerifiedAt": "2026-10-15T16:00:00Z",
+    "source": "Sony India Electronics Verified",
+    "productSourceUrl": "https://www.sony.co.in/electronics/headband-headphones/wh-1000xm5",
+    "officialProductUrl": "https://www.sony.co.in/electronics/headband-headphones/wh-1000xm5",
+    "retailerOffers": [
+      {
+        "retailerName": "Sony Center India",
+        "productUrl": "https://www.sony.co.in/electronics/headband-headphones/wh-1000xm5",
+        "price": 26990.0,
+        "currency": "INR",
+        "availability": "In Stock",
+        "lastVerifiedAt": "2026-10-15T16:00:00Z"
+      }
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+    "rating": 4.7,
+    "reviewCount": 890,
+    "verifiedPurchaseReviewCount": 810,
+    "specs": {
+      "driver": "30mm precision carbon fiber composite driver",
+      "battery": "30 hours with ANC On (40 hours with ANC Off)",
+      "charging": "USB-PD quick charge (3 min gives 3 hours)",
+      "weight": "250 g",
+      "bluetooth": "Bluetooth 5.2 with LDAC, AAC, SBC",
+      "anc": "Dual V1/QN1 processors with 8 beamforming microphones"
+    },
+    "intendedUsageTags": [
+      "college",
+      "office",
+      "video_editing"
+    ],
+    "priorityAffinities": {
+      "performance": 0.95,
+      "battery": 0.95,
+      "portability": 0.9,
+      "ram": 0.7,
+      "build_quality": 0.92,
+      "value": 0.86
+    },
+    "features": [
+      "Industry-standard Auto NC Optimizer that adjusts to atmospheric pressure",
+      "Multipoint connection seamlessly switching between phone and laptop",
+      "Speak-to-Chat auto pause and voice detection"
+    ],
+    "pros": [
+      "Best-in-class low and mid-frequency ambient noise suppression",
+      "Extremely comfortable lightweight earcups for 8+ hour study sessions",
+      "Flawless microphone clarity for online lectures and Zoom meetings"
+    ],
+    "cons": [
+      "Earcups do not fold inward into the headband like the older XM4",
+      "Touch sensor controls can be sensitive to accidental brush-ups",
+      "Slightly premium price compared to midrange ANC headphones"
+    ],
+    "price_status": "verified"
+  }
+]

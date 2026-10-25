@@ -299,6 +299,86 @@ class TOPSISRankingEngine:
             # Lower latency is better (Cost criterion)
             features["stylus_latency"] = (lat_val, lat_val is None)
 
+        elif category == "televisions":
+            disp_text = specs.get("display", "").lower()
+            screen_size = None
+            size_m = re.search(r"(\d{2})\s*[-]?inch", disp_text)
+            if size_m:
+                screen_size = float(size_m.group(1))
+            features["screen_size"] = (screen_size, screen_size is None)
+
+            hz_m = re.search(r"(\d{2,3})\s*hz", disp_text)
+            hz_val = float(hz_m.group(1)) if hz_m else 60.0
+            features["refresh_rate"] = (hz_val, False)
+
+            if "oled" in disp_text:
+                disp_tier = 5.0
+            elif "mini led" in disp_text:
+                disp_tier = 4.5
+            elif "qled" in disp_text:
+                disp_tier = 3.8
+            else:
+                disp_tier = 3.0
+            features["display_tier"] = (disp_tier, False)
+
+            audio_text = specs.get("audio", "")
+            watt_m = re.search(r"(\d+)\s*w", audio_text, re.IGNORECASE)
+            watt_val = float(watt_m.group(1)) if watt_m else None
+            features["audio_power"] = (watt_val, watt_val is None)
+
+        elif category == "refrigerators":
+            cap_text = specs.get("capacity", "")
+            cap_m = re.search(r"(\d+)\s*l", cap_text, re.IGNORECASE)
+            cap_val = float(cap_m.group(1)) if cap_m else None
+            features["capacity_l"] = (cap_val, cap_val is None)
+
+            star_text = specs.get("energy_rating", "") or specs.get("energy_efficiency", "")
+            star_m = re.search(r"(\d)\s*star", star_text, re.IGNORECASE)
+            star_val = float(star_m.group(1)) if star_m else 3.0
+            features["energy_rating"] = (star_val, False)
+
+        elif category == "washing_machines":
+            cap_text = specs.get("capacity", "")
+            cap_m = re.search(r"([\d\.]+)\s*kg", cap_text, re.IGNORECASE)
+            cap_val = float(cap_m.group(1)) if cap_m else None
+            features["capacity_kg"] = (cap_val, cap_val is None)
+
+            rpm_text = specs.get("spin_speed", "")
+            rpm_m = re.search(r"(\d+)\s*rpm", rpm_text, re.IGNORECASE)
+            rpm_val = float(rpm_m.group(1)) if rpm_m else None
+            features["spin_speed"] = (rpm_val, rpm_val is None)
+
+            star_text = specs.get("energy_rating", "")
+            star_m = re.search(r"(\d)\s*star", star_text, re.IGNORECASE)
+            star_val = float(star_m.group(1)) if star_m else 5.0
+            features["energy_rating"] = (star_val, False)
+
+        elif category == "air_conditioners":
+            ton_text = specs.get("capacity", "")
+            ton_m = re.search(r"([\d\.]+)\s*ton", ton_text, re.IGNORECASE)
+            ton_val = float(ton_m.group(1)) if ton_m else None
+            features["tonnage"] = (ton_val, ton_val is None)
+
+            cool_text = specs.get("cooling_capacity", "")
+            cool_m = re.search(r"(\d+)\s*w", cool_text, re.IGNORECASE)
+            cool_val = float(cool_m.group(1)) if cool_m else 4800.0
+            features["cooling_power"] = (cool_val, False)
+
+            star_text = specs.get("energy_rating", "")
+            star_m = re.search(r"(\d)\s*star", star_text, re.IGNORECASE)
+            star_val = float(star_m.group(1)) if star_m else 4.0
+            features["energy_rating"] = (star_val, False)
+
+        elif category == "tablets_monitors":
+            disp_text = specs.get("display", "").lower()
+            size_m = re.search(r"([\d\.]+)\s*[-]?inch", disp_text)
+            size_val = float(size_m.group(1)) if size_m else None
+            features["screen_size"] = (size_val, size_val is None)
+
+            hz_m = re.search(r"(\d{2,3})\s*hz", disp_text)
+            hz_val = float(hz_m.group(1)) if hz_m else 60.0
+            features["refresh_rate"] = (hz_val, False)
+
         return features
 
     def compute_weights(
@@ -316,9 +396,14 @@ class TOPSISRankingEngine:
         weights: Dict[str, float] = {k: 1.0 for k in criteria_keys}
 
         priority_map = {
-            "performance": ["ram_gb", "processor_tier", "gpu_tier", "capacity", "wattage"],
+            "performance": ["ram_gb", "processor_tier", "gpu_tier", "capacity", "wattage", "refresh_rate", "spin_speed", "cooling_power"],
             "battery": ["battery_capacity", "battery_mah", "fitness_battery"],
             "camera": ["camera_mp"],
+            "display": ["display_tier", "screen_size", "refresh_rate"],
+            "sound": ["audio_power"],
+            "cooling": ["cooling_power", "tonnage"],
+            "energy": ["energy_rating"],
+            "capacity": ["capacity_l", "capacity_kg", "capacity"],
             "portability": ["weight_kg", "weight_g", "shoe_weight", "stylus_latency"],
             "ram": ["ram_gb", "storage_gb"],
             "value": ["price"],
@@ -778,26 +863,33 @@ class TOPSISRankingEngine:
 
         # Role 2: BEST VALUE
         remaining = [item for item in ranked_items if item["product"]["id"] != best_overall["product"]["id"]]
+        if not remaining and len(ranked_items) > 1:
+            remaining = [dict(ranked_items[1])]
+
         def value_metric(item):
             price = max(float(item["product"].get("price", 1)), 1.0)
             return item["topsis_score"] / price
 
-        best_value_item = dict(max(remaining, key=value_metric))
-        best_value_item["role"] = "BEST VALUE"
-        best_value_item["role_tagline"] = f"Optimal specification-per-rupee ratio, priced at ₹{best_value_item['product'].get('price', 0):,.0f}."
-        best_value_item["important_differences"] = self._compute_spec_differences(
-            best_value_item["product"],
-            [it["product"] for it in ranked_items if it["product"]["id"] != best_value_item["product"]["id"]]
-        )
-        best_value_item["merit_badge"] = "BEST VALUE"
-        recommendations.append(best_value_item)
+        if remaining:
+            best_value_item = dict(max(remaining, key=value_metric))
+            best_value_item["role"] = "BEST VALUE"
+            best_value_item["role_tagline"] = f"Optimal specification-per-rupee ratio, priced at ₹{best_value_item['product'].get('price', 0):,.0f}."
+            best_value_item["important_differences"] = self._compute_spec_differences(
+                best_value_item["product"],
+                [it["product"] for it in ranked_items if it["product"]["id"] != best_value_item["product"]["id"]]
+            )
+            best_value_item["merit_badge"] = "BEST VALUE"
+            recommendations.append(best_value_item)
 
-        if len(remaining) == 1:
+        if len(remaining) <= 1:
             return recommendations
 
         # Role 3: BEST ALTERNATIVE
         chosen_ids = {best_overall["product"]["id"], best_value_item["product"]["id"]}
         alternatives = [item for item in ranked_items if item["product"]["id"] not in chosen_ids]
+        if not alternatives and len(ranked_items) > 2:
+            alternatives = [dict(ranked_items[2])]
+
         if alternatives:
             best_alt = dict(alternatives[0])
             best_alt["role"] = "BEST ALTERNATIVE"
@@ -817,3 +909,17 @@ class TOPSISRankingEngine:
             recommendations.append(best_alt)
 
         return recommendations
+
+    def rank_products_for_comparison(
+        self,
+        products: List[Dict[str, Any]],
+        category: str,
+        priorities: Optional[List[str]] = None,
+        weights: Optional[Dict[str, float]] = None
+    ) -> List[Dict[str, Any]]:
+        """Convenience method returning ranked recommendations list directly."""
+        res = self.rank_products_topsis(products, category, priorities or ["performance"])
+        ranked = res.get("ranked_products", [])
+        for idx, item in enumerate(ranked):
+            item["rank"] = idx + 1
+        return ranked

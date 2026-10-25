@@ -70,6 +70,97 @@ PRODUCT_SUBCATEGORIES = {
             "criteria": ["driver", "battery", "anc", "weight", "bluetooth"]
         }
     },
+    "smartphones": {
+        "smartphones": {
+            "label": "Smartphones & Mobile Phones",
+            "keywords": ["phone", "iphone", "galaxy", "pixel", "oneplus", "smartphone", "mobile", "ultra", "pro max"],
+            "criteria": ["processor", "ram", "storage", "camera", "display", "battery"]
+        }
+    },
+    "laptops": {
+        "laptops": {
+            "label": "Laptops & Notebooks",
+            "keywords": ["laptop", "notebook", "xps", "macbook", "zenbook", "legion", "aspire", "thinkpad", "ideapad", "ultrabook", "spectre"],
+            "criteria": ["processor", "ram", "storage", "gpu", "display", "battery", "weight"]
+        }
+    },
+    "televisions": {
+        "televisions": {
+            "label": "Smart Televisions",
+            "keywords": ["tv", "television", "oled", "qled", "bravia", "smart tv", "mini led", "4k"],
+            "criteria": ["display", "hdr", "processor", "audio", "ports"]
+        }
+    },
+    "refrigerators": {
+        "refrigerators": {
+            "label": "Refrigerators",
+            "keywords": ["refrigerator", "fridge", "frost free", "side-by-side", "double door", "single door", "inverter"],
+            "criteria": ["capacity", "compressor", "energy_rating", "cooling_technology"]
+        }
+    },
+    "washing_machines": {
+        "washing_machines": {
+            "label": "Washing Machines",
+            "keywords": ["washing machine", "washer", "front load", "top load", "inverter", "rpm"],
+            "criteria": ["capacity", "spin_speed", "motor", "energy_rating"]
+        }
+    },
+    "air_conditioners": {
+        "air_conditioners": {
+            "label": "Air Conditioners",
+            "keywords": ["air conditioner", "split ac", "inverter ac", "ton", "tonnage", "copper"],
+            "criteria": ["capacity", "energy_rating", "compressor", "condenser_coil"]
+        }
+    },
+    "tablets_monitors": {
+        "tablets_monitors": {
+            "label": "Tablets & Monitors",
+            "keywords": ["tablet", "ipad", "galaxy tab", "monitor", "ultrasharp", "ultragear", "gaming monitor"],
+            "criteria": ["display", "processor", "ram", "storage", "connectivity"]
+        }
+    },
+    "consumer_electronics": {
+        "headphones": {
+            "label": "Audio & Headphones",
+            "keywords": ["headphone", "headphones", "earphone", "earbuds", "wh-1000xm", "anc", "audio", "airpods"],
+            "criteria": ["driver", "battery", "anc", "weight", "bluetooth"]
+        }
+    },
+    "books": {
+        "books": {
+            "label": "Books & Study Materials",
+            "keywords": ["book", "programming", "edition", "designing data", "machine learning"],
+            "criteria": ["pages", "publisher", "edition"]
+        }
+    },
+    "magazines": {
+        "magazines": {
+            "label": "Magazines & Periodicals",
+            "keywords": ["magazine", "periodical", "review", "monthly", "wired", "technology review"],
+            "criteria": ["frequency", "publisher"]
+        }
+    },
+    "fitness_equipment": {
+        "fitness_equipment": {
+            "label": "Fitness Equipment",
+            "keywords": ["dumbbell", "selecttech", "weight", "barbell", "bench", "boldfit", "kore"],
+            "criteria": ["weight_range", "mechanism", "dimensions"]
+        }
+    },
+    "kitchen_chimneys": {
+        "kitchen_chimneys": {
+            "label": "Kitchen Chimneys",
+            "keywords": ["chimney", "hood", "faber", "elica", "suction", "filterless", "auto clean"],
+            "criteria": ["suction_power", "filter_type", "dimensions"]
+        }
+    },
+    "nutrition": {
+        "nutrition": {
+            "label": "Protein & Nutrition",
+            "keywords": ["protein", "whey", "gold standard", "biozyme", "isolate", "creatine"],
+            "criteria": ["protein_per_serving", "servings", "flavor"]
+        }
+    },
     "footwear": {
         "running_shoes": {
             "label": "Running & Athletic Shoes",
@@ -199,6 +290,87 @@ CATEGORY_KEYWORD_RULES = {
             "fitness", "dumbbell", "barbell", "workout", "exercise", "weight bench"
         ],
         "negative": ["laptop", "desk", "fryer", "office chair"]
+    },
+    "smartphones": {
+        "strong": [
+            "smartphone", "phone", "galaxy s2", "galaxy s25", "iphone 16", "iphone 15", "pixel 9",
+            "oneplus 12", "oneplus 13", "snapdragon 8", "amoled 120hz", "redmi note", "realme gt", "iqoo 12"
+        ],
+        "general": ["mobile", "cell phone", "5g phone", "android", "ios", "handset"],
+        "negative": ["laptop", "television", "refrigerator", "washing machine", "ac", "shoe"]
+    },
+    "laptops": {
+        "strong": [
+            "laptop", "notebook", "ultrabook", "macbook", "xps 15", "xps 13", "thinkpad",
+            "zenbook", "legion pro", "spectre x360", "swift go", "core ultra", "rtx 4060", "rtx 4070"
+        ],
+        "general": ["computer", "pc", "clamshell", "macbook pro", "macbook air"],
+        "negative": ["smartphone", "television", "refrigerator", "ac", "washing machine"]
+    },
+    "televisions": {
+        "strong": [
+            "television", "smart tv", "4k tv", "oled tv", "qled tv", "bravia", "neo qled",
+            "oled evo", "c4 oled", "s95d", "tcl c755", "mini led tv"
+        ],
+        "general": ["tv", "display screen", "google tv", "tizen", "webos"],
+        "negative": ["laptop", "smartphone", "refrigerator", "washing machine", "ac"]
+    },
+    "refrigerators": {
+        "strong": [
+            "refrigerator", "fridge", "frost free", "side-by-side refrigerator", "double door refrigerator",
+            "single door refrigerator", "twin cooling", "door cooling", "moistfresh"
+        ],
+        "general": ["freezer", "convertible fridge", "inverter refrigerator"],
+        "negative": ["tv", "laptop", "phone", "washing machine", "ac"]
+    },
+    "washing_machines": {
+        "strong": [
+            "washing machine", "washer", "front load", "top load", "ai directdrive",
+            "ecobubble", "turbodrum", "spin rpm", "inverter motor"
+        ],
+        "general": ["laundry", "clothes washer", "fully automatic"],
+        "negative": ["tv", "laptop", "fridge", "refrigerator", "ac"]
+    },
+    "air_conditioners": {
+        "strong": [
+            "air conditioner", "split ac", "inverter ac", "1.5 ton", "1 ton", "dual inverter ac",
+            "iseer", "coanda airflow", "dew clean", "copper condenser ac"
+        ],
+        "general": ["ac", "cooling unit", "room cooler"],
+        "negative": ["tv", "laptop", "refrigerator", "washer"]
+    },
+    "tablets_monitors": {
+        "strong": [
+            "ipad pro", "ipad air", "galaxy tab", "ultrasharp", "ultragear", "gaming monitor",
+            "240hz monitor", "4k monitor", "tandem oled", "ips black"
+        ],
+        "general": ["tablet", "monitor", "stylus tablet", "screen"],
+        "negative": ["refrigerator", "washing machine", "ac", "shoe"]
+    },
+    "books": {
+        "strong": ["paperback", "hardcover", "edition", "publisher", "hands-on machine learning", "designing data-intensive"],
+        "general": ["book", "study guide", "textbook"],
+        "negative": ["laptop", "phone", "shoes"]
+    },
+    "magazines": {
+        "strong": ["periodical", "monthly issue", "wired magazine", "mit technology review", "annual subscription"],
+        "general": ["magazine", "journal"],
+        "negative": ["laptop", "phone"]
+    },
+    "fitness_equipment": {
+        "strong": ["adjustable dumbbell", "home gym", "weight bench", "barbell combo", "selecttech", "kore 20kg"],
+        "general": ["dumbbells", "gym equipment", "weights"],
+        "negative": ["laptop", "phone", "book"]
+    },
+    "kitchen_chimneys": {
+        "strong": ["kitchen chimney", "auto clean chimney", "filterless chimney", "hood orient", "elica chimney", "faber chimney"],
+        "general": ["chimney", "exhaust hood"],
+        "negative": ["laptop", "phone", "shoes"]
+    },
+    "nutrition": {
+        "strong": ["whey protein", "gold standard whey", "biozyme performance", "protein powder", "isolate whey", "bcaa"],
+        "general": ["nutrition", "protein supplement"],
+        "negative": ["laptop", "phone", "tv"]
     },
     "education": {
         "strong": [
@@ -970,7 +1142,7 @@ class CategoryValidator:
             status = "valid"
             identity_status = "needs_confirmation" if (brand or model_name) else "not_identified"
         elif cat:
-            status = "ambiguous"
+            status = "warning"
             identity_status = "needs_confirmation"
         else:
             status = "unknown"
