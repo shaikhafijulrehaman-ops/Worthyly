@@ -21,9 +21,16 @@ import {
   Scale,
   Award,
   Zap,
-  DollarSign
+  DollarSign,
+  Tv,
+  Box,
+  Disc,
+  Wind,
+  Tablet,
+  Home
 } from 'lucide-react';
 import NeonBorder from '../components/NeonBorder';
+import { getCanonicalCategories } from '../services/categoryRegistry';
 
 const CATEGORY_ICON_MAP = {
   smartphones: Smartphone,
